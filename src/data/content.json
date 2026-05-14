@@ -65,7 +65,12 @@
     {
       "title": "Mapa Interactivo de Biodiversidad",
       "type": "Herramienta",
-      "link": "https://biodiversidad.lovable.app/"
+      "link": "https://biodiversidadglobal.vercel.app/"
+    },
+    {
+      "title": "Mapa Interactivo ODS",
+      "type": "Herramienta",
+      "link": "https://odsinteractivo.vercel.app/"
     }
   ]
 }
