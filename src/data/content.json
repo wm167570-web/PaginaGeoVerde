@@ -20,21 +20,21 @@
       "id": "videoId1",
       "title": "Huella de Carbono",
       "description": "Aprende a medir, reducir y compensar tu impacto ambiental personal y corporativo para un futuro sostenible.",
-      "image": "/src/assets/images/regenerated_image_1778719801817.jpg",
+      "image": "/assets/images/regenerated_image_1778719801817.jpg",
       "url": "https://www.youtube.com/playlist?list=PLgg4No7_afp0hlOqZOfERROG4vJub12Rs"
     },
     {
       "id": "videoId2",
       "title": "Granjas Verticales",
       "description": "Descubre cómo la agricultura hidropónica y vertical está optimizando el uso de recursos en las ciudades inteligentes.",
-      "image": "/src/assets/images/regenerated_image_1778720228531.jpg",
+      "image": "/assets/images/regenerated_image_1778720228531.jpg",
       "url": "https://www.youtube.com/watch?v=pk6NQWBRlP8&t=2s"
     },
     {
       "id": "videoId3",
       "title": "¿Qué es un DEM?",
       "description": "Explora el uso de Modelos Digitales de Elevación para el análisis topográfico y la gestión del riesgo ambiental.",
-      "image": "/src/assets/images/regenerated_image_1778720617460.jpg",
+      "image": "/assets/images/regenerated_image_1778720617460.jpg",
       "url": "https://www.youtube.com/watch?v=C8MyqlK0lHE"
     }
   ],
@@ -52,7 +52,7 @@
       "title": "La Importancia de los Glaciares",
       "excerpt": "¿Por qué el derretimiento de los polos nos afecta a todos?",
       "date": "2026-05-05",
-      "image": "/src/assets/images/regenerated_image_1778728123329.jpg",
+      "image": "/assets/images/regenerated_image_1778728123329.jpg",
       "content": "Los glaciares son los 'termómetros' de nuestro planeta y desempeñan funciones vitales:\n\n* **Reserva de agua dulce**: Almacenan el 75% del agua dulce de la Tierra.\n* **Regulación climática**: Reflejan la radiación solar (efecto albedo), ayudando a mantener la temperatura global.\n* **Equilibrio ecológico**: Son el hábitat de especies únicas y regulan el nivel del mar.\n\nEl calentamiento global está provocando su retroceso acelerado, lo que conlleva al aumento del nivel del mar y la pérdida de biodiversidad crítica. Protegerlos es proteger nuestro futuro."
     }
   ],
