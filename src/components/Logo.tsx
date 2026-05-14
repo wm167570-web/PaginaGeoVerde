@@ -21,14 +21,14 @@ export default function Logo({ className = "w-10 h-10" }: { className?: string }
 
       {/* Main Text: GEOVERDE (Arched) */}
       <path id="logo-curve" d="M 80 280 A 180 180 0 0 1 420 280" fill="none" />
-      <text className="fill-[#34D321] font-bold" style={{ fontSize: '82px', fontWeight: 900 }}>
+      <text className="fill-brand-forest font-bold" style={{ fontSize: '82px', fontWeight: 900 }}>
         <textPath href="#logo-curve" startOffset="50%" textAnchor="middle">
           GEOVERDE
         </textPath>
       </text>
 
       {/* Center Text: VIDA CONSCIENTE */}
-      <g className="fill-[#34D321] font-bold tracking-widest">
+      <g className="fill-brand-secondary font-bold tracking-widest">
         <text x="250" y="245" textAnchor="middle" style={{ fontSize: '20px' }}>VIDA</text>
         <text x="250" y="270" textAnchor="middle" style={{ fontSize: '20px' }}>CONSCIENTE</text>
       </g>
@@ -53,20 +53,20 @@ export default function Logo({ className = "w-10 h-10" }: { className?: string }
         <circle cx="250" cy="530" r="280" fill="white" />
         
         {/* Mountains */}
-        <path d="M -50 630 Q 120 380 200 500 T 350 350 T 550 550 V 800 H -50 Z" fill="#B0F464" />
-        <path d="M -50 680 Q 100 450 180 550 T 320 400 T 550 600 V 800 H -50 Z" fill="#84cc16" />
+        <path d="M -50 630 Q 120 380 200 500 T 350 350 T 550 550 V 800 H -50 Z" fill="#dde05c" />
+        <path d="M -50 680 Q 100 450 180 550 T 320 400 T 550 600 V 800 H -50 Z" fill="#adb52a" />
 
         {/* Deep Water */}
-        <rect x="0" y="550" width="500" height="300" fill="#1E40AF" />
+        <rect x="0" y="550" width="500" height="300" fill="#004c84" />
         
         {/* The White Flowing Shape (River/Lake center) */}
         <path d="M 250 480 Q 220 500 280 550 L 500 580 V 800 H 150 L 250 480 Z" fill="white" />
         
         {/* Foreground Peaks */}
-        <path d="M -50 600 Q 100 480 180 580 T 350 480 T 550 650 V 800 H -50 Z" fill="#34D321" />
+        <path d="M -50 600 Q 100 480 180 580 T 350 480 T 550 650 V 800 H -50 Z" fill="#6b6e1b" />
 
         {/* Trees */}
-        <g fill="#14532D">
+        <g fill="#004c84">
           <path d="M 120 620 L 135 550 L 150 620 Z" />
           <path d="M 150 650 L 165 580 L 180 650 Z" />
           <path d="M 185 680 L 200 610 L 215 680 Z" />

@@ -17,7 +17,7 @@ export default function Home() {
       <VideoGrid />
       
       {/* Resources Preview */}
-      <section id="resources" className="py-24 bg-brand-green text-white">
+      <section id="resources" className="py-24 bg-brand-forest text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -44,7 +44,7 @@ export default function Home() {
                        </div>
                        <div>
                          <span className="text-[10px] uppercase font-bold tracking-widest opacity-60 mb-1 block">{resource.type}</span>
-                         <span className="text-lg font-bold">{resource.title}</span>
+                         <span className="text-lg font-bold group-hover:text-brand-lime transition-colors">{resource.title}</span>
                        </div>
                     </div>
                     <ArrowRight className="w-6 h-6 opacity-40 group-hover:opacity-100 transition-opacity" />
@@ -69,43 +69,43 @@ export default function Home() {
       <BlogSection />
       <ContactForm />
 
-      <footer className="bg-brand-earth py-20 border-t border-brand-moss/10">
+      <footer className="bg-brand-earth py-20 border-t border-brand-forest/10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
             <div className="max-w-sm">
-              <div className="flex items-center gap-4 mb-6 text-brand-green">
+              <div className="flex items-center gap-4 mb-6 text-brand-primary">
                 <Logo className="w-16 h-16" />
                 <span className="font-serif text-3xl font-bold tracking-tight">
                   {content.channel.name}
                 </span>
               </div>
-              <p className="text-brand-moss/60 mb-8 leading-relaxed italic font-serif text-lg">
+              <p className="text-brand-forest/60 mb-8 leading-relaxed italic font-serif text-lg">
                 "{content.channel.description}"
               </p>
               <div className="flex items-center gap-6">
-                <a href={content.channel.social.instagram} target="_blank" rel="noopener noreferrer" className="text-brand-moss hover:text-brand-green transition-colors"><Instagram className="w-5 h-5" /></a>
-                <a href={content.channel.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-brand-moss hover:text-brand-green transition-colors"><Music className="w-5 h-5" /></a>
-                <a href={content.channel.social.facebook} target="_blank" rel="noopener noreferrer" className="text-brand-moss hover:text-brand-green transition-colors"><Facebook className="w-5 h-5" /></a>
-                <a href={content.channel.url} target="_blank" rel="noopener noreferrer" className="text-brand-moss hover:text-brand-green transition-colors"><Youtube className="w-5 h-5" /></a>
+                <a href={content.channel.social.instagram} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Instagram className="w-5 h-5" /></a>
+                <a href={content.channel.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Music className="w-5 h-5" /></a>
+                <a href={content.channel.social.facebook} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Facebook className="w-5 h-5" /></a>
+                <a href={content.channel.url} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Youtube className="w-5 h-5" /></a>
               </div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
               <div className="flex flex-col gap-4">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-moss opacity-50">Explorar</span>
-                <a href="#videos" className="text-sm font-medium hover:text-brand-green transition-colors">Videos</a>
-                <a href="#blog" className="text-sm font-medium hover:text-brand-green transition-colors">Noticias</a>
-                <a href="#resources" className="text-sm font-medium hover:text-brand-green transition-colors">Recursos</a>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-50">Explorar</span>
+                <a href="#videos" className="text-sm font-medium hover:text-brand-primary transition-colors">Videos</a>
+                <a href="#blog" className="text-sm font-medium hover:text-brand-primary transition-colors">Noticias</a>
+                <a href="#resources" className="text-sm font-medium hover:text-brand-primary transition-colors">Recursos</a>
               </div>
               <div className="flex flex-col gap-4">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-moss opacity-50">Legal</span>
-                <Link to="/privacidad" className="text-sm font-medium hover:text-brand-green transition-colors">Privacidad</Link>
-                <Link to="/terminos" className="text-sm font-medium hover:text-brand-green transition-colors">Términos</Link>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-50">Legal</span>
+                <Link to="/privacidad" className="text-sm font-medium hover:text-brand-primary transition-colors">Privacidad</Link>
+                <Link to="/terminos" className="text-sm font-medium hover:text-brand-primary transition-colors">Términos</Link>
               </div>
             </div>
           </div>
           
-          <div className="pt-12 border-t border-brand-moss/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-moss opacity-40">
+          <div className="pt-12 border-t border-brand-forest/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-40">
             <span>© 2026 {content.channel.name}. Todos los derechos reservados.</span>
             <span>Hecho con amor por la naturaleza</span>
           </div>

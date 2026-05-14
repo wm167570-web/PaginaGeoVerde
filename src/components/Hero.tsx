@@ -6,8 +6,8 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-earth">
       {/* Abstract background elements */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-brand-green/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-brand-moss/5 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4" />
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-brand-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-brand-sky/5 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4" />
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         <motion.div
@@ -15,14 +15,14 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 text-brand-green text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
-            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary/10 text-brand-forest text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
+            <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse" />
             Nuevo Video Disponible
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold leading-[1.1] text-brand-green-bright mb-8">
+          <h1 className="font-serif text-5xl md:text-7xl font-bold leading-[1.1] text-brand-primary mb-8 text-shadow-sm">
             {content.hero.title}
           </h1>
-          <p className="text-lg text-brand-moss/80 leading-relaxed max-w-md mb-10">
+          <p className="text-lg text-brand-forest/80 leading-relaxed max-w-md mb-10">
             {content.hero.subtitle}
           </p>
           
@@ -31,14 +31,14 @@ export default function Hero() {
               href={content.channel.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 bg-brand-green text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 shadow-xl shadow-brand-green/30"
+              className="group flex items-center gap-3 bg-brand-primary text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 shadow-xl shadow-brand-primary/30"
             >
               Ver en YouTube
               <Youtube className="w-5 h-5" />
             </a>
             <a 
               href="#blog"
-              className="group flex items-center gap-3 bg-white text-brand-green border border-brand-green/20 px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-green/5"
+              className="group flex items-center gap-3 bg-white text-brand-sky border border-brand-sky/20 px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-sky/5"
             >
               Explorar Blog
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -61,10 +61,10 @@ export default function Hero() {
               fetchPriority="high"
               decoding="async"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-green/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/40 via-transparent to-transparent" />
             <div className="absolute bottom-12 left-12 right-12 text-white">
               <span className="text-xs font-bold uppercase tracking-widest opacity-80 mb-2 block">Causa del mes</span>
-              <h3 className="font-serif text-3xl font-bold italic">Reforestación Urbana en el Siglo XXI</h3>
+              <h3 className="font-serif text-3xl font-bold italic text-white drop-shadow-md">Reforestación Urbana en el Siglo XXI</h3>
             </div>
           </div>
           
@@ -72,11 +72,11 @@ export default function Hero() {
           <motion.div 
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-10 -right-10 bg-white p-8 rounded-2xl shadow-2xl border border-brand-moss/10"
+            className="absolute -top-10 -right-10 bg-white p-8 rounded-2xl shadow-2xl border border-brand-accent/20"
           >
             <div className="flex flex-col items-center">
-              <span className="text-4xl font-serif font-bold text-brand-green">100+</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-moss opacity-60">Videos Publicados</span>
+              <span className="text-4xl font-serif font-bold text-brand-primary">100+</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Videos Publicados</span>
             </div>
           </motion.div>
         </motion.div>
