@@ -105,6 +105,8 @@ export default function BlogSection() {
                   src={activePost.image} 
                   alt={activePost.title} 
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>

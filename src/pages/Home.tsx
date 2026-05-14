@@ -55,9 +55,11 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square bg-white/5 rounded-full absolute inset-0 blur-3xl animate-pulse" />
               <img 
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000" 
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=60&w=1000" 
                 alt="Green Living"
                 className="rounded-[4rem] relative z-10 shadow-3xl rotate-3 hover:rotate-0 transition-transform duration-1000"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

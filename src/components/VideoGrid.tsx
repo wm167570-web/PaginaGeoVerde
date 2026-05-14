@@ -33,9 +33,11 @@ export default function VideoGrid() {
                 {/* Mock Thumbnail */}
                 <div className="absolute inset-0 bg-brand-moss/10 group-hover:bg-brand-moss/0 transition-colors duration-500" />
                 <img 
-                  src={video.image || `https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80&w=600&sig=${index}`}
+                  src={video.image || `https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=60&w=600&sig=${index}`}
                   alt={video.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
                 />
                 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

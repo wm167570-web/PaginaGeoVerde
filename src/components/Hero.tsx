@@ -54,9 +54,12 @@ export default function Hero() {
         >
           <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-y-3 transform transition-transform hover:skew-y-0 duration-700">
             <img 
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000" 
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=60&w=1000" 
               alt="Conciencia y Naturaleza"
               className="object-cover w-full h-full scale-110 hover:scale-100 transition-transform duration-[2000ms]"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-green/60 via-transparent to-transparent" />
             <div className="absolute bottom-12 left-12 right-12 text-white">
