@@ -1,0 +1,71 @@
+{
+  "channel": {
+    "name": "GeoVerde",
+    "handle": "@GeoVerdeCon100",
+    "url": "https://www.youtube.com/@GeoVerdeCon100",
+    "description": "Explorando la conciencia, la ecología y soluciones sostenibles para nuestro planeta.",
+    "social": {
+      "instagram": "https://www.instagram.com/geoverdecon100/",
+      "tiktok": "https://www.tiktok.com/@geoverdecon100",
+      "facebook": "https://www.facebook.com/GeoVerdeCon100/"
+    },
+    "email": "geoverdeconciencia@gmail.com"
+  },
+  "hero": {
+    "title": "Conectando con la Naturaleza a través de la Conciencia",
+    "subtitle": "Descubre el mundo, protege el entorno y únete a la revolución verde con GeoVerde."
+  },
+  "featuredVideos": [
+    {
+      "id": "videoId1",
+      "title": "Huella de Carbono",
+      "description": "Aprende a medir, reducir y compensar tu impacto ambiental personal y corporativo para un futuro sostenible.",
+      "image": "/src/assets/images/regenerated_image_1778719801817.jpg",
+      "url": "https://www.youtube.com/playlist?list=PLgg4No7_afp0hlOqZOfERROG4vJub12Rs"
+    },
+    {
+      "id": "videoId2",
+      "title": "Granjas Verticales",
+      "description": "Descubre cómo la agricultura hidropónica y vertical está optimizando el uso de recursos en las ciudades inteligentes.",
+      "image": "/src/assets/images/regenerated_image_1778720228531.jpg",
+      "url": "https://www.youtube.com/watch?v=pk6NQWBRlP8&t=2s"
+    },
+    {
+      "id": "videoId3",
+      "title": "¿Qué es un DEM?",
+      "description": "Explora el uso de Modelos Digitales de Elevación para el análisis topográfico y la gestión del riesgo ambiental.",
+      "image": "/src/assets/images/regenerated_image_1778720617460.jpg",
+      "url": "https://www.youtube.com/watch?v=C8MyqlK0lHE"
+    }
+  ],
+  "blog": [
+    {
+      "id": "1",
+      "title": "5 Maneras de Reducir tu Huella de Carbono",
+      "excerpt": "Desde el transporte hasta la alimentación, descubre cómo puedes marcar la diferencia.",
+      "date": "2026-05-10",
+      "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2070",
+      "content": "Reducir nuestra huella de carbono es esencial para mitigar el cambio climático. Aquí te presentamos 5 acciones concretas:\n\n1. **Movilidad Sostenible**: Prioriza caminar, el uso de la bicicleta o el transporte público. Si usas coche, considera compartirlo.\n2. **Eficiencia Energética**: Cambia a bombillas LED, desconecta aparatos que no uses y mejora el aislamiento de tu hogar.\n3. **Dieta Consciente**: Reduce el consumo de carne roja y prioriza productos locales y de temporada.\n4. **Consumo Responsable**: Aplica la regla de las 3R (Reducir, Reutilizar, Reciclar). Evita los plásticos de un solo uso.\n5. **Compensación**: Apoya proyectos de reforestación o energías renovables para equilibrar las emisiones que no puedes evitar."
+    },
+    {
+      "id": "2",
+      "title": "La Importancia de los Glaciares",
+      "excerpt": "¿Por qué el derretimiento de los polos nos afecta a todos?",
+      "date": "2026-05-05",
+      "image": "/src/assets/images/regenerated_image_1778728123329.jpg",
+      "content": "Los glaciares son los 'termómetros' de nuestro planeta y desempeñan funciones vitales:\n\n* **Reserva de agua dulce**: Almacenan el 75% del agua dulce de la Tierra.\n* **Regulación climática**: Reflejan la radiación solar (efecto albedo), ayudando a mantener la temperatura global.\n* **Equilibrio ecológico**: Son el hábitat de especies únicas y regulan el nivel del mar.\n\nEl calentamiento global está provocando su retroceso acelerado, lo que conlleva al aumento del nivel del mar y la pérdida de biodiversidad crítica. Protegerlos es proteger nuestro futuro."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Guía de Reciclaje Pro",
+      "type": "PDF",
+      "link": "https://drive.google.com/file/d/12gqa5fHDmIqyCx5ZCgiYq5McTVVVwgye/view?usp=sharing"
+    },
+    {
+      "title": "Mapa Interactivo de Biodiversidad",
+      "type": "Herramienta",
+      "link": "https://biodiversidad.lovable.app/"
+    }
+  ]
+}
