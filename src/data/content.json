@@ -65,12 +65,12 @@
     {
       "title": "Mapa Interactivo de Biodiversidad",
       "type": "Herramienta",
-      "link": "https://biodiversidadglobal.vercel.app/"
+      "link": "https://bio.geoverdevidaconsciente.com/"
     },
     {
-      "title": "Mapa Interactivo ODS",
+      "title": "Agenda 2030 Interactiva",
       "type": "Herramienta",
-      "link": "https://odsinteractivo.vercel.app/"
+      "link": "https://ods.geoverdevidaconsciente.com/"
     }
   ]
 }

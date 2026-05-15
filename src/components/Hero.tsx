@@ -47,7 +47,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6 shadow-sm hover:scale-105 transition-transform cursor-pointer"
           >
             <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-            Nuevo Video Disponible
+            VIVE CONSCIENTE
           </a>
           <h1 className="font-serif text-6xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
             {content.hero.title}

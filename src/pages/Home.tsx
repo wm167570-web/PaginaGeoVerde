@@ -106,7 +106,7 @@ export default function Home() {
                        </div>
                        <div>
                          <span className="text-[10px] uppercase font-bold tracking-widest opacity-60 mb-1 block">{resource.type}</span>
-                         <span className="text-lg font-bold group-hover:text-brand-lime transition-colors">{loading && i === 0 ? 'Buscando...' : (i === 0 && latestVideo ? latestVideo.title : resource.title)}</span>
+                         <span className="text-lg font-bold group-hover:text-brand-lime transition-colors">{loading && i === 0 ? 'Buscando...' : resource.title}</span>
                        </div>
                     </div>
                     <ArrowRight className="w-6 h-6 opacity-40 group-hover:opacity-100 transition-opacity" />

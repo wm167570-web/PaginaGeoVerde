@@ -1,10 +1,8 @@
 import express from "express";
 import path from "path";
-import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from "vite";
 import nodemailer from "nodemailer";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import 'dotenv/config';
 
 async function startServer() {
   const app = express();
@@ -61,6 +59,9 @@ async function startServer() {
 
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${PORT}`);
+  }).on('error', (err) => {
+    console.error('Server failed to start:', err);
+    process.exit(1);
   });
 }
 
