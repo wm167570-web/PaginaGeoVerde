@@ -1,19 +1,20 @@
 import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 import content from '../data/content.json';
+import { OptimizedImage } from './ui/OptimizedImage';
 
 export default function VideoGrid() {
   return (
     <section id="videos" className="py-24 bg-white relative overflow-hidden border-b border-brand-earth/10">
       {/* Subtle Pattern Background */}
       <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none">
-        <img 
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920" 
+        <OptimizedImage 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
           alt="Environmental Background" 
           className="w-full h-full object-cover grayscale"
-          referrerPolicy="no-referrer"
+          width={1920}
+          height={1080}
           loading="lazy"
-          decoding="async"
         />
       </div>
       
@@ -21,14 +22,14 @@ export default function VideoGrid() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-sky mb-4">Lanzamientos</h2>
-            <h3 className="font-serif text-5xl md:text-7xl font-black text-brand-primary italic leading-[0.9] tracking-tighter">Explora <span className="not-italic font-light opacity-80">Nuestra Videoteca</span></h3>
+            <h3 className="font-serif text-4xl md:text-7xl font-black text-brand-primary italic leading-[0.9] tracking-tighter">Explora <span className="not-italic font-light opacity-80">Nuestra Videoteca</span></h3>
           </div>
           <p className="text-brand-forest/60 max-w-sm border-l-2 border-brand-secondary pl-4 text-sm md:text-base font-light leading-relaxed">
             Educación ambiental de alta calidad para entender el mundo en el que vivimos.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {content.featuredVideos.map((video, index) => (
             <motion.a
               key={video.id}
@@ -44,12 +45,13 @@ export default function VideoGrid() {
               <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-brand-light-green/20">
                 {/* Mock Thumbnail */}
                 <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
-                <img 
-                  src={video.image || `https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=60&w=600&sig=${index}`}
+                <OptimizedImage 
+                  src={video.image || "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d"}
                   alt={video.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  width={600}
+                  height={340}
                   loading="lazy"
-                  decoding="async"
                 />
                 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

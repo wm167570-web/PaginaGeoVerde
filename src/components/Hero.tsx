@@ -1,19 +1,20 @@
 import { motion } from 'motion/react';
 import { ArrowRight, Youtube } from 'lucide-react';
 import content from '../data/content.json';
+import { OptimizedImage } from './ui/OptimizedImage';
 
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-surface">
       {/* Background Image Watermark */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-        <img 
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920" 
+        <OptimizedImage 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
           alt="Conciencia ambiental background" 
           className="w-full h-full object-cover grayscale mix-blend-overlay"
-          referrerPolicy="no-referrer"
+          width={1920}
+          height={1080}
           loading="lazy"
-          decoding="async"
         />
       </div>
 
@@ -22,16 +23,16 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-brand-sky/20 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4 animate-pulse delay-1000" />
       <div className="absolute top-1/2 left-1/2 w-[30vw] h-[30vw] bg-brand-secondary/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 bg-white/40 backdrop-blur-md rounded-[3rem] p-8 md:p-20 border border-brand-forest/5 group overflow-hidden shadow-2xl shadow-brand-forest/5">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 bg-white/40 backdrop-blur-md rounded-[3rem] p-4 md:p-20 border border-brand-forest/5 group overflow-hidden shadow-2xl shadow-brand-forest/5">
 
         <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
-          <img 
-            src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2?auto=format&fit=crop&q=80&w=1920" 
+          <OptimizedImage 
+            src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2" 
             alt="" 
             className="w-full h-full object-cover mix-blend-multiply scale-110 group-hover:scale-100 transition-transform duration-[5s]"
-            referrerPolicy="no-referrer"
+            width={1920}
+            height={1080}
             loading="lazy"
-            decoding="async"
           />
         </div>
         
@@ -49,7 +50,7 @@ export default function Hero() {
             <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
             VIVE CONSCIENTE
           </a>
-          <h1 className="font-serif text-6xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
+          <h1 className="font-serif text-5xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
             {content.hero.title}
           </h1>
           <p className="text-lg md:text-xl text-brand-forest/70 leading-relaxed max-w-md mb-10 border-l-4 border-brand-sky pl-6 font-light">
@@ -84,18 +85,19 @@ export default function Hero() {
           className="relative perspective-1000 hidden md:block"
         >
           <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-y-3 transform transition-transform hover:skew-y-0 duration-700">
-            <img 
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=60&w=1000" 
+            <OptimizedImage 
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
               alt="Conciencia y Naturaleza"
               className="object-cover w-full h-full scale-110 hover:scale-100 transition-transform duration-[2000ms]"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
+              width={1000}
+              height={1250}
+              priority={true}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/40 via-transparent to-transparent" />
             <div className="absolute bottom-12 left-12 right-12 text-white">
               <span className="text-xs font-bold uppercase tracking-widest opacity-80 mb-2 block">Causa del mes</span>
-              <h3 className="font-serif text-3xl font-bold italic text-white drop-shadow-md">Reforestación Urbana en el Siglo XXI</h3>
+              <h3 className="font-serif 
+ text-3xl font-bold italic text-white drop-shadow-md">Reforestación Urbana en el Siglo XXI</h3>
             </div>
           </div>
           

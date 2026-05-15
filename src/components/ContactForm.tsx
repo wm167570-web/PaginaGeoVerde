@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Send, MapPin, Mail, Phone, Youtube } from 'lucide-react';
 import { useState } from 'react';
 import content from '../data/content.json';
+import { OptimizedImage } from './ui/OptimizedImage';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -101,11 +102,13 @@ export default function ContactForm() {
     <section id="contact" className="py-24 bg-neutral-950 relative overflow-hidden transition-colors duration-500">
       {/* Background Image Texture */}
       <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
-        <img 
-          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920" 
+        <OptimizedImage 
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" 
           alt="Contact Background" 
           className="w-full h-full object-cover grayscale brightness-50"
-          referrerPolicy="no-referrer"
+          width={1920}
+          height={1080}
+          loading="lazy"
         />
       </div>
 

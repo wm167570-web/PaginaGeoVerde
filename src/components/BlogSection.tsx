@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import Logo from './Logo';
 import Tooltip from './ui/Tooltip';
 import content from '../data/content.json';
+import { OptimizedImage } from './ui/OptimizedImage';
 
 export default function BlogSection() {
   const [activePost, setActivePost] = useState<null | typeof content.blog[0]>(null);
@@ -39,7 +40,7 @@ export default function BlogSection() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-32">
             <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-primary/60 mb-4">Blog Ambiental</h2>
-            <h3 className="font-serif text-5xl md:text-7xl font-black text-brand-primary italic leading-[0.9] mb-8 tracking-tighter">
+            <h3 className="font-serif text-4xl md:text-7xl font-black text-brand-primary italic leading-[0.9] mb-8 tracking-tighter">
               Artículos & <span className="not-italic font-light opacity-80">Noticias Verdes</span>
             </h3>
             <p className="text-brand-forest/70 mb-10 text-base md:text-lg border-b-2 border-brand-sky pb-6 inline-block font-light leading-relaxed">
@@ -61,7 +62,7 @@ export default function BlogSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group relative bg-white/60 backdrop-blur-sm p-8 md:p-12 rounded-[2.5rem] border border-white shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 overflow-hidden"
+                className="group relative bg-white/60 backdrop-blur-sm p-6 md:p-12 rounded-[2.5rem] border border-white shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 overflow-hidden"
               >
                 {/* Background decorative text */}
                 <div className="absolute top-0 right-0 p-8 font-serif text-9xl font-bold text-brand-sky/5 italic pointer-events-none group-hover:scale-110 transition-transform duration-1000">
@@ -93,9 +94,9 @@ export default function BlogSection() {
                   <div className="flex items-center justify-between mt-auto">
                     <button 
                       onClick={() => setActivePost(post)}
-                      className="flex items-center gap-2 text-brand-primary font-bold text-sm uppercase tracking-widest group-hover:gap-4 transition-all hover:text-brand-sky"
+                      className="flex items-center gap-2 text-brand-primary font-bold text-sm uppercase tracking-widest transition-all hover:text-brand-secondary"
                     >
-                      Leer Más <ArrowUpRight className="w-4 h-4" />
+                      Leer Más <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
 
                     <Tooltip text="Compartir artículo" position="left">
@@ -141,13 +142,13 @@ export default function BlogSection() {
               </button>
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
-                <img 
+                <OptimizedImage 
                   src={activePost.image} 
                   alt={activePost.title} 
                   className="absolute inset-0 w-full h-full object-cover"
+                  width={600}
+                  height={400}
                   loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>
