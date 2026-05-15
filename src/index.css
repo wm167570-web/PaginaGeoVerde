@@ -18,6 +18,14 @@
   --color-brand-green: var(--color-brand-forest);
   --color-brand-green-bright: var(--color-brand-secondary);
   --color-brand-moss: var(--color-brand-forest);
+
+  /* New Tokens */
+  --color-surface-1: #FDFEF9;
+  --color-surface-2: #FFFFFF;
+  --color-surface-3: #F1F5F9;
+  --color-border-subtle: #E2E8F0;
+  --color-border-accent: var(--color-brand-primary);
+  --color-text-muted: #64748B;
 }
 
 body {

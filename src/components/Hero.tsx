@@ -1,13 +1,37 @@
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Youtube } from 'lucide-react';
 import content from '../data/content.json';
 import { OptimizedImage } from './ui/OptimizedImage';
+import { useRef, useEffect, useState } from 'react';
 
 export default function Hero() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const yTitle = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const opacityText = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-surface">
+    <section ref={containerRef} className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-surface">
       {/* Background Image Watermark */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+      <motion.div 
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
+        style={{ y: isMobile ? 0 : yBackground }}
+      >
         <OptimizedImage 
           src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
           alt="Conciencia ambiental background" 
@@ -16,7 +40,7 @@ export default function Hero() {
           height={1080}
           loading="lazy"
         />
-      </div>
+      </motion.div>
 
       {/* Abstract background elements - using palette blobs */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-brand-earth/20 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -24,7 +48,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 w-[30vw] h-[30vw] bg-brand-secondary/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 bg-white/40 backdrop-blur-md rounded-[3rem] p-4 md:p-20 border border-brand-forest/5 group overflow-hidden shadow-2xl shadow-brand-forest/5">
-
+        
         <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
           <OptimizedImage 
             src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2" 
@@ -37,51 +61,53 @@ export default function Hero() {
         </div>
         
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          style={{ 
+            y: isMobile ? 0 : yTitle,
+            opacity: opacityText 
+          }}
         >
-          <a 
-            href={content.featuredVideos[content.featuredVideos.length - 1].url} 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6 shadow-sm hover:scale-105 transition-transform cursor-pointer"
+          <motion.div
+            style={{ y: isMobile ? 0 : yContent }}
           >
-            <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-            VIVE CONSCIENTE
-          </a>
-          <h1 className="font-serif text-5xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
-            {content.hero.title}
-          </h1>
-          <p className="text-lg md:text-xl text-brand-forest/70 leading-relaxed max-w-md mb-10 border-l-4 border-brand-sky pl-6 font-light">
-            {content.hero.subtitle}
-          </p>
-          
-          <div className="flex flex-wrap gap-4">
             <a 
-              href={content.featuredVideos[content.featuredVideos.length - 1].url}
+              href={content.featuredVideos[content.featuredVideos.length - 1].url} 
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 bg-brand-primary text-white border-2 border-brand-primary px-8 py-4 rounded-full font-bold transition-all hover:bg-transparent hover:text-brand-primary shadow-xl shadow-brand-primary/20"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-sm hover:scale-105 transition-transform cursor-pointer"
             >
-              Ver en YouTube
-              <Youtube className="w-5 h-5" />
+              <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
+              VIVE CONSCIENTE
             </a>
-            <a 
-              href="#blog"
-              className="group flex items-center gap-3 bg-transparent text-brand-earth border-2 border-brand-earth px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-earth hover:text-white"
-            >
-              Explorar Blog
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-
+            <h1 className="text-balance font-serif text-5xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
+              {content.hero.title}
+            </h1>
+            <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 mb-10 border-l-4 border-brand-sky pl-6 font-light">
+              {content.hero.subtitle}
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href={content.featuredVideos[content.featuredVideos.length - 1].url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 bg-brand-primary text-white border-2 border-brand-primary px-8 py-4 rounded-full font-bold transition-all hover:bg-transparent hover:text-brand-primary shadow-xl shadow-brand-primary/20"
+              >
+                Ver en YouTube
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a 
+                href="#blog"
+                className="group flex items-center gap-3 bg-transparent text-brand-earth border-2 border-brand-earth px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-earth hover:text-white"
+              >
+                Explorar Blog
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
-          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          style={{ y: isMobile ? 0 : yContent }}
           className="relative perspective-1000 hidden md:block"
         >
           <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-y-3 transform transition-transform hover:skew-y-0 duration-700">
@@ -95,13 +121,11 @@ export default function Hero() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/40 via-transparent to-transparent" />
             <div className="absolute bottom-12 left-12 right-12 text-white">
-              <span className="text-xs font-bold uppercase tracking-widest opacity-80 mb-2 block">Causa del mes</span>
-              <h3 className="font-serif 
- text-3xl font-bold italic text-white drop-shadow-md">Reforestación Urbana en el Siglo XXI</h3>
+              <span className="text-[11px] font-bold uppercase tracking-[0.15em] opacity-80 mb-2 block">Causa del mes</span>
+              <h3 className="text-balance font-serif text-3xl font-bold italic text-white drop-shadow-md">Reforestación Urbana en el Siglo XXI</h3>
             </div>
           </div>
           
-          {/* Floating badge */}
           <motion.div 
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}

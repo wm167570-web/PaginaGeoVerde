@@ -32,18 +32,18 @@ export default function BlogSection() {
   };
 
   return (
-    <section id="blog" className="py-24 bg-brand-light-green/10 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-brand-earth/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-sky/10 rounded-full blur-3xl translate-x-1/4 translate-y-1/4" />
+    <section id="blog" className="py-24 bg-surface-3 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-64 h-64 bg-surface-1 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-surface-1 rounded-full blur-3xl translate-x-1/4 translate-y-1/4" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-32">
-            <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-primary/60 mb-4">Blog Ambiental</h2>
-            <h3 className="font-serif text-4xl md:text-7xl font-black text-brand-primary italic leading-[0.9] mb-8 tracking-tighter">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-primary/60 mb-4">Blog Ambiental</h2>
+            <h3 className="text-balance font-serif text-4xl md:text-5xl font-black text-brand-primary italic leading-[1.1] mb-8 tracking-tighter">
               Artículos & <span className="not-italic font-light opacity-80">Noticias Verdes</span>
             </h3>
-            <p className="text-brand-forest/70 mb-10 text-base md:text-lg border-b-2 border-brand-sky pb-6 inline-block font-light leading-relaxed">
+            <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 mb-10 border-b-2 border-brand-sky pb-6 font-light">
               Profundizamos en los temas que importan hoy para proteger el mañana.
             </p>
             <Link 
@@ -75,7 +75,7 @@ export default function BlogSection() {
                 </div>
 
                 <div className="relative z-10">
-                  <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest/60 mb-6 font-sans">
+                  <div className="flex items-center gap-6 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-forest/60 mb-6 font-sans">
                     <span className="flex items-center gap-2">
                        <Calendar className="w-3 h-3 text-brand-sky" /> {post.date}
                     </span>
@@ -87,7 +87,7 @@ export default function BlogSection() {
                   <h4 className="font-serif text-3xl md:text-4xl font-bold text-brand-primary mb-6 group-hover:text-brand-earth transition-colors duration-500 leading-tight">
                     {post.title}
                   </h4>
-                  <p className="text-brand-forest/70 leading-relaxed max-w-xl group-hover:text-brand-forest transition-colors mb-8">
+                  <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 group-hover:text-brand-forest transition-colors mb-8">
                     {post.excerpt}
                   </p>
 

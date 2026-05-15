@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import Logo from './Logo';
 import Tooltip from './ui/Tooltip';
 import content from '../data/content.json';
 
@@ -10,19 +9,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-brand-forest/10">
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/">
           <Tooltip text="Ir al Inicio" position="bottom">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-3 cursor-pointer"
+              className="flex items-center cursor-pointer"
             >
-              <Logo className="w-10 h-10 md:w-12 md:h-12" />
-              <span className="font-serif text-xl md:text-2xl font-bold tracking-tight text-brand-primary">
-                {content.channel.name}
-              </span>
+              <img 
+                src="/assets/images/Logo%20corporativo.png"
+                alt="GeoVerde - Vida Consciente"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
             </motion.div>
           </Tooltip>
         </Link>

@@ -21,10 +21,10 @@ export default function VideoGrid() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-sky mb-4">Lanzamientos</h2>
-            <h3 className="font-serif text-4xl md:text-7xl font-black text-brand-primary italic leading-[0.9] tracking-tighter">Explora <span className="not-italic font-light opacity-80">Nuestra Videoteca</span></h3>
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-sky mb-4">Lanzamientos</h2>
+            <h3 className="text-balance font-serif text-4xl md:text-5xl font-black text-brand-primary italic leading-[1.1] tracking-tighter">Explora <span className="not-italic font-light opacity-80">Nuestra Videoteca</span></h3>
           </div>
-          <p className="text-brand-forest/60 max-w-sm border-l-2 border-brand-secondary pl-4 text-sm md:text-base font-light leading-relaxed">
+          <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 font-light">
             Educación ambiental de alta calidad para entender el mundo en el que vivimos.
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function VideoGrid() {
               <h4 className="font-serif text-2xl font-bold text-brand-primary mb-2 group-hover:text-brand-secondary transition-colors leading-tight">
                 {video.title}
               </h4>
-              <p className="text-sm text-brand-forest/70 line-clamp-2">
+              <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 line-clamp-2">
                 {video.description}
               </p>
             </motion.a>
