@@ -106,11 +106,12 @@ export default function BlogListing() {
                 >
                   <div className="relative aspect-video overflow-hidden">
                     <img 
-                      src={`${post.image}&fm=webp`} 
+                      src={post.image} 
                       alt={post.title} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                       loading="lazy"
                       decoding="async"
+                      referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
@@ -252,11 +253,12 @@ export default function BlogListing() {
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
                 <img 
-                  src={`${activePost.image}&fm=webp`} 
+                  src={activePost.image} 
                   alt={activePost.title} 
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>

@@ -8,7 +8,7 @@ export default function VideoGrid() {
       {/* Subtle Pattern Background */}
       <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none">
         <img 
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fm=webp&fit=crop&q=80&w=1920" 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920" 
           alt="Environmental Background" 
           className="w-full h-full object-cover grayscale"
           referrerPolicy="no-referrer"
@@ -45,7 +45,7 @@ export default function VideoGrid() {
                 {/* Mock Thumbnail */}
                 <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                 <img 
-                  src={video.image ? `${video.image}&fm=webp` : `https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fm=webp&fit=crop&q=60&w=600&sig=${index}`}
+                  src={video.image || `https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=60&w=600&sig=${index}`}
                   alt={video.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"

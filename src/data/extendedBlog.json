@@ -20,7 +20,7 @@
     "title": "Energías Renovables en el Hogar",
     "excerpt": "Cómo los paneles solares están transformando la independencia energética de las familias modernas.",
     "date": "2026-04-28",
-    "image": "https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&q=80&w=2070",
+    "image": "https://images.unsplash.com/photo-1508514177221-388b1f1de4d0?auto=format&fit=crop&q=80&w=2070",
     "content": "La energía solar es más accesible que nunca. Descubre los beneficios económicos y ambientales de instalar paneles en tu tejado."
   },
   {
@@ -236,7 +236,7 @@
     "title": "Restaurando Arrecifes de Coral",
     "excerpt": "Viveros de coral y bio-roca: los esfuerzos para salvar las selvas del mar.",
     "date": "2025-10-18",
-    "image": "https://images.unsplash.com/photo-1546027658-e136f28432ce?auto=format&fit=crop&q=80&w=2070",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=2070",
     "content": "Sin corales, la biodiversidad marina colapsaría. Científicos y voluntarios trabajan contra reloj para replantar los arrecifes."
   },
   {
@@ -300,7 +300,7 @@
     "title": "El Misterio de la Madera Transparente",
     "excerpt": "Innovación en materiales que podría reemplazar al vidrio y al plástico en la construcción.",
     "date": "2025-08-18",
-    "image": "https://images.unsplash.com/photo-1589149021870-745a75ce2a20?auto=format&fit=crop&q=80&w=1974",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2070",
     "content": "Científicos manipulan la lignina para crear madera translúcida que es más resistente y aislante que el vidrio convencional."
   },
   {
@@ -398,5 +398,805 @@
     "date": "2025-05-15",
     "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920",
     "content": "Gracias por ser parte de esta comunidad. Juntos somos la voz del planeta. Sigamos explorando la conciencia verde."
+  },
+  {
+    "id": "post-51",
+    "title": "Bio-materiales del Futuro",
+    "excerpt": "Cómo el micelio y las algas están reemplazando al cuero y al plástico tradicional.",
+    "date": "2025-05-10",
+    "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&q=80&w=1974",
+    "content": "La biotecnología nos permite cultivar materiales en lugar de fabricarlos dañando el entorno."
+  },
+  {
+    "id": "post-52",
+    "title": "Desalinización por Ósmosis Inversa Solar",
+    "excerpt": "Agua potable para desiertos usando solo la energía del sol.",
+    "date": "2025-05-02",
+    "image": "https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&q=80&w=1936",
+    "content": "Innovaciones en membranas están haciendo que obtener agua de mar sea energéticamente viable."
+  },
+  {
+    "id": "post-53",
+    "title": "El Regreso de los Animales de Pastoreo",
+    "excerpt": "Cómo el manejo holístico de ganado puede revertir la desertificación.",
+    "date": "2025-04-25",
+    "image": "https://images.unsplash.com/photo-1545468246-097561498f80?auto=format&fit=crop&q=80&w=2070",
+    "content": "Imitar el movimiento de las manadas salvajes ayuda a fertilizar el suelo y capturar carbono."
+  },
+  {
+    "id": "post-54",
+    "title": "Blockchain para la Transparencia Verde",
+    "excerpt": "Trazabilidad total: sabe exactamente de dónde viene cada ingrediente de lo que compras.",
+    "date": "2025-04-18",
+    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2232",
+    "content": "La tecnología de cadena de bloques evita el greenwashing al certificar cada paso de la cadena de suministro."
+  },
+  {
+    "id": "post-55",
+    "title": "Micro-redes Eléctricas Comunitarias",
+    "excerpt": "Barrios que producen y comparten su propia energía solar de forma independiente.",
+    "date": "2025-04-10",
+    "image": "https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&q=80&w=2070",
+    "content": "La descentralización de la energía hace que las comunidades sean más resilientes ante apagones."
+  },
+  {
+    "id": "post-56",
+    "title": "Reciclaje de Palas de Aerogeneradores",
+    "excerpt": "Convirtiéndolas en puentes y mobiliario urbano para cerrar el ciclo de la energía eólica.",
+    "date": "2025-04-02",
+    "image": "https://images.unsplash.com/photo-1508791334674-625849ebeed?auto=format&fit=crop&q=80&w=2071",
+    "content": "Incluso la infraestructura renovable genera desechos, pero la creatividad está encontrando soluciones."
+  },
+  {
+    "id": "post-57",
+    "title": "Cáñamo Industrial: El Súper Material",
+    "excerpt": "Papel, textil y hormigón de cáñamo: una planta que absorbe más CO2 que un bosque.",
+    "date": "2025-03-25",
+    "image": "https://images.unsplash.com/photo-1611080626919-7cf5a9db0cf9?auto=format&fit=crop&q=80&w=1964",
+    "content": "El cáñamo crece rápido, no requiere pesticidas y es increíblemente versátil para la industria."
+  },
+  {
+    "id": "post-58",
+    "title": "Restauración de Praderas Marinas",
+    "excerpt": "La importancia de la Posidonia y otros pastos marinos en la captura de metano.",
+    "date": "2025-03-18",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=2070",
+    "content": "Estos 'bosques del mar' son 35 veces más eficientes que las selvas tropicales absorbiendo carbono."
+  },
+  {
+    "id": "post-59",
+    "title": "Baterías de Sal: Energía Segura y Barata",
+    "excerpt": "Alternativas al litio que usan materiales abundantes y no inflamables.",
+    "date": "2025-03-10",
+    "image": "https://images.unsplash.com/photo-1569012871812-f38ee6fc052d?auto=format&fit=crop&q=80&w=2070",
+    "content": "Las baterías de sodio son ideales para el almacenamiento estacionario a gran escala."
+  },
+  {
+    "id": "post-60",
+    "title": "Carne de Cultivo Celular",
+    "excerpt": "¿Es esta la solución definitiva al impacto ambiental de la ganadería intensiva?",
+    "date": "2025-03-02",
+    "image": "https://images.unsplash.com/photo-1587593817647-43991756ef4e?auto=format&fit=crop&q=80&w=2070",
+    "content": "Producir carne real sin sacrificar animales ni usar vastas extensiones de tierra ya es una realidad."
+  },
+  {
+    "id": "post-61",
+    "title": "Biodiseño Urbano",
+    "excerpt": "Fachadas vivas que limpian el aire y aislantes térmicos hechos de hongos.",
+    "date": "2025-02-24",
+    "image": "https://images.unsplash.com/photo-1449156001533-cb39c8924d00?auto=format&fit=crop&q=80&w=2070",
+    "content": "La arquitectura del futuro no es inerte; está viva y respira con sus habitantes."
+  },
+  {
+    "id": "post-62",
+    "title": "Vuelos con Amoníaco Verde",
+    "excerpt": "La carrera por descarbonizar la aviación comercial con combustibles de cero emisiones.",
+    "date": "2025-02-16",
+    "image": "https://images.unsplash.com/photo-1559268950-2d7ceb2eee35?auto=format&fit=crop&q=80&w=1964",
+    "content": "El amoníaco verde podría ser el puente para los vuelos de larga distancia sin impacto climático."
+  },
+  {
+    "id": "post-63",
+    "title": "Sabiduría Ancestral y Clima",
+    "excerpt": "Lo que los pueblos indígenas pueden enseñarnos sobre la gestión de incendios forestales.",
+    "date": "2025-02-08",
+    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=2070",
+    "content": "Quemas controladas tradicionales están demostrando ser más efectivas que la supresión total del fuego."
+  },
+  {
+    "id": "post-64",
+    "title": "Robots Recolectores de Basura Marina",
+    "excerpt": "Tecnología autónoma que limpia canales y puertos antes de que los desechos lleguen al mar.",
+    "date": "2025-02-01",
+    "image": "https://images.unsplash.com/photo-1618477461853-cf6ed80fafa5?auto=format&fit=crop&q=80&w=2070",
+    "content": "Pequeños drones acuáticos están marcando la diferencia en la limpieza de nuestros ríos urbanos."
+  },
+  {
+    "id": "post-65",
+    "title": "Pintura Fotosintética",
+    "excerpt": "Recubrimientos para paredes que absorben CO2 y liberan oxígeno como si fueran plantas.",
+    "date": "2025-01-24",
+    "image": "https://images.unsplash.com/photo-1560067174-c5a3a8f37060?auto=format&fit=crop&q=80&w=1974",
+    "content": "Pintar tu fachada podría ayudar a mitigar la contaminación de tu vecindario."
+  },
+  {
+    "id": "post-66",
+    "title": "El Renacimiento del Tren de Alta Velocidad",
+    "excerpt": "Por qué viajar por tierra está volviendo a ser la opción preferida en Europa y Asia.",
+    "date": "2025-01-16",
+    "image": "https://images.unsplash.com/photo-1474487022132-520625345719?auto=format&fit=crop&q=80&w=2070",
+    "content": "Menos aeropuertos y más vías férreas: el futuro del transporte continental es eléctrico y rápido."
+  },
+  {
+    "id": "post-67",
+    "title": "Vidrio Solar",
+    "excerpt": "Ventanas que generan electricidad sin perder la transparencia.",
+    "date": "2025-01-08",
+    "image": "https://images.unsplash.com/photo-1503387762-59293a20165e?auto=format&fit=crop&q=80&w=2070",
+    "content": "Convirtiendo rascacielos enteros en granjas fotovoltaicas verticales mediante cristales inteligentes."
+  },
+  {
+    "id": "post-68",
+    "title": "Reparabilidad por Diseño",
+    "excerpt": "El movimiento por el derecho a reparar y cómo combatir la obsolescencia programada.",
+    "date": "2025-01-01",
+    "image": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2070",
+    "content": "Un producto ecológico es aquel que puede ser arreglado mil veces antes de ser desechado."
+  },
+  {
+    "id": "post-69",
+    "title": "Eco-alfabetización en Universidades",
+    "excerpt": "Por qué todas las carreras deberían incluir formación obligatoria en sostenibilidad.",
+    "date": "2024-12-24",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=2070",
+    "content": "Entender los límites del planeta es vital para economistas, ingenieros y abogados por igual."
+  },
+  {
+    "id": "post-70",
+    "title": "Madera de Ingeniería para Rascacielos",
+    "excerpt": "La madera laminada (CLT) permite construir edificios altos con huella de carbono negativa.",
+    "date": "2024-12-16",
+    "image": "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&q=80&w=2070",
+    "content": "Sustituir el acero y el hormigón por madera certificada revoluciona el urbanismo sostenible."
+  },
+  {
+    "id": "post-71",
+    "title": "Buscando al último Rinoceronte Blanco",
+    "excerpt": "La ciencia de la fecundación in vitro para salvar especies al borde de la extinción.",
+    "date": "2024-12-08",
+    "image": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&q=80&w=2070",
+    "content": "La tecnología genética es nuestro último recurso para revertir daños irreversibles a la fauna."
+  },
+  {
+    "id": "post-72",
+    "title": "El Fin de los Tintes Tóxicos",
+    "excerpt": "Bacterias que 'comen' azúcar y 'cagan' color: la revolución de los tintes biológicos.",
+    "date": "2024-11-30",
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2070",
+    "content": "Eliminar los metales pesados de la industria textil es vital para la salud de los ríos."
+  },
+  {
+    "id": "post-73",
+    "title": "Moda de Segunda Mano: El Estigma que Muere",
+    "excerpt": "Por qué comprar usado se ha convertido en un símbolo de estatus y conciencia social.",
+    "date": "2024-11-22",
+    "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=2070",
+    "content": "La prenda más ecológica es la que ya existe. El mercado de reventa está explotando positivamente."
+  },
+  {
+    "id": "post-74",
+    "title": "Criptomonedas Ecológicas",
+    "excerpt": "De 'Proof of Work' a 'Proof of Stake': reduciendo el consumo energético en un 99%.",
+    "date": "2024-11-14",
+    "image": "https://images.unsplash.com/photo-1621416848440-23690bd1fe5b?auto=format&fit=crop&q=80&w=1974",
+    "content": "El mundo digital también debe ser sostenible. La eficiencia energética llega finalmente al blockchain."
+  },
+  {
+    "id": "post-75",
+    "title": "Super-cultivos Resilientes al Calor",
+    "excerpt": "Variedades de granos que florecen en temperaturas extremas para asegurar el alimento futuro.",
+    "date": "2024-11-06",
+    "image": "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=2070",
+    "content": "La adaptación al cambio climático es tan importante como su mitigación en el sector agrícola."
+  },
+  {
+    "id": "post-76",
+    "title": "Eco-turismo en la Antártida",
+    "excerpt": "¿Es posible visitar el continente blanco sin dañarlo? El dilema de la última frontera.",
+    "date": "2024-10-29",
+    "image": "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&q=80&w=2074",
+    "content": "Regulaciones estrictas y barcos híbridos intentan equilibrar la curiosidad con la preservación extrema."
+  },
+  {
+    "id": "post-77",
+    "title": "Diseño para el Desensamblaje",
+    "excerpt": "Productos hechos para ser separados por materiales en segundos y reciclados eficientemente.",
+    "date": "2024-10-21",
+    "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1ad?auto=format&fit=crop&q=80&w=2070",
+    "content": "Si no se puede separar, no se puede reciclar. Los diseñadores industriales cambian el enfoque."
+  },
+  {
+    "id": "post-78",
+    "title": "El Futuro del Café Sostenible",
+    "excerpt": "Cómo el cambio climático está desplazando los cultivos y qué significa para tu taza mañanera.",
+    "date": "2024-10-13",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070",
+    "content": "Sombrear los cafetales ayuda a mantener la humedad y protege la biodiversidad local."
+  },
+  {
+    "id": "post-79",
+    "title": "Hidrógeno Natural: El Dorado Blanco",
+    "excerpt": "El descubrimiento de depósitos subterráneos de hidrógeno puro podría cambiarlo todo.",
+    "date": "2024-10-05",
+    "image": "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&q=80&w=2076",
+    "content": "Si podemos extraer hidrógeno directamente de la Tierra, tendríamos una fuente inagotable de energía limpia."
+  },
+  {
+    "id": "post-80",
+    "title": "Ropa que Crece contigo",
+    "excerpt": "Estructuras inspiradas en el origami que permiten que la ropa infantil se expanda varias tallas.",
+    "date": "2024-09-27",
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2070",
+    "content": "Reducir la necesidad de comprar ropa nueva constantemente es vital para las familias y el planeta."
+  },
+  {
+    "id": "post-81",
+    "title": "Sensores IoT para Bosques Inteligentes",
+    "excerpt": "Detectando fuego y talas ilegales mediante una red de 'orejas digitales' en la selva.",
+    "date": "2024-09-19",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2071",
+    "content": "La inteligencia artificial y el Internet de las Cosas son los nuevos guardabosques virtuales."
+  },
+  {
+    "id": "post-82",
+    "title": "Papel de Piedra",
+    "excerpt": "Fabricar papel sin usar árboles ni agua, utilizando polvo de piedra y resina ecológica.",
+    "date": "2024-09-11",
+    "image": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1974",
+    "content": "Resistente, impermeable y mucho más sostenible que el papel tradicional de celulosa."
+  },
+  {
+    "id": "post-83",
+    "title": "Acuaponía Doméstica",
+    "excerpt": "Peces y lechugas en simbiosis en tu propia sala. El ciclo perfecto de nitrógeno.",
+    "date": "2024-09-03",
+    "image": "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1974",
+    "content": "Los desechos de los peces alimentan a las plantas, y las plantas filtran el agua para los peces."
+  },
+  {
+    "id": "post-84",
+    "title": "El Renacimiento del Zeppelin",
+    "excerpt": "¿Podrían los dirigibles de helio ser la forma más limpia de mover carga pesada por el mundo?",
+    "date": "2024-08-26",
+    "image": "https://images.unsplash.com/photo-1559268950-2d7ceb2eee35?auto=format&fit=crop&q=80&w=1964",
+    "content": "Lentos pero extremadamente eficientes, los dirigibles modernos vuelven como opción logística verde."
+  },
+  {
+    "id": "post-85",
+    "title": "Suelos que Almacenan Datos y Carbono",
+    "excerpt": "Innovaciones en la medición de salud del suelo mediante biosensores avanzados.",
+    "date": "2024-08-18",
+    "image": "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=2070",
+    "content": "Sin un suelo sano no hay seguridad alimentaria. Aprende cómo la tecnología nos ayuda a monitorizarlo."
+  },
+  {
+    "id": "post-86",
+    "title": "Cementerios Ecológicos",
+    "excerpt": "Urnas biodegradables que se convierten en árboles: cerrando el ciclo de la vida.",
+    "date": "2024-08-10",
+    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=2070",
+    "content": "Incluso nuestra despedida del mundo puede ser un regalo para la tierra."
+  },
+  {
+    "id": "post-87",
+    "title": "Plásticos Hechos de Aire",
+    "excerpt": "Capturar CO2 de la atmósfera para convertirlo en polímeros útiles y estables.",
+    "date": "2024-08-02",
+    "image": "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&q=80&w=2070",
+    "content": "En lugar de emitir carbono, lo atrapamos en objetos cotidianos para sacarlo del ciclo térmico."
+  },
+  {
+    "id": "post-88",
+    "title": "Iluminación Bioluminiscente",
+    "excerpt": "¿Podrían las bacterias brillantes reemplazar a las farolas en nuestras calles?",
+    "date": "2024-07-25",
+    "image": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=2113",
+    "content": "La luz fría producida de forma biológica es el sueño de la eficiencia energética urbana."
+  },
+  {
+    "id": "post-89",
+    "title": "Telas de Piña y Manzana",
+    "excerpt": "Cuero vegano a partir de los desechos de la industria alimenticia.",
+    "date": "2024-07-17",
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2070",
+    "content": "Aprovechar hasta el último subproducto es la clave de la economía circular absoluta."
+  },
+  {
+    "id": "post-90",
+    "title": "Corredores Biológicos Urbanos",
+    "excerpt": "Conectando parques mediante techos verdes para facilitar el movimiento de especies.",
+    "date": "2024-07-09",
+    "image": "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80&w=1974",
+    "content": "Las ciudades no deben ser islas, sino puentes que permitan la migración de insectos y aves."
+  },
+  {
+    "id": "post-91",
+    "title": "Hormigón que se Autorepara",
+    "excerpt": "Bacterias dentro del cemento que se activan con el agua para sellar grietas automáticamente.",
+    "date": "2024-07-01",
+    "image": "https://images.unsplash.com/photo-1510003058032-47530689b09a?auto=format&fit=crop&q=80&w=2070",
+    "content": "Aumentar la vida útil de las infraestructuras reduce drásticamente la huella de carbono del sector construcción."
+  },
+  {
+    "id": "post-92",
+    "title": "El Poder de la Energía Geotérmica",
+    "excerpt": "Calor inagotable bajo nuestros pies: por qué no lo estamos usando más.",
+    "date": "2024-06-23",
+    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=2070",
+    "content": "La geotermia ofrece energía base constante, sin depender de que haga sol o sople el viento."
+  },
+  {
+    "id": "post-93",
+    "title": "Moda Desechable vs. Duradera",
+    "excerpt": "Cómo calcular el costo por uso de tus prendas para ahorrar dinero y ayudar al planeta.",
+    "date": "2024-06-15",
+    "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=2070",
+    "content": "Lo barato sale caro para tu bolsillo y para el medio ambiente. Aprende a elegir calidad."
+  },
+  {
+    "id": "post-94",
+    "title": "Reciclaje de Paneles Solares",
+    "excerpt": "Recuperar plata, silicio y vidrio: el reto de la próxima década para la energía limpia.",
+    "date": "2024-06-07",
+    "image": "https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&q=80&w=2070",
+    "content": "Debemos asegurar que la solución a la energía no se convierta en el próximo problema de residuos."
+  },
+  {
+    "id": "post-95",
+    "title": "Huertos en Techos de Autobuses",
+    "excerpt": "Filtrando el aire de la ciudad mientras el transporte público se mueve.",
+    "date": "2024-05-30",
+    "image": "https://images.unsplash.com/photo-1449156001533-cb39c8924d00?auto=format&fit=crop&q=80&w=2070",
+    "content": "Aprovechar espacios infrautilizados para la vegetación es clave en la lucha contra el efecto isla de calor."
+  },
+  {
+    "id": "post-96",
+    "title": "Pesticidas Biológicos a partir de Neems",
+    "excerpt": "Alternativas naturales que protegen los cultivos sin matar a las abejas.",
+    "date": "2024-05-22",
+    "image": "https://images.unsplash.com/photo-1464014165609-be0ef8f88880?auto=format&fit=crop&q=80&w=2074",
+    "content": "La agroecología demuestra que se puede producir masivamente sin venenos sintéticos."
+  },
+  {
+    "id": "post-97",
+    "title": "Sistemas de Riego por Goteo Autónomos",
+    "excerpt": "Sensores de humedad que liberan agua solo cuando la planta realmente la necesita.",
+    "date": "2024-05-14",
+    "image": "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1974",
+    "content": "La eficiencia hídrica máxima es posible gracias a la tecnología de bajo costo y código abierto."
+  },
+  {
+    "id": "post-98",
+    "title": "Edificios que Comen Polución",
+    "excerpt": "Fachadas recubiertas de dióxido de titanio que neutralizan los gases de escape de los coches.",
+    "date": "2024-05-06",
+    "image": "https://images.unsplash.com/photo-1518005020473-b3c6604812a6?auto=format&fit=crop&q=80&w=2070",
+    "content": "La fotocatálisis convierte los contaminantes en sales inofensivas cuando les da la luz del sol."
+  },
+  {
+    "id": "post-99",
+    "title": "Embalajes de Algas Comestibles",
+    "excerpt": "Bebe tu agua y luego cómete la botella: el fin definitivo del residuo de envase.",
+    "date": "2024-04-28",
+    "image": "https://images.unsplash.com/photo-1510003058032-47530689b09a?auto=format&fit=crop&q=80&w=2070",
+    "content": "Los polímeros de algas desaparecen en la naturaleza en semanas, sin dejar microplásticos."
+  },
+  {
+    "id": "post-100",
+    "title": "El Siglo de la Restauración",
+    "excerpt": "Dejar de conservar lo que queda y empezar a recuperar lo que perdimos de forma masiva.",
+    "date": "2024-04-20",
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920",
+    "content": "Estamos entrando en la era de la sanación planetaria. Cada proyecto regenerativo cuenta."
+  },
+  {
+    "id": "post-101",
+    "title": "IA para la Predicción de Inundaciones",
+    "excerpt": "Cómo los algoritmos de aprendizaje profundo están salvando vidas al predecir riadas.",
+    "date": "2024-04-12",
+    "image": "https://images.unsplash.com/photo-1504384308090-c89e12bf9a51?auto=format&fit=crop&q=80&w=2070",
+    "content": "La IA procesa datos meteorológicos masivos para alertar a las comunidades con horas de antelación."
+  },
+  {
+    "id": "post-102",
+    "title": "El Futuro de la Energía por Fusión",
+    "excerpt": "Imitar el sol en la tierra: ¿estamos cerca de una fuente de energía infinita?",
+    "date": "2024-04-05",
+    "image": "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&q=80&w=2076",
+    "content": "La fusión nuclear promete energía limpia sin residuos radiactivos de larga duración."
+  },
+  {
+    "id": "post-103",
+    "title": "Turismo de Avistamiento de Estrellas",
+    "excerpt": "Protegiendo los cielos oscuros para fomentar el conocimiento astronómico y la salud.",
+    "date": "2024-03-28",
+    "image": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=2113",
+    "content": "El astroturismo impulsa la conservación de áreas rurales y reduce la contaminación lumínica."
+  },
+  {
+    "id": "post-104",
+    "title": "Biorrefinerías: Del Desecho al Combustible",
+    "excerpt": "Convertir los restos de poda urbana en biocombustibles de segunda generación.",
+    "date": "2024-03-20",
+    "image": "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2070",
+    "content": "Aprovechar la biomasa residual evita la emisión de metano y produce energía circular."
+  },
+  {
+    "id": "post-105",
+    "title": "El Regreso de los Policultivos",
+    "excerpt": "Por qué plantar diferentes especies juntas es más eficiente que el monocultivo intensivo.",
+    "date": "2024-03-12",
+    "image": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=2070",
+    "content": "La diversidad en el campo previene plagas de forma natural y nutre mejor el suelo."
+  },
+  {
+    "id": "post-106",
+    "title": "Sistemas de Captura Directa de Aire (DAC)",
+    "excerpt": "Grandes ventiladores que absorben el carbono directamente de la atmósfera.",
+    "date": "2024-03-05",
+    "image": "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2070",
+    "content": "Aunque costosa, esta tecnología es vital para alcanzar las metas de emisiones negativas."
+  },
+  {
+    "id": "post-107",
+    "title": "Moda de Lujo y Sostenibilidad",
+    "excerpt": "Cómo las grandes marcas están eliminando las pieles animales y adoptando materiales reciclados.",
+    "date": "2024-02-26",
+    "image": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd15?auto=format&fit=crop&q=80&w=2070",
+    "content": "El lujo se redefine: ahora la exclusividad también significa ética y trazabilidad ambiental."
+  },
+  {
+    "id": "post-108",
+    "title": "Almacenamiento Térmico en Arena",
+    "excerpt": "Baterías finlandesas que guardan calor durante meses para calefacción urbana.",
+    "date": "2024-02-18",
+    "image": "https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&q=80&w=2070",
+    "content": "Usar materiales simples y abundantes para guardar la energía renovable sobrante en forma de calor."
+  },
+  {
+    "id": "post-109",
+    "title": "La Revolución de los Fertilizantes Verdes",
+    "excerpt": "Producir amoníaco para el campo usando solo aire, agua y electricidad limpia.",
+    "date": "2024-02-10",
+    "image": "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=2070",
+    "content": "Descarbonizar la fertilización es clave para reducir el impacto climático de nuestra dieta."
+  },
+  {
+    "id": "post-110",
+    "title": "Edificios Modulares de Bambú",
+    "excerpt": "El 'acero vegetal' permite construcciones rápidas, sísmicas y hermosas.",
+    "date": "2024-02-02",
+    "image": "https://images.unsplash.com/photo-1518005020473-b3c6604812a6?auto=format&fit=crop&q=80&w=2070",
+    "content": "El bambú crece a una velocidad increíble, capturando carbono y dando material de construcción renovable."
+  },
+  {
+    "id": "post-111",
+    "title": "Blockchain para los Créditos de Carbono",
+    "excerpt": "Evitando el fraude y la doble contabilidad en los mercados de compensación.",
+    "date": "2024-01-25",
+    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2232",
+    "content": "La integridad de los créditos de carbono es fundamental para que el sistema de compensación funcione."
+  },
+  {
+    "id": "post-112",
+    "title": "Limpieza de Órbitas Terrestres",
+    "excerpt": "El problema de la basura espacial y los satélites que pronto recogerán desechos.",
+    "date": "2024-01-17",
+    "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=2072",
+    "content": "Garantizar un espacio limpio es vital para seguir monitorizando la salud del planeta desde arriba."
+  },
+  {
+    "id": "post-113",
+    "title": "Reciclaje de Ropa mediante Química",
+    "excerpt": "Separar el algodón del poliéster a nivel molecular para crear nuevas fibras vírgenes.",
+    "date": "2024-01-09",
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2070",
+    "content": "El reciclaje químico permite reutilizar textiles infinitas veces sin perder calidad."
+  },
+  {
+    "id": "post-114",
+    "title": "Neurodivergencia y Naturaleza",
+    "excerpt": "Cómo los entornos verdes benefician especialmente a personas con TDAH y Autismo.",
+    "date": "2024-01-01",
+    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=2070",
+    "content": "La naturaleza es un bálsamo sensorial que ayuda a regular el sistema nervioso de forma orgánica."
+  },
+  {
+    "id": "post-115",
+    "title": "El Futuro del Packaging: Papel de Algas",
+    "excerpt": "Bolsas y cajas que se disuelven en el mar sin dejar rastro en menos de 24 horas.",
+    "date": "2023-12-24",
+    "image": "https://images.unsplash.com/photo-1510003058032-47530689b09a?auto=format&fit=crop&q=80&w=2070",
+    "content": "Eliminar la basura de envases es posible con materiales que la naturaleza puede reclamar."
+  },
+  {
+    "id": "post-116",
+    "title": "Electrificación de Barcos de Pesca",
+    "excerpt": "Reduciendo el ruido y las emisiones en las zonas costeras protegidas.",
+    "date": "2023-12-16",
+    "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&q=80&w=2070",
+    "content": "Los barcos eléctricos son más silenciosos, beneficiando a la fauna marina local."
+  },
+  {
+    "id": "post-117",
+    "title": "IA para la Clasificación de Residuos",
+    "excerpt": "Cámaras que identifican materiales en microsegundos para un reciclaje perfecto.",
+    "date": "2023-12-08",
+    "image": "https://images.unsplash.com/photo-1591193686104-fddec3c06fcd?auto=format&fit=crop&q=80&w=2070",
+    "content": "La automatización del reciclaje reduce los costos y aumenta la pureza de los materiales recuperados."
+  },
+  {
+    "id": "post-118",
+    "title": "Sabores de la Tierra: Cultivos Olvidados",
+    "excerpt": "Redescubriendo el mijo y el sorgo como alternativas resilientes al trigo.",
+    "date": "2023-11-30",
+    "image": "https://images.unsplash.com/photo-1511739001486-6bce108585ae?auto=format&fit=crop&q=80&w=2070",
+    "content": "Diversificar nuestra dieta es vital para la resiliencia del sistema alimentario global."
+  },
+  {
+    "id": "post-119",
+    "title": "Eco-ansiedad: Cómo gestionarla",
+    "excerpt": "Pasar de la parálisis por el futuro a la acción colectiva consciente.",
+    "date": "2023-11-22",
+    "image": "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2070",
+    "content": "Reconocer nuestras emociones es el primer paso para convertir el miedo en motor de cambio."
+  },
+  {
+    "id": "post-120",
+    "title": "Vidrio de Policarbonato Biológico",
+    "excerpt": "Materiales transparentes hechos de residuos de azúcar que son más fuertes que el cristal.",
+    "date": "2023-11-14",
+    "image": "https://images.unsplash.com/photo-1503387762-59293a20165e?auto=format&fit=crop&q=80&w=2070",
+    "content": "La química verde nos permite crear materiales sintéticos que vuelven al ciclo natural."
+  },
+  {
+    "id": "post-121",
+    "title": "Baterías Biológicas a partir de Madera",
+    "excerpt": "Usando lignina reciclada para crear almacenamiento de energía 100% orgánico.",
+    "date": "2023-11-06",
+    "image": "https://images.unsplash.com/photo-1589149021870-745a75ce2a20?auto=format&fit=crop&q=80&w=2070",
+    "content": "Las baterías del futuro podrían crecer en los árboles, literalmente."
+  },
+  {
+    "id": "post-122",
+    "title": "Arquitectura de Adobe Moderna",
+    "excerpt": "Construir con tierra cruda usando impresoras 3D industriales de bajo costo.",
+    "date": "2023-10-29",
+    "image": "https://images.unsplash.com/photo-1518005020473-b3c6604812a6?auto=format&fit=crop&q=80&w=2070",
+    "content": "Revolucionando la vivienda social con el material más antiguo y abundante: la tierra bajo nuestros pies."
+  },
+  {
+    "id": "post-123",
+    "title": "Riego con Agua Atmosférica",
+    "excerpt": "Dispositivos pasivos que recolectan rocío para mantener pequeños huertos en el desierto.",
+    "date": "2023-10-21",
+    "image": "https://images.unsplash.com/photo-1513553404607-988bf2703777?auto=format&fit=crop&q=80&w=1936",
+    "content": "Cada gota cuenta de donde sea que venga. Tecnología ancestral mejorada con diseño moderno."
+  },
+  {
+    "id": "post-124",
+    "title": "Micro-plásticos en la Comida Humana",
+    "excerpt": "Lo que la ciencia dice sobre la ingestión accidental y cómo minimizar el riesgo.",
+    "date": "2023-10-13",
+    "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=2070",
+    "content": "La contaminación por plásticos ya no es solo visual; es un problema de salud interna sistémica."
+  },
+  {
+    "id": "post-125",
+    "title": "Bio-concreto con Micro-algas",
+    "excerpt": "Edificios que absorben CO2 de forma activa durante toda su vida útil.",
+    "date": "2023-10-05",
+    "image": "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2070",
+    "content": "Sustituir el cemento tradicional por alternativas que secuestran carbono es el gran reto de la ingeniería."
+  },
+  {
+    "id": "post-126",
+    "title": "Protegiendo los Corredores de Aves Migratorias",
+    "excerpt": "Cómo las luces de los edificios y los parques urbanos afectan los viajes de miles de km.",
+    "date": "2023-09-27",
+    "image": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=2041",
+    "content": "Ciudades amigables con las aves son ciudades más ricas en vida y equilibrio biológico."
+  },
+  {
+    "id": "post-127",
+    "title": "Energía Hidrocinética",
+    "excerpt": "Turbinas en tuberías municipales que aprovechan el flujo de agua potable para generar luz.",
+    "date": "2023-09-19",
+    "image": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&q=80&w=1974",
+    "content": "Aprovechar cada movimiento de energía que ya ocurre en la infraestructura urbana."
+  },
+  {
+    "id": "post-128",
+    "title": "Eco-centros Juveniles",
+    "excerpt": "Espacios donde los adolescentes aprenden a reparar tecnología y crear soluciones verdes.",
+    "date": "2023-09-11",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=2070",
+    "content": "Empoderar a la juventud con habilidades prácticas de economía circular."
+  },
+  {
+    "id": "post-129",
+    "title": "El Regreso de la Seda de Araña Sintética",
+    "excerpt": "Fibras de alto rendimiento producidas por bacterias: más fuertes que el acero.",
+    "date": "2023-09-03",
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2070",
+    "content": "Materiales ultra-resistentes y biodegradables inspirados en los mejores diseños de la naturaleza."
+  },
+  {
+    "id": "post-130",
+    "title": "Caminos que Recargan Coches Eléctricos",
+    "excerpt": "Carreteras con carga por inducción que podrían eliminar la necesidad de baterías gigantes.",
+    "date": "2023-08-26",
+    "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=2072",
+    "content": "Cargar mientras conduces revoluciona la autonomía y la logística del transporte eléctrico."
+  },
+  {
+    "id": "post-131",
+    "title": "Invernaderos de Geotermia Profunda",
+    "excerpt": "Produciendo frutas tropicales en climas fríos usando el calor del subsuelo.",
+    "date": "2023-08-18",
+    "image": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=2070",
+    "content": "La independencia alimentaria regional es posible con energía base térmica constante."
+  },
+  {
+    "id": "post-132",
+    "title": "Blockchain para los Derechos de Agua",
+    "excerpt": "Gestión transparente y equitativa de los recursos hídricos en zonas de escasez.",
+    "date": "2023-08-10",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=2074",
+    "content": "La tecnología digital previene la corrupción y el uso ineficiente del bien más preciado."
+  },
+  {
+    "id": "post-133",
+    "title": "Cosmética de Micelio",
+    "excerpt": "Empaques que puedes plantar en el jardín para fertilizar tus flores.",
+    "date": "2023-08-02",
+    "image": "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&q=80&w=1974",
+    "content": "La industria del bienestar por fin se alinea con el bienestar del planeta."
+  },
+  {
+    "id": "post-134",
+    "title": "Restaurando la Gran Barrera de Coral con IA",
+    "excerpt": "Drones submarinos que monitorean la salud y ayudan en la siembra de larvas coralinas.",
+    "date": "2023-07-25",
+    "image": "https://images.unsplash.com/photo-1546027658-e136f28432ce?auto=format&fit=crop&q=80&w=2070",
+    "content": "Tecnología de punta aplicada al ecosistema más amenazado de los océanos."
+  },
+  {
+    "id": "post-135",
+    "title": "Moda que Detecta la Polución",
+    "excerpt": "Ropa con sensores que cambian de color cuando el aire que respiras no es saludable.",
+    "date": "2023-07-17",
+    "image": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd15?auto=format&fit=crop&q=80&w=2070",
+    "content": "Vestir para sensibilizar y alertar sobre la importancia de la calidad del aire urbano."
+  },
+  {
+    "id": "post-136",
+    "title": "Eco-construcción con Plástico del Mar",
+    "excerpt": "Ladrillos modulares hechos de residuos marinos que encajan como piezas de Lego.",
+    "date": "2023-07-09",
+    "image": "https://images.unsplash.com/photo-1618477461853-cf6ed80fafa5?auto=format&fit=crop&q=80&w=2070",
+    "content": "Limpiar los océanos y construir hogares al mismo tiempo: una solución dual brillante."
+  },
+  {
+    "id": "post-137",
+    "title": "Energía de Aire Comprimido",
+    "excerpt": "Guardar electricidad en forma de aire a presión en cuevas subterráneas.",
+    "date": "2023-07-01",
+    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=2070",
+    "content": "Una alternativa a las baterías químicas que puede durar décadas sin degradación."
+  },
+  {
+    "id": "post-138",
+    "title": "Sabiduría de Montaña: Gestión del Agua",
+    "excerpt": "Aprender de las 'acequias de careo' de Sierra Nevada para recargar acuíferos.",
+    "date": "2023-06-23",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070",
+    "content": "Técnicas medievales que hoy son vitales para la adaptación al cambio climático."
+  },
+  {
+    "id": "post-139",
+    "title": "Ropa de Papel Reciclado",
+    "excerpt": "Prendas de alta resistencia para uso diario que pueden ser compostadas al final.",
+    "date": "2023-06-15",
+    "image": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1974",
+    "content": "La celulosa como base de una industria textil verdaderamente circular y libre de microplásticos."
+  },
+  {
+    "id": "post-140",
+    "title": "Blockchain para los Derechos de Autor de Semillas",
+    "excerpt": "Protegiendo las variedades campesinas frente al patentamiento de las grandes empresas.",
+    "date": "2023-06-07",
+    "image": "https://images.unsplash.com/photo-1464014165609-be0ef8f88880?auto=format&fit=crop&q=80&w=2074",
+    "content": "La soberanía alimentaria comienza con el control social sobre las semillas locales."
+  },
+  {
+    "id": "post-141",
+    "title": "Acuicultura de Algas para Secuestro de Carbono",
+    "excerpt": "Grandes granjas marinas dedicadas exclusivamente a hundir carbono en el fondo oceánico.",
+    "date": "2023-05-30",
+    "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=2070",
+    "content": "El océano puede ser nuestro mayor aliado en la carrera por las emisiones negativas."
+  },
+  {
+    "id": "post-142",
+    "title": "Eco-turismo en Manglares",
+    "excerpt": "La importancia de visitar de forma ética estos guardianes de la línea de costa.",
+    "date": "2023-05-22",
+    "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&q=80&w=2070",
+    "content": "Aprender el valor de los manglares como barreras naturales contra huracanes e inundaciones."
+  },
+  {
+    "id": "post-143",
+    "title": "Baterías Galvanizadas: ¿El Nuevo Litio?",
+    "excerpt": "Uso de zinc y hierro para almacenamiento a gran escala sin riesgos de incendio.",
+    "date": "2023-05-14",
+    "image": "https://images.unsplash.com/photo-1569012871812-f38ee6fc052d?auto=format&fit=crop&q=80&w=2070",
+    "content": "Materiales baratos y abundantes para democratizar el acceso a la energía renovable."
+  },
+  {
+    "id": "post-144",
+    "title": "Inteligencia Artificial para la Flora Nativa",
+    "excerpt": "Apps que identifican plantas y recogen datos para bases de conocimiento botánico abiertas.",
+    "date": "2023-05-06",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2071",
+    "content": "La ciencia ciudadana impulsada por IA ayuda a mapear la biodiversidad en tiempo real."
+  },
+  {
+    "id": "post-145",
+    "title": "Edificios de Madera que Respiran",
+    "excerpt": "Sistemas de ventilación natural inspirados en los nidos de termitas.",
+    "date": "2023-04-28",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2070",
+    "content": "Biomímesis aplicada al confort térmico sin necesidad de aire acondicionado mecánico."
+  },
+  {
+    "id": "post-146",
+    "title": "El Futuro de los Océanos: Minería Submarina",
+    "excerpt": "Los riesgos ambientales de extraer metales para baterías del lecho marino profundo.",
+    "date": "2023-04-20",
+    "image": "https://images.unsplash.com/photo-1505118380757-91f5f45d8de4?auto=format&fit=crop&q=80&w=2070",
+    "content": "El dilema ético: ¿dañar un ecosistema virgen para salvar el clima terrestre?"
+  },
+  {
+    "id": "post-147",
+    "title": "Sabiduría Ancestral y Salud del Agua",
+    "excerpt": "Limpieza de ríos usando métodos tradicionales y plantas de ribera específicas.",
+    "date": "2023-04-12",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=2074",
+    "content": "Recuperar la memoria de los pueblos para sanar nuestras fuentes de vida actuales."
+  },
+  {
+    "id": "post-148",
+    "title": "Ropa de Piña: ¿El Futuro del Cuero Vegan?",
+    "excerpt": "Análisis del Piñatex como alternativa sostenible a gran escala.",
+    "date": "2023-04-04",
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2070",
+    "content": "Aprovechar los subproductos agrícolas permite crear materiales de alta gama sin impacto animal."
+  },
+  {
+    "id": "post-149",
+    "title": "Blockchain Verde: Tokenizando la Tierra",
+    "excerpt": "Cómo los ciudadanos pueden comprar parcelas digitales vinculadas a la reforestación real.",
+    "date": "2023-03-27",
+    "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=2232",
+    "content": "La economía digital puede ser el motor que financie la restauración masiva de biomas."
+  },
+  {
+    "id": "post-150",
+    "title": "GeoVerde: Un Futuro Compartido",
+    "excerpt": "Hacia dónde vamos y cómo puedes ser parte activa del cambio regenerativo mundial.",
+    "date": "2023-03-19",
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920",
+    "content": "El camino es largo, pero cada paso cuenta. Gracias por ser parte de esta revolución de la conciencia."
   }
 ]

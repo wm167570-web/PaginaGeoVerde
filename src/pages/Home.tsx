@@ -69,6 +69,7 @@ export default function Home() {
                 className="rounded-[4rem] relative z-10 shadow-3xl rotate-3 hover:rotate-0 transition-transform duration-1000"
                 loading="lazy"
                 decoding="async"
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>

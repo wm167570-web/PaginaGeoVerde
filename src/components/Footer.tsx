@@ -11,7 +11,7 @@ export default function Footer() {
       {/* Subtle Environmental Awareness Background */}
       <div className="absolute inset-0 z-0 opacity-[0.08] pointer-events-none">
         <img 
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fm=webp&fit=crop&q=80&w=1920" 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920" 
           alt="Environmental Awareness" 
           className="w-full h-full object-cover grayscale mix-blend-multiply"
           referrerPolicy="no-referrer"

@@ -142,11 +142,12 @@ export default function BlogSection() {
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
                 <img 
-                  src={`${activePost.image}&fm=webp`} 
+                  src={activePost.image} 
                   alt={activePost.title} 
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
                   decoding="async"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>
