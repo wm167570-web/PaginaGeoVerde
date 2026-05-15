@@ -5,9 +5,10 @@ import Hero from '../components/Hero';
 import VideoGrid from '../components/VideoGrid';
 import BlogSection from '../components/BlogSection';
 import ContactForm from '../components/ContactForm';
-import Logo from '../components/Logo';
+import Footer from '../components/Footer';
+import BackToTop from '../components/BackToTop';
+import Tooltip from '../components/ui/Tooltip';
 import content from '../data/content.json';
-import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -52,8 +53,16 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-square bg-white/5 rounded-full absolute inset-0 blur-3xl animate-pulse" />
+            <div className="relative group">
+              <div className="aspect-square absolute inset-0 z-0 opacity-20 pointer-events-none rounded-[4rem] overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=1920" 
+                  alt="Forest background decorative" 
+                  className="w-full h-full object-cover blur-[2px] scale-110 group-hover:scale-100 transition-transform duration-[5s]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="aspect-square bg-white/5 rounded-full absolute inset-0 blur-3xl animate-pulse opacity-50" />
               <img 
                 src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=60&w=1000" 
                 alt="Green Living"
@@ -68,49 +77,8 @@ export default function Home() {
 
       <BlogSection />
       <ContactForm />
-
-      <footer className="bg-brand-earth py-20 border-t border-brand-forest/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-            <div className="max-w-sm">
-              <div className="flex items-center gap-4 mb-6 text-brand-primary">
-                <Logo className="w-16 h-16" />
-                <span className="font-serif text-3xl font-bold tracking-tight">
-                  {content.channel.name}
-                </span>
-              </div>
-              <p className="text-brand-forest/60 mb-8 leading-relaxed italic font-serif text-lg">
-                "{content.channel.description}"
-              </p>
-              <div className="flex items-center gap-6">
-                <a href={content.channel.social.instagram} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Instagram className="w-5 h-5" /></a>
-                <a href={content.channel.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Music className="w-5 h-5" /></a>
-                <a href={content.channel.social.facebook} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Facebook className="w-5 h-5" /></a>
-                <a href={content.channel.url} target="_blank" rel="noopener noreferrer" className="text-brand-forest hover:text-brand-primary transition-colors"><Youtube className="w-5 h-5" /></a>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-50">Explorar</span>
-                <a href="#videos" className="text-sm font-medium hover:text-brand-primary transition-colors">Videos</a>
-                <a href="#blog" className="text-sm font-medium hover:text-brand-primary transition-colors">Noticias</a>
-                <a href="#resources" className="text-sm font-medium hover:text-brand-primary transition-colors">Recursos</a>
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-50">Legal</span>
-                <Link to="/privacidad" className="text-sm font-medium hover:text-brand-primary transition-colors">Privacidad</Link>
-                <Link to="/terminos" className="text-sm font-medium hover:text-brand-primary transition-colors">Términos</Link>
-              </div>
-            </div>
-          </div>
-          
-          <div className="pt-12 border-t border-brand-forest/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-40">
-            <span>© 2026 {content.channel.name}. Todos los derechos reservados.</span>
-            <span>Hecho con amor por la naturaleza</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
+      <BackToTop />
     </main>
   );
 }

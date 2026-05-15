@@ -5,11 +5,60 @@ import content from '../data/content.json';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState({ name: '', email: '', message: '' });
+  const [touched, setTouched] = useState({ name: false, email: false, message: false });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
+  const validateField = (name: string, value: string) => {
+    let error = '';
+    if (name === 'name') {
+      if (!value.trim()) error = 'El nombre es obligatorio';
+      else if (value.trim().length < 3) error = 'El nombre debe tener al menos 3 caracteres';
+    }
+    if (name === 'email') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!value) error = 'El correo es obligatorio';
+      else if (!emailRegex.test(value)) error = 'Formato de correo no válido';
+    }
+    if (name === 'message') {
+      if (!value.trim()) error = 'El mensaje no puede estar vacío';
+      else if (value.trim().length < 10) error = 'El mensaje debe ser más descriptivo (mín. 10 caracteres)';
+    }
+    return error;
+  };
+
+  const handleBlur = (field: keyof typeof touched) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
+    const error = validateField(field, formData[field]);
+    setErrors(prev => ({ ...prev, [field]: error }));
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+    
+    if (touched[id as keyof typeof touched]) {
+      const error = validateField(id, value);
+      setErrors(prev => ({ ...prev, [id]: error }));
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Mark all as touched and validate
+    const newErrors = {
+      name: validateField('name', formData.name),
+      email: validateField('email', formData.email),
+      message: validateField('message', formData.message),
+    };
+    
+    setErrors(newErrors);
+    setTouched({ name: true, email: true, message: true });
+
+    if (Object.values(newErrors).some(err => err)) return;
+
     setIsSubmitting(true);
 
     // Construct mailto link
@@ -31,97 +80,158 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-brand-sky/10 rounded-full blur-3xl -translate-x-1/2" />
+    <section id="contact" className="py-24 bg-neutral-950 relative overflow-hidden transition-colors duration-500">
+      {/* Background Image Texture */}
+      <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1920" 
+          alt="Contact Background" 
+          className="w-full h-full object-cover grayscale brightness-50"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
+      {/* Abstract background elements - Magnific style */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[120px] -translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-secondary/5 rounded-full blur-[100px] translate-x-1/4 translate-y-1/4 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-brand-forest opacity-50 mb-4">Contacto</h2>
-            <h3 className="font-serif text-4xl md:text-6xl font-bold text-brand-secondary italic mb-8">
-              ¿Tienes un proyecto ecológico? <span className="text-brand-forest not-italic font-sans font-light">Hablemos.</span>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-primary mb-6">Contacto</h2>
+            <h3 className="font-serif text-5xl md:text-7xl font-black text-white italic mb-10 leading-[0.9] tracking-tighter">
+              ¿Tienes un <span className="text-white not-italic font-light opacity-80">proyecto ecológico?</span> <span className="text-brand-primary not-italic font-sans font-extralight block mt-4">Hablemos.</span>
             </h3>
             
-            <div className="space-y-8 mt-12">
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-brand-earth flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-brand-primary" />
+            <div className="space-y-10 mt-12">
+              <div className="flex items-start gap-8 group">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300">
+                  <Mail className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Email</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1 block">Email</span>
                   <a 
                     href={`mailto:${content.channel.email}`}
-                    className="text-lg font-medium text-brand-primary cursor-pointer hover:underline block"
+                    className="text-xl font-medium text-white hover:text-brand-primary transition-colors cursor-pointer block"
                   >
                     {content.channel.email}
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-brand-earth flex items-center justify-center flex-shrink-0">
-                  <Youtube className="w-5 h-5 text-brand-primary" />
+              <div className="flex items-start gap-8 group">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all duration-300">
+                  <Youtube className="w-6 h-6 text-brand-primary group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Comunidad</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1 block">Comunidad</span>
                   <a 
                     href={content.channel.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-lg font-medium text-brand-primary hover:underline block"
+                    className="text-xl font-medium text-white hover:text-brand-primary transition-colors block"
                   >
                     {content.channel.handle}
                   </a>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-brand-earth p-8 md:p-12 rounded-[3rem] shadow-2xl shadow-brand-primary/5">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#1A1A1A] p-8 md:p-14 rounded-[3.5rem] border border-white/5 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)]"
+          >
             {!isSent ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-4">
-                  <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-brand-forest">Nombre Completo</label>
+              <form onSubmit={handleSubmit} className="space-y-10" noValidate>
+                <div className="space-y-3 relative">
+                  <div className="flex justify-between items-center px-1">
+                    <label htmlFor="name" className="text-[10px] font-bold uppercase tracking-widest text-white/40">Nombre Completo</label>
+                    {touched.name && errors.name && (
+                      <span className="text-[10px] font-bold text-red-500 uppercase tracking-tighter animate-pulse">{errors.name}</span>
+                    )}
+                  </div>
                   <input 
                     type="text" 
                     id="name"
-                    required
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur('name')}
                     placeholder="Tu nombre aquí..."
-                    className="w-full bg-white border-b border-brand-forest/10 px-4 py-4 focus:outline-none focus:border-brand-secondary transition-colors font-medium rounded-xl"
+                    aria-invalid={!!errors.name}
+                    className={`w-full bg-white/5 border px-8 py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium rounded-2xl ${
+                      touched.name && errors.name 
+                        ? 'border-red-500/50 bg-red-500/5' 
+                        : touched.name && !errors.name 
+                        ? 'border-brand-secondary/50 bg-brand-secondary/5'
+                        : 'border-white/10 focus:border-brand-primary/50 focus:bg-white/10'
+                    }`}
                   />
                 </div>
-                <div className="space-y-4">
-                  <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-brand-forest">Correo Electrónico</label>
+                
+                <div className="space-y-3 relative">
+                  <div className="flex justify-between items-center px-1">
+                    <label htmlFor="email" className="text-[10px] font-bold uppercase tracking-widest text-white/40">Correo Electrónico</label>
+                    {touched.email && errors.email && (
+                      <span className="text-[10px] font-bold text-red-500 uppercase tracking-tighter animate-pulse">{errors.email}</span>
+                    )}
+                  </div>
                   <input 
                     type="email" 
                     id="email"
-                    required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur('email')}
                     placeholder="tucorreo@dominio.com"
-                    className="w-full bg-white border-b border-brand-forest/10 px-4 py-4 focus:outline-none focus:border-brand-secondary transition-colors font-medium rounded-xl"
+                    aria-invalid={!!errors.email}
+                    className={`w-full bg-white/5 border px-8 py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium rounded-2xl ${
+                      touched.email && errors.email 
+                        ? 'border-red-500/50 bg-red-500/5' 
+                        : touched.email && !errors.email 
+                        ? 'border-brand-secondary/50 bg-brand-secondary/5'
+                        : 'border-white/10 focus:border-brand-primary/50 focus:bg-white/10'
+                    }`}
                   />
                 </div>
-                <div className="space-y-4">
-                  <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-brand-forest">Mensaje</label>
+
+                <div className="space-y-3 relative">
+                  <div className="flex justify-between items-center px-1">
+                    <label htmlFor="message" className="text-[10px] font-bold uppercase tracking-widest text-white/40">Mensaje</label>
+                    {touched.message && errors.message && (
+                      <span className="text-[10px] font-bold text-red-500 uppercase tracking-tighter animate-pulse">{errors.message}</span>
+                    )}
+                  </div>
                   <textarea 
                     id="message"
-                    required
                     rows={4}
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur('message')}
                     placeholder="¿En qué podemos ayudarte?"
-                    className="w-full bg-white border-b border-brand-forest/10 px-4 py-4 focus:outline-none focus:border-brand-secondary transition-colors font-medium resize-none rounded-xl"
+                    aria-invalid={!!errors.message}
+                    className={`w-full bg-white/5 border px-8 py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium resize-none rounded-2xl ${
+                      touched.message && errors.message 
+                        ? 'border-red-500/50 bg-red-500/5' 
+                        : touched.message && !errors.message 
+                        ? 'border-brand-secondary/50 bg-brand-secondary/5'
+                        : 'border-white/10 focus:border-brand-primary/50 focus:bg-white/10'
+                    }`}
                   />
                 </div>
                 
                 <button 
                   disabled={isSubmitting}
-                  className="w-full group flex items-center justify-center gap-3 bg-brand-primary text-white py-6 rounded-3xl font-bold transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50"
+                  className="w-full group flex items-center justify-center gap-3 bg-[#F5F5F5] text-[#1A1A1A] py-6 rounded-full font-bold transition-all hover:bg-white hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 mt-4 disabled:cursor-not-allowed shadow-xl shadow-black/20"
                 >
-                  {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
-                  {!isSubmitting && <Send className="w-5 h-5 group-hover:translate-x-2 transition-transform" />}
+                  <span className="text-sm uppercase tracking-widest">
+                    {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                  </span>
+                  {!isSubmitting && <Send className="w-5 h-5 group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform" />}
                 </button>
               </form>
             ) : (
@@ -130,20 +240,20 @@ export default function ContactForm() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-12"
               >
-                <div className="w-20 h-20 bg-brand-primary text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-24 h-24 bg-brand-primary/20 text-brand-primary rounded-full flex items-center justify-center mx-auto mb-8 border border-brand-primary/30">
                   <Send className="w-10 h-10" />
                 </div>
-                <h4 className="font-serif text-3xl font-bold text-brand-primary mb-4">¡Mensaje Enviado!</h4>
-                <p className="text-brand-forest/70">Gracias por contactarnos. Te responderemos muy pronto.</p>
+                <h4 className="font-serif text-3xl font-bold text-white mb-4 italic">¡Mensaje Enviado!</h4>
+                <p className="text-white/60 text-lg">Gracias por contactarnos. Te responderemos muy pronto.</p>
                 <button 
                   onClick={() => setIsSent(false)}
-                  className="mt-8 text-brand-primary font-bold uppercase tracking-widest text-sm hover:underline"
+                  className="mt-10 bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all"
                 >
                   Enviar otro mensaje
                 </button>
               </motion.div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

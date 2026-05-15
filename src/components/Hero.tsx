@@ -4,25 +4,50 @@ import content from '../data/content.json';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-earth">
-      {/* Abstract background elements */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-brand-primary/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-brand-sky/5 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4" />
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-brand-surface">
+      {/* Background Image Watermark */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fm=webp&fit=crop&q=80&w=1920" 
+          alt="Conciencia ambiental background" 
+          className="w-full h-full object-cover grayscale mix-blend-overlay"
+          referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+      {/* Abstract background elements - using palette blobs */}
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-brand-earth/20 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-brand-sky/20 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4 animate-pulse delay-1000" />
+      <div className="absolute top-1/2 left-1/2 w-[30vw] h-[30vw] bg-brand-secondary/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 bg-white/40 backdrop-blur-md rounded-[3rem] p-8 md:p-20 border border-brand-forest/5 group overflow-hidden shadow-2xl shadow-brand-forest/5">
+
+        <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
+          <img 
+            src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2?auto=format&fm=webp&fit=crop&q=80&w=1920" 
+            alt="Forest Canopy Background" 
+            className="w-full h-full object-cover mix-blend-multiply scale-110 group-hover:scale-100 transition-transform duration-[5s]"
+            referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary/10 text-brand-forest text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
-            <span className="w-2 h-2 rounded-full bg-brand-secondary animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
             Nuevo Video Disponible
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold leading-[1.1] text-brand-primary mb-8 text-shadow-sm">
+          <h1 className="font-serif text-6xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
             {content.hero.title}
           </h1>
-          <p className="text-lg text-brand-forest/80 leading-relaxed max-w-md mb-10">
+          <p className="text-lg md:text-xl text-brand-forest/70 leading-relaxed max-w-md mb-10 border-l-4 border-brand-sky pl-6 font-light">
             {content.hero.subtitle}
           </p>
           
@@ -31,19 +56,20 @@ export default function Hero() {
               href={content.channel.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 bg-brand-primary text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 shadow-xl shadow-brand-primary/30"
+              className="group flex items-center gap-3 bg-brand-primary text-white border-2 border-brand-primary px-8 py-4 rounded-full font-bold transition-all hover:bg-transparent hover:text-brand-primary shadow-xl shadow-brand-primary/20"
             >
               Ver en YouTube
               <Youtube className="w-5 h-5" />
             </a>
             <a 
               href="#blog"
-              className="group flex items-center gap-3 bg-white text-brand-sky border border-brand-sky/20 px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-sky/5"
+              className="group flex items-center gap-3 bg-transparent text-brand-earth border-2 border-brand-earth px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-earth hover:text-white"
             >
               Explorar Blog
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
+
         </motion.div>
 
         <motion.div
@@ -54,7 +80,7 @@ export default function Hero() {
         >
           <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-y-3 transform transition-transform hover:skew-y-0 duration-700">
             <img 
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=60&w=1000" 
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fm=webp&fit=crop&q=60&w=1000" 
               alt="Conciencia y Naturaleza"
               className="object-cover w-full h-full scale-110 hover:scale-100 transition-transform duration-[2000ms]"
               loading="eager"

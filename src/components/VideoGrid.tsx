@@ -4,14 +4,26 @@ import content from '../data/content.json';
 
 export default function VideoGrid() {
   return (
-    <section id="videos" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="videos" className="py-24 bg-white relative overflow-hidden border-b border-brand-earth/10">
+      {/* Subtle Pattern Background */}
+      <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none">
+        <img 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fm=webp&fit=crop&q=80&w=1920" 
+          alt="Environmental Background" 
+          className="w-full h-full object-cover grayscale"
+          referrerPolicy="no-referrer"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-brand-forest opacity-50 mb-4">Lanzamientos Recientes</h2>
-            <h3 className="font-serif text-4xl md:text-5xl font-bold text-brand-secondary italic">Explora Nuestra Videoteca</h3>
+            <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-sky mb-4">Lanzamientos Recientes</h2>
+            <h3 className="font-serif text-5xl md:text-7xl font-black text-brand-primary italic leading-[0.9] tracking-tighter">Explora <span className="not-italic font-light opacity-80">Nuestra Videoteca</span></h3>
           </div>
-          <p className="text-brand-forest/60 max-w-sm">
+          <p className="text-brand-forest/60 max-w-sm border-l-2 border-brand-secondary pl-4 text-sm md:text-base font-light leading-relaxed">
             Educación ambiental de alta calidad para entender el mundo en el que vivimos.
           </p>
         </div>
@@ -29,11 +41,11 @@ export default function VideoGrid() {
               transition={{ delay: index * 0.1 }}
               className="group cursor-pointer block"
             >
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-brand-earth">
+              <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-brand-light-green/20">
                 {/* Mock Thumbnail */}
-                <div className="absolute inset-0 bg-brand-forest/10 group-hover:bg-brand-forest/0 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                 <img 
-                  src={video.image || `https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=60&w=600&sig=${index}`}
+                  src={video.image ? `${video.image}&fm=webp` : `https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fm=webp&fit=crop&q=60&w=600&sig=${index}`}
                   alt={video.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
@@ -51,7 +63,7 @@ export default function VideoGrid() {
                 </div>
               </div>
 
-              <h4 className="font-serif text-xl font-bold text-brand-secondary mb-2 group-hover:text-brand-primary transition-colors">
+              <h4 className="font-serif text-2xl font-bold text-brand-primary mb-2 group-hover:text-brand-secondary transition-colors leading-tight">
                 {video.title}
               </h4>
               <p className="text-sm text-brand-forest/70 line-clamp-2">
@@ -66,7 +78,7 @@ export default function VideoGrid() {
             href={content.channel.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all"
+            className="inline-flex items-center gap-2 text-brand-primary font-bold text-sm uppercase tracking-widest hover:gap-4 transition-all"
           >
             Ver todos los videos en el canal
             <span className="h-[2px] w-12 bg-brand-secondary" />

@@ -1,17 +1,19 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
   
-  --color-brand-primary: #004c84; /* Deep Navy Blue */
-  --color-brand-secondary: #adb52a; /* Medium Olive */
-  --color-brand-accent: #94c5e8; /* Light Blue */
-  --color-brand-forest: #6b6e1b; /* Dark Olive */
-  --color-brand-lime: #dde05c; /* Lime Yearllow */
-  --color-brand-sky: #508abe; /* Medium Blue */
-  --color-brand-earth: #f8fafc;
+  --color-brand-primary: #1B4332; /* Deep Forest Green */
+  --color-brand-secondary: #70E000; /* Bright Lime Green */
+  --color-brand-accent: #48BFE3; /* Sky Blue */
+  --color-brand-forest: #1B4332; /* Deep Forest Green */
+  --color-brand-lime: #70E000; /* Bright Lime Green */
+  --color-brand-sky: #48BFE3; /* Sky Blue */
+  --color-brand-earth: #B08968; /* Sandy Earth Tan */
+  --color-brand-light-green: #B7E4C7; /* Soft Green */
+  --color-brand-surface: #FDFEF9; /* Off-white surface */
   
   --color-brand-green: var(--color-brand-forest);
   --color-brand-green-bright: var(--color-brand-secondary);
@@ -19,9 +21,19 @@
 }
 
 body {
-  background-color: var(--color-brand-earth);
+  background-color: var(--color-brand-surface);
   color: #1a1a1a;
   overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.02;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
 }
 
 .perspective-1000 {

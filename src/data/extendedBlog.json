@@ -1,0 +1,402 @@
+[
+  {
+    "id": "post-1",
+    "title": "5 Maneras de Reducir tu Huella de Carbono",
+    "excerpt": "Desde el transporte hasta la alimentación, descubre cómo puedes marcar la diferencia en tu día a día.",
+    "date": "2026-05-10",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=2070",
+    "content": "Reducir nuestra huella de carbono es esencial para mitigar el cambio climático. Aquí te presentamos 5 acciones concretas:\n\n1. **Movilidad Sostenible**: Prioriza caminar, el uso de la bicicleta o el transporte público.\n2. **Eficiencia Energética**: Cambia a bombillas LED y mejora el aislamiento de tu hogar.\n3. **Dieta Consciente**: Reduce el consumo de carne roja y prioriza productos locales.\n4. **Consumo Responsable**: Aplica la regla de las 3R (Reducir, Reutilizar, Reciclar).\n5. **Compensación**: Apoya proyectos de reforestación para equilibrar las emisiones."
+  },
+  {
+    "id": "post-2",
+    "title": "La Importancia de los Glaciares",
+    "excerpt": "¿Por qué el derretimiento de los polos nos afecta a todos y qué podemos hacer al respecto?",
+    "date": "2026-05-05",
+    "image": "https://images.unsplash.com/photo-1476231682828-37e571bc172f?auto=format&fit=crop&q=80&w=2074",
+    "content": "Los glaciares son los 'termómetros' de nuestro planeta y desempeñan funciones vitales. El calentamiento global está provocando su retroceso acelerado."
+  },
+  {
+    "id": "post-3",
+    "title": "Energías Renovables en el Hogar",
+    "excerpt": "Cómo los paneles solares están transformando la independencia energética de las familias modernas.",
+    "date": "2026-04-28",
+    "image": "https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?auto=format&fit=crop&q=80&w=2070",
+    "content": "La energía solar es más accesible que nunca. Descubre los beneficios económicos y ambientales de instalar paneles en tu tejado."
+  },
+  {
+    "id": "post-4",
+    "title": "El Futuro del Agua Dulce",
+    "excerpt": "Analizamos las soluciones tecnológicas para combatir la escasez hídrica global.",
+    "date": "2026-04-20",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=2074",
+    "content": "La gestión del agua es el mayor desafío del siglo XXI. Desde la desalinización hasta la recolección de lluvia, exploramos el camino a seguir."
+  },
+  {
+    "id": "post-5",
+    "title": "Biodiversidad: El Escudo Invisible",
+    "excerpt": "Por qué la variedad de especies es nuestra mejor defensa contra futuras pandemias y desastres.",
+    "date": "2026-04-15",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2071",
+    "content": "Un ecosistema saludable nos protege de enfermedades zoonóticas y desastres naturales. La pérdida de biodiversidad es una crisis silenciosa."
+  },
+  {
+    "id": "post-6",
+    "title": "Moda Sostenible: Más que una Tendencia",
+    "excerpt": "La industria textil se reinventa para reducir el desperdicio de agua y químicos.",
+    "date": "2026-04-10",
+    "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=2070",
+    "content": "El 'fast fashion' es destructivo. Aprende sobre fibras orgánicas, reciclaje textil y marcas éticas que están cambiando el juego."
+  },
+  {
+    "id": "post-7",
+    "title": "Agricultura Regenerativa",
+    "excerpt": "Sanar la tierra mientras producimos alimentos: el fin del arado convencional.",
+    "date": "2026-04-02",
+    "image": "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&q=80&w=2070",
+    "content": "La agricultura regenerativa restaura la salud del suelo y captura carbono. Es una de nuestras herramientas más potentes contra la crisis climática."
+  },
+  {
+    "id": "post-8",
+    "title": "Plásticos de un Solo Uso",
+    "excerpt": "Guía práctica para eliminar definitivamente el plástico de tu cocina y baño.",
+    "date": "2026-03-25",
+    "image": "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&q=80&w=2070",
+    "content": "Pequeños cambios como usar jabón sólido o bolsas de tela pueden evitar toneladas de basura plástica en los océanos."
+  },
+  {
+    "id": "post-9",
+    "title": "Ciudades Esponja",
+    "excerpt": "Cómo el diseño urbano está aprendiendo de la naturaleza para prevenir inundaciones.",
+    "date": "2026-03-18",
+    "image": "https://images.unsplash.com/photo-1449156001533-cb39c8924d00?auto=format&fit=crop&q=80&w=2070",
+    "content": "Las 'ciudades esponja' utilizan infraestructura verde para absorber el exceso de agua, recargando acuíferos y embelleciendo el entorno."
+  },
+  {
+    "id": "post-10",
+    "title": "El Poder de los Bosques Urbanos",
+    "excerpt": "Micro-bosques Miyawaki: la solución para enfriar las ciudades y mejorar la calidad del aire.",
+    "date": "2026-03-10",
+    "image": "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80&w=1974",
+    "content": "Incluso en espacios pequeños, plantar bosques nativos densos puede transformar el microclima de un barrio entero."
+  },
+  {
+    "id": "post-11",
+    "title": "Transporte Eléctrico: Mitos y Realidades",
+    "excerpt": "Desglosamos la verdad sobre la vida útil de las baterías y el origen de la energía elécrica.",
+    "date": "2026-03-05",
+    "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=2072",
+    "content": "Aunque no son perfectos, los coches eléctricos son significativamente mejores para el clima que los de combustión a lo largo de su vida útil."
+  },
+  {
+    "id": "post-12",
+    "title": "Economía Circular para Principiantes",
+    "excerpt": "Dejar de extraer, producir y tirar. Aprende los principios del diseño sin desechos.",
+    "date": "2026-02-28",
+    "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=2070",
+    "content": "En la naturaleza no existen los residuos. La economía circular busca imitar estos ciclos para que cada producto sea materia prima del siguiente."
+  },
+  {
+    "id": "post-13",
+    "title": "Turismo Regenerativo",
+    "excerpt": "Viajar para mejorar el destino, no solo para visitarlo. El nuevo paradigma del viajero consciente.",
+    "date": "2026-02-20",
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2074",
+    "content": "El turismo regenerativo va un paso más allá de la sostenibilidad, buscando dejar el lugar mejor de como lo encontramos."
+  },
+  {
+    "id": "post-14",
+    "title": "Protección de Abejas y Polinizadores",
+    "excerpt": "Sin ellos, nuestra seguridad alimentaria está en riesgo. Crea un refugio en tu balcón.",
+    "date": "2026-02-15",
+    "image": "https://images.unsplash.com/photo-1464014165609-be0ef8f88880?auto=format&fit=crop&q=80&w=2074",
+    "content": "Plantar flores nativas y evitar pesticidas es vital para salvar a las abejas, que polinizan un tercio de lo que comemos."
+  },
+  {
+    "id": "post-15",
+    "title": "Tecnología Satelital y Medio Ambiente",
+    "excerpt": "Cómo observamos desde el espacio la deforestación y los vertidos de petróleo en tiempo real.",
+    "date": "2026-02-08",
+    "image": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=2072",
+    "content": "Los satélites son nuestros aliados críticos para monitorizar la salud planetaria y exigir responsabilidades por daños ambientales."
+  },
+  {
+    "id": "post-16",
+    "title": "Compostaje en Apartamentos",
+    "excerpt": "Todo lo que necesitas saber para convertir tus restos de comida en abono sin olores ni complicaciones.",
+    "date": "2026-02-01",
+    "image": "https://images.unsplash.com/photo-1542601906-9c3fbd690181?auto=format&fit=crop&q=80&w=2070",
+    "content": "El compostaje doméstico reduce el 40% de tus residuos que van al vertedero y genera vida para tus plantas."
+  },
+  {
+    "id": "post-17",
+    "title": "El Renacimiento del Hidrógeno Verde",
+    "excerpt": "Analizamos si el hidrógeno es finalmente la clave para descarbonizar la gran industria.",
+    "date": "2026-01-25",
+    "image": "https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?auto=format&fit=crop&q=80&w=2076",
+    "content": "El hidrógeno producido con energía renovable puede ser el combustible limpio para barcos, aviones y fábricas de acero."
+  },
+  {
+    "id": "post-18",
+    "title": "Minimalismo: Menos es Más",
+    "excerpt": "Cómo reducir tus posesiones materiales libera espacio mental y alivia al planeta.",
+    "date": "2026-01-18",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1964",
+    "content": "Consumir menos es la forma más efectiva de sostenibilidad. El minimalismo nos invita a valorar lo que realmente importa."
+  },
+  {
+    "id": "post-19",
+    "title": "Artesanía vs. Industrialización",
+    "excerpt": "El regreso a lo local y hecho a mano como resistencia al consumo masivo.",
+    "date": "2026-01-10",
+    "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&q=80&w=1974",
+    "content": "Comprar productos artesanales apoya la economía local y garantiza objetos duraderos con menor huella ecológica."
+  },
+  {
+    "id": "post-20",
+    "title": "Protección de Océanos",
+    "excerpt": "Las áreas marinas protegidas son vitales para la resiliencia climática mundial.",
+    "date": "2025-12-28",
+    "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&q=80&w=2070",
+    "content": "Los océanos absorben calor y CO2. Proteger ecosistemas marinos es fundamental para mantener el equilibrio térmico de la Tierra."
+  },
+  {
+    "id": "post-21",
+    "title": "Arquitectura Bioclimática",
+    "excerpt": "Casas que se enfrían solas y aprovechan cada rayo de sol sin gastar electricidad.",
+    "date": "2025-12-20",
+    "image": "https://images.unsplash.com/photo-1518005020473-b3c6604812a6?auto=format&fit=crop&q=80&w=2070",
+    "content": "Utilizando materiales locales y diseño inteligente, podemos construir edificios que operan en armonía con el clima circundante."
+  },
+  {
+    "id": "post-22",
+    "title": "Educación Ambiental para Niños",
+    "excerpt": "Cómo criar a la próxima generación de guardianes de la naturaleza de forma lúdica.",
+    "date": "2025-12-15",
+    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=2070",
+    "content": "La conexión emocional con la naturaleza en la infancia es el predictor más fuerte de comportamiento pro-ambiental en adultos."
+  },
+  {
+    "id": "post-23",
+    "title": "El Gran Desperdicio Alimentario",
+    "excerpt": "Tiramos un tercio de la comida producida. Aprende técnicas para salvar tus vegetales.",
+    "date": "2025-12-08",
+    "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=2070",
+    "content": "Evitar que la comida termine en el vertedero es vital, ya que al descomponerse genera metano, un gas de efecto invernadero potente."
+  },
+  {
+    "id": "post-24",
+    "title": "Derechos de la Naturaleza",
+    "excerpt": "El movimiento global para otorgar a ríos y montañas estatus legal para su protección.",
+    "date": "2025-12-01",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070",
+    "content": "Varios países ya reconocen a la naturaleza como sujeto de derechos. Un cambio histórico en nuestra relación con el planeta."
+  },
+  {
+    "id": "post-25",
+    "title": "Hidroponía Urbana",
+    "excerpt": "Cultivar sin tierra en vertical: así están alimentándose las grandes urbes del futuro.",
+    "date": "2025-11-25",
+    "image": "https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1974",
+    "content": "La hidroponía ahorra hasta un 90% de agua respecto a la agricultura tradicional y permite cultivos locales todo el año."
+  },
+  {
+    "id": "post-26",
+    "title": "Baños Secos y Saneamiento Ecológico",
+    "excerpt": "Rompiendo tabúes sobre el ahorro de agua en el baño y el uso de desechos como recurso.",
+    "date": "2025-11-18",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=2070",
+    "content": "El saneamiento seco no requiere agua y permite procesar los desechos de forma segura para fertilizar bosques."
+  },
+  {
+    "id": "post-27",
+    "title": "El Futuro del Almacenamiento de Energía",
+    "excerpt": "Baterías de estado sólido y gravedad: cómo guardaremos la energía renovable.",
+    "date": "2025-11-10",
+    "image": "https://images.unsplash.com/photo-1569012871812-f38ee6fc052d?auto=format&fit=crop&q=80&w=2070",
+    "content": "Almacenar el viento y el sol es el reto final. Tecnologías innovadoras están haciendo que el 100% renovable sea posible."
+  },
+  {
+    "id": "post-28",
+    "title": "Salud Mental y Naturaleza",
+    "excerpt": "Baños de bosque (Shinrin-yoku): la ciencia detrás de por qué caminar entre árboles nos cura.",
+    "date": "2025-11-02",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2071",
+    "content": "La naturaleza reduce el cortisol, la presión arterial y mejora el sistema inmune. No es solo ocio, es medicina preventiva."
+  },
+  {
+    "id": "post-29",
+    "title": "Micelio: El Material del Futuro",
+    "excerpt": "Cómo los hongos pueden reemplazar al plástico y al cuero de una forma 100% biodegradable.",
+    "date": "2025-10-25",
+    "image": "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&q=80&w=1974",
+    "content": "El micelio permite crear envases, textiles e incluso materiales de construcción que vuelven a la tierra al final de su vida."
+  },
+  {
+    "id": "post-30",
+    "title": "Restaurando Arrecifes de Coral",
+    "excerpt": "Viveros de coral y bio-roca: los esfuerzos para salvar las selvas del mar.",
+    "date": "2025-10-18",
+    "image": "https://images.unsplash.com/photo-1546027658-e136f28432ce?auto=format&fit=crop&q=80&w=2070",
+    "content": "Sin corales, la biodiversidad marina colapsaría. Científicos y voluntarios trabajan contra reloj para replantar los arrecifes."
+  },
+  {
+    "id": "post-31",
+    "title": "Inversión con Impacto",
+    "excerpt": "Cómo poner tu dinero a trabajar en proyectos que benefician al planeta y a la sociedad.",
+    "date": "2025-10-10",
+    "image": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=2070",
+    "content": "Mover los fondos de inversión lejos de los combustibles fósiles es una de las acciones más poderosas para el cambio sistémico."
+  },
+  {
+    "id": "post-32",
+    "title": "Permacultura: Ética y Diseño",
+    "excerpt": "Mucho más que agricultura: un sistema holístico para vidas sostenibles y comunidades resilientes.",
+    "date": "2025-10-02",
+    "image": "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=2070",
+    "content": "La permacultura nos enseña a diseñar sistemas que funcionan con la naturaleza en lugar de contra ella."
+  },
+  {
+    "id": "post-33",
+    "title": "El Regreso de la Fauna Silvestre",
+    "excerpt": "Especies que están volviendo a Europa y América gracias a políticas de conservación estrictas.",
+    "date": "2025-09-25",
+    "image": "https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&q=80&w=2072",
+    "content": "Lobos, linces y ballenas están recuperando territorio. Un rayo de esperanza para la recuperación de la vida salvaje."
+  },
+  {
+    "id": "post-34",
+    "title": "Biorremediación",
+    "excerpt": "Usar bacterias y plantas para limpiar suelos contaminados por la minería y la industria.",
+    "date": "2025-09-18",
+    "image": "https://images.unsplash.com/photo-1530508943348-b8f606ea2bf2?auto=format&fit=crop&q=80&w=2070",
+    "content": "La naturaleza tiene su propio kit de limpieza. Ciertos organismos pueden 'comer' toxinas y restaurar la vida en sitios degradados."
+  },
+  {
+    "id": "post-35",
+    "title": "Huertos Comunitarios: Tejiendo Socialmente",
+    "excerpt": "Cómo cultivar comida en la ciudad fortalece el barrio y reduce la soledad.",
+    "date": "2025-09-10",
+    "image": "https://images.unsplash.com/photo-1541944743827-e04bb645d993?auto=format&fit=crop&q=80&w=1974",
+    "content": "Los huertos compartidos son oasis de biodiversidad y democracia, donde se intercambian semillas y conocimientos."
+  },
+  {
+    "id": "post-36",
+    "title": "Vivienda en Contenedores Reciclados",
+    "excerpt": "De los puertos a los hogares: una opción rápida y ecológica para la crisis de vivienda.",
+    "date": "2025-09-02",
+    "image": "https://images.unsplash.com/photo-1510003058032-47530689b09a?auto=format&fit=crop&q=80&w=2070",
+    "content": "Reutilizar contenedores de transporte reduce la energía gris de la construcción y permite diseños modulares increíbles."
+  },
+  {
+    "id": "post-37",
+    "title": "Cosmética Sólida sin Tóxicos",
+    "excerpt": "Elimina los microplásticos de tu rutina de belleza y cuida tu piel de forma natural.",
+    "date": "2025-08-25",
+    "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&q=80&w=1974",
+    "content": "Los champús y jabones en barra son duraderos, no necesitan envases plásticos y evitan químicos agresivos para tu salud y el agua."
+  },
+  {
+    "id": "post-38",
+    "title": "El Misterio de la Madera Transparente",
+    "excerpt": "Innovación en materiales que podría reemplazar al vidrio y al plástico en la construcción.",
+    "date": "2025-08-18",
+    "image": "https://images.unsplash.com/photo-1589149021870-745a75ce2a20?auto=format&fit=crop&q=80&w=1974",
+    "content": "Científicos manipulan la lignina para crear madera translúcida que es más resistente y aislante que el vidrio convencional."
+  },
+  {
+    "id": "post-39",
+    "title": "Recogida de Agua de Niebla",
+    "excerpt": "Sistemas de mallas que atrapan nubes para dar agua a comunidades en zonas áridas.",
+    "date": "2025-08-10",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=2074",
+    "content": "En climas costeros desérticos, la niebla puede ser una fuente vital de agua potable mediante tecnología pasiva sencilla."
+  },
+  {
+    "id": "post-40",
+    "title": "Superalimentos Locales vs. Importados",
+    "excerpt": "Por qué las bayas de tu región son a menudo mejores que las exóticas chía o kale que viajan miles de km.",
+    "date": "2025-08-02",
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=2000",
+    "content": "La nutrición debe ir de la mano de la ecología. Descubre las joyas nutricionales que crecen cerca de ti."
+  },
+  {
+    "id": "post-41",
+    "title": "Biochar: El Carbón que Salva Suelos",
+    "excerpt": "Cómo este material milenario está volviendo para capturar carbono por siglos.",
+    "date": "2025-07-25",
+    "image": "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=2070",
+    "content": "El biochar mejora la retención de agua y nutrientes, mientras bloquea permanentemente el CO2 lejos de la atmósfera."
+  },
+  {
+    "id": "post-42",
+    "title": "El Problema de la Contaminación Lumínica",
+    "excerpt": "Recuperar la oscuridad de la noche es vital para los insectos, las aves y nuestra propia salud.",
+    "date": "2025-07-18",
+    "image": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=2113",
+    "content": "Demasiada luz artificial confunde a la fauna nocturna y altera nuestros ciclos de sueño. Aprende a iluminar de forma responsable."
+  },
+  {
+    "id": "post-43",
+    "title": "Drones al Servicio de la Reforestación",
+    "excerpt": "Cómo disparar semillas desde el aire puede plantar mil árboles por minuto.",
+    "date": "2025-07-10",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2071",
+    "content": "La tecnología de drones permite reforestar zonas de difícil acceso de forma rápida y eficiente, escalando la restauración ecosistémica."
+  },
+  {
+    "id": "post-44",
+    "title": "Pueblos en Transición",
+    "excerpt": "Comunidades que están decidiendo dejar de depender del petróleo de forma colectiva.",
+    "date": "2025-07-02",
+    "image": "https://images.unsplash.com/photo-1469122312224-c5846569efe1?auto=format&fit=crop&q=80&w=2070",
+    "content": "El movimiento Transition Towns nos muestra cómo grupos locales pueden transformar sus economías y sistemas de energía."
+  },
+  {
+    "id": "post-45",
+    "title": "El Placer de Caminar",
+    "excerpt": "La caminabilidad de las ciudades como indicador clave de calidad de vida y ecología urbana.",
+    "date": "2025-06-25",
+    "image": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&q=80&w=2041",
+    "content": "Ciudades diseñadas para las personas y no para los coches son más felices, seguras y libres de emisiones."
+  },
+  {
+    "id": "post-46",
+    "title": "Microplasticos en la Lluvia",
+    "excerpt": "Cómo el plástico ha entrado en el ciclo del agua y qué podemos hacer para frenarlo.",
+    "date": "2025-06-18",
+    "image": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&q=80&w=1974",
+    "content": "No hay rincón del mundo sin plástico. La prohibición de polímeros no biodegradables es ya un imperativo de salud pública."
+  },
+  {
+    "id": "post-47",
+    "title": "Energía Mareomotriz",
+    "excerpt": "Aprovechar la fuerza constante de las mareas: el gigante dormido de las renovables.",
+    "date": "2025-06-10",
+    "image": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&q=80&w=2070",
+    "content": "A diferencia del sol y el viento, las mareas son 100% predecibles. El mar tiene el potencial de darnos toda la energía que necesitamos."
+  },
+  {
+    "id": "post-48",
+    "title": "La Verdad sobre el Reciclaje de Papel",
+    "excerpt": "Cuántas veces se puede reciclar una fibra y por qué reducir sigue siendo lo primero.",
+    "date": "2025-06-02",
+    "image": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&q=80&w=1974",
+    "content": "El papel tiene un límite de vida. Aprende sobre sellos FSC y cómo el papel reciclado ahorra el 65% de la energía de producción."
+  },
+  {
+    "id": "post-49",
+    "title": "Slow Living: Un Acto Revolucionario",
+    "excerpt": "Bajar el ritmo en un mundo acelerado para reconectar con lo que es esencial.",
+    "date": "2025-05-25",
+    "image": "https://images.unsplash.com/photo-1543336301-4c622c742817?auto=format&fit=crop&q=80&w=2070",
+    "content": "Vivir despacio no es ser improductivo, es elegir la calidad sobre la cantidad y la armonía sobre el agotamiento."
+  },
+  {
+    "id": "post-50",
+    "title": "GeoVerde: Un Año de Impacto",
+    "excerpt": "Resumen de lo que hemos logrado juntos en el último año de activismo y educación.",
+    "date": "2025-05-15",
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920",
+    "content": "Gracias por ser parte de esta comunidad. Juntos somos la voz del planeta. Sigamos explorando la conciencia verde."
+  }
+]
