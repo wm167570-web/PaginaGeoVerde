@@ -9,6 +9,7 @@ export default function ContactForm() {
   const [touched, setTouched] = useState({ name: false, email: false, message: false });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
 
   const validateField = (name: string, value: string) => {
     let error = '';
@@ -60,28 +61,39 @@ export default function ContactForm() {
     if (Object.values(newErrors).some(err => err)) return;
 
     setIsSubmitting(true);
-    setErrors({ name: '', email: '', message: '' }); // Clear any existing errors
+    setErrors({ name: '', email: '', message: '' }); 
+    setFormError(null); 
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          "Accept": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "da7aaf70-8afe-4fa4-aca6-76b555bb76e3",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: "Nuevo contacto desde GeoVerde",
+          from_name: "Sitio Web GeoVerde",
+        }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
+      const data = await response.json();
 
-      setIsSubmitting(false);
-      setIsSent(true);
-      setFormData({ name: '', email: '', message: '' }); // Clear form
+      if (data.success) {
+        setIsSubmitting(false);
+        setIsSent(true);
+        setFormData({ name: '', email: '', message: '' }); 
+      } else {
+        throw new Error(data.message || "Algo salió mal al enviar el mensaje.");
+      }
     } catch (error) {
       console.error("Error sending message:", error);
       setIsSubmitting(false);
-      // Optional: Set a global error state to inform the user
+      setFormError(error instanceof Error ? error.message : "Error desconocido al enviar el mensaje.");
     }
   };
 
@@ -231,10 +243,16 @@ export default function ContactForm() {
                   />
                 </div>
                 
-                <button 
-                  disabled={isSubmitting}
-                  className="w-full group flex items-center justify-center gap-3 bg-[#F5F5F5] text-[#1A1A1A] py-6 rounded-full font-bold transition-all hover:bg-white hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 mt-4 disabled:cursor-not-allowed shadow-xl shadow-black/20"
-                >
+                 
+                 {(formError || errors.name || errors.email || errors.message) && (
+                   <p className="text-[10px] font-bold text-red-500 uppercase tracking-tighter text-center mt-2">
+                     {formError || "Por favor, corrige los errores del formulario."}
+                   </p>
+                 )}
+                 <button 
+                   disabled={isSubmitting}
+                   className="w-full group flex items-center justify-center gap-3 bg-[#F5F5F5] text-[#1A1A1A] py-6 rounded-full font-bold transition-all hover:bg-white hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 mt-4 disabled:cursor-not-allowed shadow-xl shadow-black/20"
+                 >
                   <span className="text-sm uppercase tracking-widest">
                     {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
                   </span>
