@@ -14,6 +14,7 @@ import content from '../data/content.json';
 export default function Home() {
   const [latestVideo, setLatestVideo] = useState<{title: string, link: string} | null>(null);
   const [loading, setLoading] = useState(false);
+  const [selectedResource, setSelectedResource] = useState<number | null>(null);
 
   const fetchLatestVideo = async (e: React.MouseEvent, fallbackLink: string) => {
     e.preventDefault();
@@ -94,11 +95,14 @@ export default function Home() {
                       <motion.a 
                     key={i}
                     href={resource.link}
-                    onClick={i === 0 ? (e) => fetchLatestVideo(e, resource.link) : undefined}
+                    onClick={(e) => { 
+                      setSelectedResource(i);
+                      if (i === 0) fetchLatestVideo(e, resource.link);
+                    }}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 20 }}
-                    className={`group flex items-center justify-between p-6 bg-white/10 backdrop-blur-md rounded-2xl border ${i === 0 ? 'border-brand-lime ring-2 ring-brand-lime' : 'border-white/20'} cursor-pointer ${loading && i === 0 ? 'opacity-50 cursor-wait' : ''}`}
+                    className={`group flex items-center justify-between p-6 bg-white/10 backdrop-blur-md rounded-2xl border ${selectedResource === i ? 'border-brand-lime ring-2 ring-brand-lime' : 'border-white/20'} cursor-pointer ${loading && i === 0 ? 'opacity-50 cursor-wait' : ''}`}
                   >
                     <div className="flex items-center gap-6">
                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
