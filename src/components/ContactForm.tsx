@@ -121,10 +121,11 @@ export default function ContactForm() {
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1 block">Email</span>
                   <a 
-                    href={`mailto:${content.channel.email}`}
-                    className="text-xl font-medium text-white hover:text-brand-primary transition-colors cursor-pointer block"
+                    href={`mailto:info@geoverdevidaconsciente.com,gerencia@geoverdevidaconsciente.com`}
+                    className="text-lg font-medium text-white hover:text-brand-primary transition-colors cursor-pointer block"
                   >
-                    {content.channel.email}
+                    info@geoverdevidaconsciente.com <br />
+                    gerencia@geoverdevidaconsciente.com
                   </a>
                 </div>
               </div>
