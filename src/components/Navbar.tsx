@@ -20,7 +20,7 @@ export default function Navbar() {
             >
               <img 
                 src="/assets/images/logo-geoverde.png"
-                alt="GeoVerde - Vida Consciente"
+                alt="GeoVerde"
                 className="h-10 md:h-12 w-auto object-contain"
               />
             </motion.div>
