@@ -44,7 +44,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Mark all as touched and validate
@@ -60,23 +60,29 @@ export default function ContactForm() {
     if (Object.values(newErrors).some(err => err)) return;
 
     setIsSubmitting(true);
+    setErrors({ name: '', email: '', message: '' }); // Clear any existing errors
 
-    // Construct mailto link
-    const subject = encodeURIComponent(`Nuevo mensaje de ${formData.name} via GeoVerde`);
-    const body = encodeURIComponent(
-      `Nombre: ${formData.name}\n` +
-      `Email: ${formData.email}\n\n` +
-      `Mensaje:\n${formData.message}`
-    );
-    
-    const mailtoUrl = `mailto:${content.channel.email}?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Simulate API call and open mailto
-    setTimeout(() => {
-      window.location.href = mailtoUrl;
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setIsSubmitting(false);
       setIsSent(true);
-    }, 1000);
+      setFormData({ name: '', email: '', message: '' }); // Clear form
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setIsSubmitting(false);
+      // Optional: Set a global error state to inform the user
+    }
   };
 
   return (
