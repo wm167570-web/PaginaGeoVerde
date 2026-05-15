@@ -20,7 +20,7 @@ export default function VideoGrid() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-sky mb-4">Lanzamientos Recientes</h2>
+            <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-sky mb-4">Lanzamientos</h2>
             <h3 className="font-serif text-5xl md:text-7xl font-black text-brand-primary italic leading-[0.9] tracking-tighter">Explora <span className="not-italic font-light opacity-80">Nuestra Videoteca</span></h3>
           </div>
           <p className="text-brand-forest/60 max-w-sm border-l-2 border-brand-secondary pl-4 text-sm md:text-base font-light leading-relaxed">

@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Calendar, User, ArrowLeft, Search, Share2, X, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calendar, User, ArrowLeft, Search, Share2, X, ArrowUpRight, ChevronLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import Navbar from '../components/Navbar';
 import Logo from '../components/Logo';
@@ -56,6 +57,22 @@ export default function BlogListing() {
       
       <main className="pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="mb-8"
+          >
+            <Link 
+              to="/" 
+              className="inline-flex items-center gap-2 group text-brand-primary font-bold text-xs uppercase tracking-[0.2em] hover:text-brand-secondary transition-all"
+            >
+              <div className="w-8 h-8 rounded-full bg-white border border-brand-earth/10 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all shadow-sm">
+                <ChevronLeft className="w-4 h-4" />
+              </div>
+              Volver al Inicio
+            </Link>
+          </motion.div>
+
           <div className="mb-16 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -27,7 +27,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
           <img 
             src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2?auto=format&fit=crop&q=80&w=1920" 
-            alt="Forest Canopy Background" 
+            alt="" 
             className="w-full h-full object-cover mix-blend-multiply scale-110 group-hover:scale-100 transition-transform duration-[5s]"
             referrerPolicy="no-referrer"
             loading="lazy"
@@ -40,10 +40,15 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6 shadow-sm">
+          <a 
+            href={content.featuredVideos[content.featuredVideos.length - 1].url} 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6 shadow-sm hover:scale-105 transition-transform cursor-pointer"
+          >
             <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
             Nuevo Video Disponible
-          </div>
+          </a>
           <h1 className="font-serif text-6xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
             {content.hero.title}
           </h1>
@@ -53,7 +58,7 @@ export default function Hero() {
           
           <div className="flex flex-wrap gap-4">
             <a 
-              href={content.channel.url}
+              href={content.featuredVideos[content.featuredVideos.length - 1].url}
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-3 bg-brand-primary text-white border-2 border-brand-primary px-8 py-4 rounded-full font-bold transition-all hover:bg-transparent hover:text-brand-primary shadow-xl shadow-brand-primary/20"

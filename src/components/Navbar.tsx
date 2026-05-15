@@ -23,7 +23,7 @@ export default function Navbar() {
           </Tooltip>
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-brand-forest">
+        <div className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest text-brand-forest">
           <Tooltip text="Ver videos" position="bottom">
             <a href="/#videos" className="hover:text-brand-primary transition-colors">Videos</a>
           </Tooltip>
@@ -40,7 +40,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Tooltip text="Canal de YouTube" position="bottom">
-            <a href={content.channel.url} target="_blank" rel="noreferrer" className="bg-brand-primary text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-brand-primary/90 transition-all shadow-lg shadow-brand-primary/20">
+            <a href={content.channel.url} target="_blank" rel="noreferrer" className="bg-brand-primary text-white px-6 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-brand-primary/90 transition-all shadow-lg shadow-brand-primary/20">
               Suscribirse
             </a>
           </Tooltip>

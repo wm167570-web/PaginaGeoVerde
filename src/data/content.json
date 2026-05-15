@@ -17,11 +17,11 @@
   },
   "featuredVideos": [
     {
-      "id": "videoId1",
-      "title": "Huella de Carbono",
-      "description": "Aprende a medir, reducir y compensar tu impacto ambiental personal y corporativo para un futuro sostenible.",
+      "id": "videoIdLatest",
+      "title": "Reforestación Urbana en el Siglo XXI",
+      "description": "Explorando estrategias modernas para integrar la naturaleza en el tejido urbano.",
       "image": "/assets/images/regenerated_image_1778719801817.jpg",
-      "url": "https://www.youtube.com/playlist?list=PLgg4No7_afp0hlOqZOfERROG4vJub12Rs"
+      "url": "https://www.youtube.com/watch?v=F3zWvG2f-E4"
     },
     {
       "id": "videoId2",

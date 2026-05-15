@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Youtube, Instagram, Music, Facebook, Download, ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -11,6 +12,65 @@ import Tooltip from '../components/ui/Tooltip';
 import content from '../data/content.json';
 
 export default function Home() {
+  const [latestVideo, setLatestVideo] = useState<{title: string, link: string} | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const fetchLatestVideo = async (e: React.MouseEvent, fallbackLink: string) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+        const timestamp = Date.now();
+        
+        // Parallel fetches
+        const [xmlResponse, htmlResponse] = await Promise.all([
+          fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=UCvYq_72L4xGAn0vMsc_R_3Q&t=${timestamp}`),
+          fetch(`https://www.youtube.com/@GeoVerdeCon100/shorts?t=${timestamp}`)
+        ]);
+
+        const xmlText = await xmlResponse.text();
+        const htmlText = await htmlResponse.text();
+
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+        const entries = Array.from(xmlDoc.getElementsByTagName('entry'));
+        
+        const videoResults = entries.map(entry => {
+            const published = entry.getElementsByTagName('published')[0]?.textContent || 
+                              entry.getElementsByTagName('updated')[0]?.textContent || '';
+            const title = entry.getElementsByTagName('title')[0]?.textContent || 'Sin título';
+            const videoId = entry.getElementsByTagName('yt:videoId')[0]?.textContent;
+            return { title, link: `https://www.youtube.com/watch?v=${videoId}`, date: new Date(published), isShort: false };
+        });
+
+        // Heuristic extraction for latest short from HTML
+        let latestShort = { title: '', link: '', date: new Date(0), isShort: true };
+        const shortMatch = htmlText.match(/watch\?v=([a-zA-Z0-9_-]{11})/);
+        if (shortMatch) {
+            latestShort.link = `https://www.youtube.com/shorts/${shortMatch[1]}`;
+            latestShort.title = "Short reciente detectado";
+            latestShort.date = new Date(); // Approximate
+        }
+
+        const allResults = [latestShort, ...videoResults].filter(r => r.link && !r.link.includes('undefined'));
+        allResults.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+        const latest = allResults[0];
+        console.log("Detectado más reciente:", latest);
+
+        if (latest && latest.link) {
+            setLatestVideo({title: latest.title, link: latest.link});
+            window.open(latest.link, '_blank');
+        } else {
+             window.open(fallbackLink, '_blank');
+        }
+    } catch (error) {
+        console.error("Error fetching video", error);
+        window.open(fallbackLink, '_blank');
+    } finally {
+        setLoading(false);
+    }
+  }
+
   return (
     <main className="font-sans antialiased bg-white">
       <Navbar />
@@ -31,21 +91,22 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-6">
                 {content.resources.map((resource, i) => (
-                  <motion.a 
+                      <motion.a 
                     key={i}
                     href={resource.link}
+                    onClick={i === 0 ? (e) => fetchLatestVideo(e, resource.link) : undefined}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ x: 20 }}
-                    className="group flex items-center justify-between p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 cursor-pointer"
+                    className={`group flex items-center justify-between p-6 bg-white/10 backdrop-blur-md rounded-2xl border ${i === 0 ? 'border-brand-lime ring-2 ring-brand-lime' : 'border-white/20'} cursor-pointer ${loading && i === 0 ? 'opacity-50 cursor-wait' : ''}`}
                   >
                     <div className="flex items-center gap-6">
                        <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                          <Download className="w-6 h-6" />
+                          {loading && i === 0 ? <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div> : <Download className="w-6 h-6" />}
                        </div>
                        <div>
                          <span className="text-[10px] uppercase font-bold tracking-widest opacity-60 mb-1 block">{resource.type}</span>
-                         <span className="text-lg font-bold group-hover:text-brand-lime transition-colors">{resource.title}</span>
+                         <span className="text-lg font-bold group-hover:text-brand-lime transition-colors">{loading && i === 0 ? 'Buscando...' : (i === 0 && latestVideo ? latestVideo.title : resource.title)}</span>
                        </div>
                     </div>
                     <ArrowRight className="w-6 h-6 opacity-40 group-hover:opacity-100 transition-opacity" />
