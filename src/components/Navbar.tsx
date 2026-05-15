@@ -19,7 +19,7 @@ export default function Navbar() {
               className="flex items-center cursor-pointer"
             >
               <img 
-                src="/assets/images/Logo%20corporativo.png"
+                src="/assets/images/logo-geoverde.png"
                 alt="GeoVerde - Vida Consciente"
                 className="h-10 md:h-12 w-auto object-contain"
               />
