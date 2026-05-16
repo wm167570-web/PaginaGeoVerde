@@ -124,7 +124,7 @@ export default function ContactForm() {
             viewport={{ once: true }}
           >
             <h2 className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-brand-primary mb-6">Contacto</h2>
-            <h3 className="font-serif text-5xl md:text-7xl font-black text-white italic mb-10 leading-[0.9] tracking-tighter">
+            <h3 className="font-serif text-4xl sm:text-5xl md:text-7xl font-black text-white italic mb-10 leading-[1.1] md:leading-[0.9] tracking-tighter">
               ¿Tienes un <span className="text-white not-italic font-light opacity-80">proyecto ecológico?</span> <span className="text-brand-primary not-italic font-sans font-extralight block mt-4">Hablemos.</span>
             </h3>
             
@@ -137,7 +137,7 @@ export default function ContactForm() {
                   <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1 block">Email</span>
                   <a 
                     href={`mailto:info@geoverdevidaconsciente.com,gerencia@geoverdevidaconsciente.com`}
-                    className="text-lg font-medium text-white hover:text-brand-primary transition-colors cursor-pointer block"
+                    className="text-sm sm:text-base md:text-lg font-medium text-white hover:text-brand-primary transition-colors cursor-pointer block break-all sm:break-words"
                   >
                     info@geoverdevidaconsciente.com <br />
                     gerencia@geoverdevidaconsciente.com
@@ -154,7 +154,7 @@ export default function ContactForm() {
                     href={content.channel.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl font-medium text-white hover:text-brand-primary transition-colors block"
+                    className="text-base md:text-xl font-medium text-white hover:text-brand-primary transition-colors block break-words"
                   >
                     {content.channel.handle}
                   </a>
@@ -167,7 +167,7 @@ export default function ContactForm() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#1A1A1A] p-8 md:p-14 rounded-[3.5rem] border border-white/5 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)]"
+            className="bg-[#1A1A1A] p-6 sm:p-8 md:p-14 rounded-[2rem] md:rounded-[3.5rem] border border-white/5 shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] w-full overflow-hidden"
           >
             {!isSent ? (
               <form onSubmit={handleSubmit} className="space-y-10" noValidate>
@@ -186,7 +186,7 @@ export default function ContactForm() {
                     onBlur={() => handleBlur('name')}
                     placeholder="Tu nombre aquí..."
                     aria-invalid={!!errors.name}
-                    className={`w-full bg-white/5 border px-8 py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium rounded-2xl ${
+                    className={`w-full bg-white/5 border px-5 md:px-8 py-4 md:py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium rounded-2xl ${
                       touched.name && errors.name 
                         ? 'border-red-500/50 bg-red-500/5' 
                         : touched.name && !errors.name 
@@ -211,7 +211,7 @@ export default function ContactForm() {
                     onBlur={() => handleBlur('email')}
                     placeholder="tucorreo@dominio.com"
                     aria-invalid={!!errors.email}
-                    className={`w-full bg-white/5 border px-8 py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium rounded-2xl ${
+                    className={`w-full bg-white/5 border px-5 md:px-8 py-4 md:py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium rounded-2xl ${
                       touched.email && errors.email 
                         ? 'border-red-500/50 bg-red-500/5' 
                         : touched.email && !errors.email 
@@ -236,7 +236,7 @@ export default function ContactForm() {
                     onBlur={() => handleBlur('message')}
                     placeholder="¿En qué podemos ayudarte?"
                     aria-invalid={!!errors.message}
-                    className={`w-full bg-white/5 border px-8 py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium resize-none rounded-2xl ${
+                    className={`w-full bg-white/5 border px-5 md:px-8 py-4 md:py-5 focus:outline-none transition-all text-white placeholder:text-white/20 font-medium resize-none rounded-2xl ${
                       touched.message && errors.message 
                         ? 'border-red-500/50 bg-red-500/5' 
                         : touched.message && !errors.message 

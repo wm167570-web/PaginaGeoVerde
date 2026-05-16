@@ -3,6 +3,7 @@ import { ArrowRight, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import content from '../data/content.json';
 import { OptimizedImage } from './ui/OptimizedImage';
+import Tooltip from './ui/Tooltip';
 import { useRef, useEffect, useState } from 'react';
 
 export default function Hero() {
@@ -53,7 +54,8 @@ export default function Hero() {
         <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
           <OptimizedImage 
             src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2" 
-            alt="Fondo decorativo de naturaleza" 
+            alt=""
+            aria-hidden="true"
             className="w-full h-full object-cover mix-blend-multiply scale-110 group-hover:scale-100 transition-transform duration-[5s]"
             width={1920}
             height={1080}
@@ -70,17 +72,19 @@ export default function Hero() {
           <motion.div
             style={{ y: isMobile ? 0 : yContent }}
           >
-            <Link 
-              to="/vive-consciente"
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-sm hover:scale-105 transition-transform cursor-pointer"
-            >
-              <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
-              VIVE CONSCIENTE
-            </Link>
+            <Tooltip text="Nuestra Filosofía" position="top">
+              <Link 
+                to="/vive-consciente"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-sm hover:scale-105 transition-transform cursor-pointer"
+              >
+                <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
+                VIVE CONSCIENTE
+              </Link>
+            </Tooltip>
             <h1 className="text-balance font-serif text-5xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
               {content.hero.title}
             </h1>
-            <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 mb-10 border-l-4 border-brand-sky pl-6 font-light">
+            <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 mb-10 border-l-4 border-brand-sky pl-6 font-bold">
               {content.hero.subtitle}
             </p>
             

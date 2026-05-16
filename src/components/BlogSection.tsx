@@ -110,7 +110,7 @@ export default function BlogSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-32">
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-primary/60 mb-4">Blog Ambiental</h2>
+            <h2 className="text-[59px] font-bold uppercase tracking-[0.15em] text-brand-primary/60 mb-4">Blog Ambiental</h2>
             <h3 className="text-balance font-serif text-4xl md:text-5xl font-black text-brand-primary italic leading-[1.1] mb-8 tracking-tighter">
               Artículos & <span className="not-italic font-light opacity-80">Noticias Verdes</span>
             </h3>

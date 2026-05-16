@@ -92,32 +92,33 @@ export default function Footer() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
             <div className="flex flex-col gap-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-forest opacity-60">Explorar</span>
+              <span className="text-[18px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Explorar</span>
               <Tooltip text="Ver videos" position="right">
-                <a href="/#videos" className="text-sm font-semibold hover:text-brand-primary transition-colors">Videos</a>
+                <a href="/#videos" className="text-sm font-bold hover:text-brand-primary transition-colors">Videos</a>
               </Tooltip>
               <Tooltip text="Blog" position="right">
-                <Link to="/blog" className="text-sm font-semibold hover:text-brand-primary transition-colors">Noticias</Link>
+                <Link to="/blog" className="text-sm font-bold hover:text-brand-primary transition-colors">Noticias</Link>
               </Tooltip>
               <Tooltip text="Material gratis" position="right">
-                <a href="/#resources" className="text-sm font-semibold hover:text-brand-primary transition-colors">Recursos</a>
+                <a href="/#resources" className="text-sm font-bold hover:text-brand-primary transition-colors">Recursos</a>
               </Tooltip>
             </div>
             <div className="flex flex-col gap-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-forest opacity-60">Legal</span>
+              <span className="text-[18px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Legal</span>
               <Tooltip text="Nuestra política" position="right">
-                <Link to="/privacidad" className="text-sm font-semibold hover:text-brand-primary transition-colors">Privacidad</Link>
+                <Link to="/privacidad" className="text-sm font-bold hover:text-brand-primary transition-colors">Privacidad</Link>
               </Tooltip>
               <Tooltip text="Condiciones de uso" position="right">
-                <Link to="/terminos" className="text-sm font-semibold hover:text-brand-primary transition-colors">Términos</Link>
+                <Link to="/terminos" className="text-sm font-bold hover:text-brand-primary transition-colors">Términos</Link>
               </Tooltip>
             </div>
           </div>
         </div>
         
-        <div className="pt-12 border-t border-brand-forest/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest opacity-40">
-          <span className="text-[#071f01] text-lg">© 2026 {content.channel.name}. Todos los derechos reservados.</span>
-          <span className="text-[#001b0e] text-base">Hecho con amor por la naturaleza</span>
+        <div className="pt-12 border-t border-brand-forest/10 flex justify-center items-center text-center">
+          <span className="text-[0.9rem] md:text-base font-medium tracking-[0.05em] text-[#F3F0DF]/80" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            © 2026 GEOVERDE VIDA CONSCIENTE. LIDERANDO LA EDUCACIÓN AMBIENTAL HOLÍSTICA.
+          </span>
         </div>
       </div>
     </footer>

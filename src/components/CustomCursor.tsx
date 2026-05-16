@@ -34,7 +34,6 @@ export default function CustomCursor() {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       
-      // Check for interactive elements
       if (
         target.tagName === 'A' || 
         target.tagName === 'BUTTON' || 
@@ -45,7 +44,6 @@ export default function CustomCursor() {
         setIsInteractive(true);
       }
       
-      // Check for text elements
       if (
         target.tagName === 'P' || 
         target.tagName === 'H1' || 

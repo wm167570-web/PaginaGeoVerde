@@ -21,10 +21,10 @@ export default function VideoGrid() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-sky mb-4">Lanzamientos</h2>
+            <h2 className="text-[61px] font-bold uppercase tracking-[0.15em] text-brand-sky mb-4">Lanzamientos</h2>
             <h3 className="text-balance font-serif text-4xl md:text-5xl font-black text-brand-primary italic leading-[1.1] tracking-tighter">Explora <span className="not-italic font-light opacity-80">Nuestra Videoteca</span></h3>
           </div>
-          <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 font-light">
+          <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 font-bold">
             Educación ambiental de alta calidad para entender el mundo en el que vivimos.
           </p>
         </div>

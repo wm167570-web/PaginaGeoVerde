@@ -24,6 +24,82 @@
     <meta name="twitter:description" content="Impulsa la sostenibilidad con GeoVerde Vida Consciente. Especialistas en consultoría ambiental y educación para la conservación en Latinoamérica. ¡Conócenos!" />
     <meta name="twitter:image" content="https://geoverdevidaconsciente.com/og-image.png" />
 
+    <!-- Fluid CSS -->
+    <link rel="stylesheet" href="/src/styles/fluid.css" />
+    <script type="module" src="/src/animations.js"></script>
+    
+    <!-- Sistema de Diseño UI/UX - Variables CSS -->
+    <style>
+      :root {
+        /* ============================================
+           PALETA DE COLORES - NATURALEZA PROFESIONAL
+           ============================================ */
+        --color-primary: #1B4332;       /* Verde bosque profundo - Estabilidad, Liderazgo */
+        --color-secondary: #2E5F3D;     /* Verde hoja fresca - Crecimiento, Vida */
+        --color-moss: #8AB081;          /* Verde musgo - Calma, Equilibrio */
+        --color-accent-earth: #A67B5B;  /* Tierra/café cálido - Enraizamiento, Accesibilidad */
+        
+        --color-bg-cream: #F8F6F0;      /* Crema/beige - Fondos alternativos cálidos */
+        --color-bg-white: #FFFFFF;      /* Blanco puro - Limpieza, Espacio negativo */
+        
+        --color-text-dark: #1F2321;     /* Gris carbón - Textos principales legibles (nunca negro puro) */
+        --color-text-medium: #4A5550;   /* Gris medio - Textos secundarios */
+        --color-text-light: #FFFFFF;    /* Blanco - Textos sobre fondos oscuros */
+
+        /* ============================================
+           SISTEMA TIPOGRÁFICO FLUIDO
+           ============================================ */
+        --font-heading: 'Plus Jakarta Sans', sans-serif;
+        --font-body: 'Inter', sans-serif;
+
+        /* Tipografía responsiva usando clamp(min, val, max) */
+        --text-xs: clamp(0.75rem, 0.70rem + 0.25vw, 0.875rem);
+        --text-sm: clamp(0.875rem, 0.83rem + 0.25vw, 1rem);
+        --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+        --text-lg: clamp(1.125rem, 1.05rem + 0.38vw, 1.25rem);
+        --text-xl: clamp(1.25rem, 1.10rem + 0.75vw, 1.5rem);
+        --text-2xl: clamp(1.5rem, 1.20rem + 1.50vw, 2rem);
+        --text-3xl: clamp(1.875rem, 1.38rem + 2.50vw, 2.5rem);
+        --text-4xl: clamp(2.25rem, 1.50rem + 3.75vw, 3rem);
+        --text-5xl: clamp(2.5rem, 1.50rem + 5.00vw, 4rem);
+        --text-6xl: clamp(3rem, 1.50rem + 7.50vw, 5rem);
+        
+        /* ============================================
+           SISTEMA DE ESPACIADO FLUIDO
+           ============================================ */
+        --space-3xs: clamp(0.25rem, 0.20rem + 0.25vw, 0.375rem);
+        --space-2xs: clamp(0.50rem, 0.45rem + 0.25vw, 0.625rem);
+        --space-xs: clamp(0.75rem, 0.65rem + 0.50vw, 1rem);
+        --space-s: clamp(1rem, 0.90rem + 0.50vw, 1.25rem);
+        --space-m: clamp(1.5rem, 1.30rem + 1.00vw, 2rem);
+        --space-l: clamp(2rem, 1.60rem + 2.00vw, 3rem);
+        --space-xl: clamp(3rem, 2.40rem + 3.00vw, 4.5rem);
+        --space-2xl: clamp(4rem, 3.20rem + 4.00vw, 6rem);
+        --space-3xl: clamp(5rem, 3.50rem + 7.50vw, 8rem);
+
+        /* ============================================
+           BORDES Y SOMBRAS (ESTÉTICA ORGÁNICA)
+           ============================================ */
+        /* Radios asimétricos para simular formas de hojas y piedras */
+        --radius-leaf: 2px 24px 2px 24px;
+        --radius-pebble: 16px 24px 16px 24px;
+        --radius-soft: clamp(8px, 2vw, 16px);
+        --radius-pill: 9999px;
+
+        /* Sombras suaves con tintes verdes para integración perfecta */
+        --shadow-xs: 0 1px 2px 0 rgba(27, 67, 50, 0.05);
+        --shadow-sm: 0 1px 3px 0 rgba(27, 67, 50, 0.1), 0 1px 2px -1px rgba(27, 67, 50, 0.1);
+        --shadow-md: 0 4px 6px -1px rgba(27, 67, 50, 0.1), 0 2px 4px -2px rgba(27, 67, 50, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(27, 67, 50, 0.1), 0 4px 6px -4px rgba(27, 67, 50, 0.1);
+        --shadow-xl: 0 20px 25px -5px rgba(27, 67, 50, 0.1), 0 8px 10px -6px rgba(27, 67, 50, 0.1);
+        --shadow-inner: inset 0 2px 4px 0 rgba(27, 67, 50, 0.05);
+        
+        /* Transiciones uniformes */
+        --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-smooth: 500ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+    </style>
+    
     <!-- Schema Markup JSON-LD -->
     <script type="application/ld+json">
     {

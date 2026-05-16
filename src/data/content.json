@@ -58,6 +58,12 @@
   ],
   "resources": [
     {
+      "id": "calculator",
+      "title": "Calculadora de Huella de Carbono",
+      "type": "Herramienta",
+      "link": "#"
+    },
+    {
       "title": "Guía de Reciclaje Pro",
       "type": "PDF",
       "link": "https://drive.google.com/file/d/12gqa5fHDmIqyCx5ZCgiYq5McTVVVwgye/view?usp=sharing"
