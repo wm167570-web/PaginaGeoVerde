@@ -1,0 +1,36 @@
+name: Nuevo Artículo Automático
+
+on:
+  schedule:
+    - cron: '0 0 */5 * *' # Cada 5 días a medianoche
+  workflow_dispatch: # Permite ejecutarlo manualmente desde GitHub
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install @google/genai
+
+      - name: Generar Nuevo Artículo con Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/generate-article.mjs
+
+      - name: Commit y Push de cambios
+        run: |
+          git config --global user.name 'GeoVerde Bot'
+          git config --global user.email 'bot@geoverde.com'
+          git add src/data/extendedBlog.json
+          git commit -m "feat: nuevo artículo automatizado" || echo "No hay cambios para commitear"
+          git push

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import Logo from './Logo';
 import Tooltip from './ui/Tooltip';
-import content from '../data/content.json';
+import extendedBlog from '../data/extendedBlog.json';
 import { OptimizedImage } from './ui/OptimizedImage';
 
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800";
@@ -80,9 +80,11 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
 }
 
 export default function BlogSection() {
-  const [activePost, setActivePost] = useState<null | typeof content.blog[0]>(null);
+  const [activePost, setActivePost] = useState<null | typeof extendedBlog[0]>(null);
 
-  const handleShare = async (e: React.MouseEvent, post: typeof content.blog[0]) => {
+  const featuredPosts = extendedBlog.slice(0, 2);
+
+  const handleShare = async (e: React.MouseEvent, post: typeof extendedBlog[0]) => {
     e.stopPropagation();
     const shareData = {
       title: `${post.title} | GeoVerde`,
@@ -126,7 +128,7 @@ export default function BlogSection() {
           </div>
 
           <div className="lg:col-span-8 flex flex-col gap-12">
-            {content.blog.map((post, index) => (
+            {featuredPosts.map((post, index) => (
               <BlogArticleCard 
                 key={post.id} 
                 post={post} 
