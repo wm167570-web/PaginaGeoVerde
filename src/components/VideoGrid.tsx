@@ -47,7 +47,7 @@ export default function VideoGrid() {
                 <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                 <OptimizedImage 
                   src={video.image || "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d"}
-                  alt={video.title}
+                  alt={`Video sobre ${video.title} - GeoVerde`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   width={600}
                   height={340}

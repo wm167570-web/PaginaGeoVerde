@@ -133,7 +133,7 @@ export default function BlogListing() {
                   <div className="relative aspect-video overflow-hidden">
                     <OptimizedImage 
                       src={imageErrors[post.id] || !post.image ? FALLBACK_IMAGE : post.image} 
-                      alt={post.title} 
+                      alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                       onError={() => handleImageError(post.id)}
                       width={400}
@@ -280,7 +280,7 @@ export default function BlogListing() {
               <div className="md:w-1/2 relative h-64 md:h-auto">
                 <OptimizedImage 
                   src={imageErrors[activePost.id] || !activePost.image ? FALLBACK_IMAGE : activePost.image} 
-                  alt={activePost.title} 
+                  alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={() => handleImageError(activePost.id)}
                   width={600}

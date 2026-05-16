@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
           <OptimizedImage 
             src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2" 
-            alt="" 
+            alt="Fondo decorativo de naturaleza" 
             className="w-full h-full object-cover mix-blend-multiply scale-110 group-hover:scale-100 transition-transform duration-[5s]"
             width={1920}
             height={1080}

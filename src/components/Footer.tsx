@@ -26,7 +26,7 @@ export default function Footer() {
                 <div className="flex items-center gap-4 mb-6 cursor-pointer">
                   <img
                     src="/logo-geoverde.png"
-                    alt="GeoVerde - Vida Consciente"
+                    alt="Logo GeoVerde Vida Consciente"
                     className="w-16 h-16 object-contain"
                   />
                   <span className="font-serif text-3xl font-bold tracking-tight text-brand-primary">

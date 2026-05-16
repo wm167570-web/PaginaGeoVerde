@@ -44,7 +44,7 @@ export default function Navbar() {
             >
               <img 
                 src="/logo-geoverde.png"
-                alt="GeoVerde - Vida Consciente"
+                alt="Logo GeoVerde Vida Consciente"
                 className="h-10 md:h-12 w-auto object-contain transition-all duration-300"
               />
               <span className="hidden sm:block font-serif text-[#27e81e] text-lg font-bold tracking-tight">
