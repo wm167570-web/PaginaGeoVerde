@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://geoverdevidaconsciente.com/sitemap.xml
-Sitemap: https://geoverdevidaconsciente.com/sitemap_index.xml
