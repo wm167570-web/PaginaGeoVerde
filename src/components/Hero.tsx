@@ -90,7 +90,7 @@ export default function Hero() {
             
             <div className="flex flex-wrap gap-4">
               <a 
-                href={content.featuredVideos[content.featuredVideos.length - 1].url}
+                href="https://m.youtube.com/@GeoVerdeCon100"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 bg-brand-primary text-white border-2 border-brand-primary px-8 py-4 rounded-full font-bold transition-all hover:bg-transparent hover:text-brand-primary shadow-xl shadow-brand-primary/20"
