@@ -47,9 +47,8 @@ async function generateArticle() {
     });
     const nextId = `post-${maxId + 1}`;
 
-    // 3. Configurar Gemini AI
-    const genAI = new GoogleGenAI({ apiKey: API_KEY });
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    // 3. Configurar Gemini AI (Sintaxis @google/genai)
+    const ai = new GoogleGenAI({ apiKey: API_KEY });
 
     // 4. Definir el Prompt con las directrices de calidad GeoVerde
     const prompt = `
@@ -87,9 +86,11 @@ async function generateArticle() {
     `;
 
     // 5. Generar contenido con la API
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const textResponse = response.text().trim();
+    const response = await ai.models.generateContent({
+      model: 'gemini-1.5-flash',
+      contents: prompt
+    });
+    const textResponse = response.text.trim();
 
     // 6. Extraer y parsear el JSON de forma segura
     const jsonStartIndex = textResponse.indexOf('{');
