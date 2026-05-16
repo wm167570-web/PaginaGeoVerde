@@ -8,6 +8,7 @@ interface OptimizedImageProps {
   height?: number;
   priority?: boolean;
   loading?: 'lazy' | 'eager';
+  onError?: () => void;
 }
 
 export function OptimizedImage({ 
@@ -17,7 +18,8 @@ export function OptimizedImage({
   width, 
   height, 
   priority = false, 
-  loading = 'lazy' 
+  loading = 'lazy',
+  onError
 }: OptimizedImageProps) {
   // Optimize Unsplash URLs if possible
   const optimizedSrc = src.includes('images.unsplash.com') 
@@ -35,6 +37,7 @@ export function OptimizedImage({
       fetchPriority={priority ? 'high' : 'auto'}
       decoding="async"
       referrerPolicy="no-referrer"
+      onError={onError}
     />
   );
 }

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Youtube, Instagram, Music, Facebook, Download, ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import AboutSection from '../components/AboutSection';
 import VideoGrid from '../components/VideoGrid';
 import BlogSection from '../components/BlogSection';
 import ContactForm from '../components/ContactForm';
@@ -73,9 +74,10 @@ export default function Home() {
   }
 
   return (
-    <main className="font-sans antialiased bg-white">
+    <main className="relative font-sans antialiased bg-white overflow-x-hidden">
       <Navbar />
       <Hero />
+      <AboutSection />
       <VideoGrid />
       
       {/* Resources Preview */}

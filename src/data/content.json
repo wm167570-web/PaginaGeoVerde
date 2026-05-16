@@ -18,10 +18,10 @@
   "featuredVideos": [
     {
       "id": "videoIdLatest",
-      "title": "Reforestación Urbana en el Siglo XXI",
-      "description": "Explorando estrategias modernas para integrar la naturaleza en el tejido urbano.",
+      "title": "Huella de Carbono",
+      "description": "Mide, reduce y compensa tu impacto ambiental para un futuro sostenible.",
       "image": "/assets/images/regenerated_image_1778719801817.jpg",
-      "url": "https://www.youtube.com/watch?v=F3zWvG2f-E4"
+      "url": "https://www.youtube.com/playlist?list=PLgg4No7_afp0hlOqZOfERROG4vJub12Rs"
     },
     {
       "id": "videoId2",

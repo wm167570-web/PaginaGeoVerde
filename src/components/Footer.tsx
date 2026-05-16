@@ -1,7 +1,6 @@
 import { motion } from 'motion/react';
 import { Youtube, Instagram, Music, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Logo from './Logo';
 import Tooltip from './ui/Tooltip';
 import content from '../data/content.json';
 
@@ -24,9 +23,13 @@ export default function Footer() {
           <div className="max-w-sm">
             <Link to="/">
               <Tooltip text="Volver arriba" position="right">
-                <div className="flex items-center gap-4 mb-6 text-brand-primary cursor-pointer">
-                  <Logo className="w-16 h-16" />
-                  <span className="font-serif text-3xl font-bold tracking-tight">
+                <div className="flex items-center gap-4 mb-6 cursor-pointer">
+                  <img
+                    src="/logo-geoverde.png"
+                    alt="GeoVerde - Vida Consciente"
+                    className="w-16 h-16 object-contain"
+                  />
+                  <span className="font-serif text-3xl font-bold tracking-tight text-brand-primary">
                     {content.channel.name}
                   </span>
                 </div>

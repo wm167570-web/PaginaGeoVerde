@@ -9,10 +9,19 @@ import Tooltip from '../components/ui/Tooltip';
 import Footer from '../components/Footer';
 import extendedBlog from '../data/extendedBlog.json';
 
+import { OptimizedImage } from '../components/ui/OptimizedImage';
+
+const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800";
+
 export default function BlogListing() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [activePost, setActivePost] = useState<null | typeof extendedBlog[0]>(null);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+
+  const handleImageError = (postId: string) => {
+    setImageErrors(prev => ({ ...prev, [postId]: true }));
+  };
 
   const postsPerPage = 9;
 
@@ -122,13 +131,13 @@ export default function BlogListing() {
                   className="group bg-white rounded-[2.5rem] overflow-hidden border border-brand-earth/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
                 >
                   <div className="relative aspect-video overflow-hidden">
-                    <img 
-                      src={post.image} 
+                    <OptimizedImage 
+                      src={imageErrors[post.id] || !post.image ? FALLBACK_IMAGE : post.image} 
                       alt={post.title} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                      loading="lazy"
-                      decoding="async"
-                      referrerPolicy="no-referrer"
+                      onError={() => handleImageError(post.id)}
+                      width={400}
+                      height={300}
                     />
                     <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
@@ -269,13 +278,13 @@ export default function BlogListing() {
               </button>
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
-                <img 
-                  src={activePost.image} 
+                <OptimizedImage 
+                  src={imageErrors[activePost.id] || !activePost.image ? FALLBACK_IMAGE : activePost.image} 
                   alt={activePost.title} 
                   className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
+                  onError={() => handleImageError(activePost.id)}
+                  width={600}
+                  height={400}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>

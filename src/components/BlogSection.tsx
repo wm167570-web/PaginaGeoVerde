@@ -8,6 +8,77 @@ import Tooltip from './ui/Tooltip';
 import content from '../data/content.json';
 import { OptimizedImage } from './ui/OptimizedImage';
 
+const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800";
+
+function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
+  const [imageError, setImageError] = useState(false);
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+      className="group relative bg-white/60 backdrop-blur-sm p-6 md:p-12 rounded-[2.5rem] border border-white shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 overflow-hidden flex flex-col md:flex-row gap-8"
+    >
+      <div className="absolute top-0 right-0 p-8 font-serif text-9xl font-bold text-brand-sky/5 italic pointer-events-none group-hover:scale-110 transition-transform duration-1000">
+        {index + 1}
+      </div>
+
+      <div className="absolute -bottom-16 -right-16 w-80 h-80 opacity-[0.03] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-1000 pointer-events-none">
+        <Logo className="w-full h-full" />
+      </div>
+
+      <div className="md:w-1/3 h-64 md:h-auto rounded-3xl overflow-hidden shadow-inner">
+        <OptimizedImage
+          src={imageError || !post.image ? FALLBACK_IMAGE : post.image}
+          alt={post.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          width={400}
+          height={300}
+          onError={() => setImageError(true)}
+        />
+      </div>
+
+      <div className="relative z-10 md:w-2/3 flex flex-col">
+        <div className="flex items-center gap-6 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-forest/60 mb-6 font-sans">
+          <span className="flex items-center gap-2">
+              <Calendar className="w-3 h-3 text-brand-sky" /> {post.date}
+          </span>
+          <span className="flex items-center gap-2 uppercase">
+              <User className="w-3 h-3 text-brand-secondary" /> GeoVerde
+          </span>
+        </div>
+
+        <h4 className="font-serif text-3xl md:text-4xl font-bold text-brand-primary mb-6 group-hover:text-brand-earth transition-colors duration-500 leading-tight">
+          {post.title}
+        </h4>
+        <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 group-hover:text-brand-forest transition-colors mb-8 flex-grow">
+          {post.excerpt}
+        </p>
+
+        <div className="flex items-center justify-between mt-auto pt-6 border-t border-brand-primary/5">
+          <button
+            onClick={() => setActivePost(post)}
+            className="flex items-center gap-2 text-brand-primary font-bold text-sm uppercase tracking-widest transition-all hover:text-brand-secondary"
+          >
+            Leer Más <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </button>
+
+          <Tooltip text="Compartir artículo" position="left">
+            <button
+              onClick={(e) => handleShare(e, post)}
+              className="p-2 text-brand-forest/40 hover:text-brand-secondary transition-colors"
+            >
+              <Share2 className="w-4 h-4" />
+            </button>
+          </Tooltip>
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
 export default function BlogSection() {
   const [activePost, setActivePost] = useState<null | typeof content.blog[0]>(null);
 
@@ -56,60 +127,13 @@ export default function BlogSection() {
 
           <div className="lg:col-span-8 flex flex-col gap-12">
             {content.blog.map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group relative bg-white/60 backdrop-blur-sm p-6 md:p-12 rounded-[2.5rem] border border-white shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500 overflow-hidden"
-              >
-                {/* Background decorative text */}
-                <div className="absolute top-0 right-0 p-8 font-serif text-9xl font-bold text-brand-sky/5 italic pointer-events-none group-hover:scale-110 transition-transform duration-1000">
-                  {index + 1}
-                </div>
-
-                {/* Subtile background Logo watermark */}
-                <div className="absolute -bottom-16 -right-16 w-80 h-80 opacity-[0.03] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-1000 pointer-events-none">
-                  <Logo className="w-full h-full" />
-                </div>
-
-                <div className="relative z-10">
-                  <div className="flex items-center gap-6 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-forest/60 mb-6 font-sans">
-                    <span className="flex items-center gap-2">
-                       <Calendar className="w-3 h-3 text-brand-sky" /> {post.date}
-                    </span>
-                    <span className="flex items-center gap-2 uppercase">
-                       <User className="w-3 h-3 text-brand-secondary" /> GeoVerde
-                    </span>
-                  </div>
-
-                  <h4 className="font-serif text-3xl md:text-4xl font-bold text-brand-primary mb-6 group-hover:text-brand-earth transition-colors duration-500 leading-tight">
-                    {post.title}
-                  </h4>
-                  <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 group-hover:text-brand-forest transition-colors mb-8">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between mt-auto">
-                    <button 
-                      onClick={() => setActivePost(post)}
-                      className="flex items-center gap-2 text-brand-primary font-bold text-sm uppercase tracking-widest transition-all hover:text-brand-secondary"
-                    >
-                      Leer Más <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </button>
-
-                    <Tooltip text="Compartir artículo" position="left">
-                      <button 
-                        onClick={(e) => handleShare(e, post)}
-                        className="p-2 text-brand-forest/40 hover:text-brand-secondary transition-colors"
-                      >
-                        <Share2 className="w-4 h-4" />
-                      </button>
-                    </Tooltip>
-                  </div>
-                </div>
-              </motion.article>
+              <BlogArticleCard 
+                key={post.id} 
+                post={post} 
+                index={index} 
+                setActivePost={setActivePost} 
+                handleShare={handleShare} 
+              />
             ))}
           </div>
         </div>

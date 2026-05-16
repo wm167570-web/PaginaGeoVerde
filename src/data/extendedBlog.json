@@ -20,7 +20,7 @@
     "title": "Energías Renovables en el Hogar",
     "excerpt": "Cómo los paneles solares están transformando la independencia energética de las familias modernas.",
     "date": "2026-04-28",
-    "image": "/src/assets/images/regenerated_image_1778815125734.png",
+    "image": "/assets/images/regenerated_image_1778815125734.png",
     "content": "La energía solar es más accesible que nunca. Descubre los beneficios económicos y ambientales de instalar paneles en tu tejado."
   },
   {
@@ -68,7 +68,7 @@
     "title": "Ciudades Esponja",
     "excerpt": "Cómo el diseño urbano está aprendiendo de la naturaleza para prevenir inundaciones.",
     "date": "2026-03-18",
-    "image": "/src/assets/images/regenerated_image_1778815130262.png",
+    "image": "/assets/images/regenerated_image_1778815130262.png",
     "content": "Las 'ciudades esponja' utilizan infraestructura verde para absorber el exceso de agua, recargando acuíferos y embelleciendo el entorno."
   },
   {
@@ -100,7 +100,7 @@
     "title": "Turismo Regenerativo",
     "excerpt": "Viajar para mejorar el destino, no solo para visitarlo. El nuevo paradigma del viajero consciente.",
     "date": "2026-02-20",
-    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=2074",
+    "image": "/assets/images/regenerated_image_1778893636127.png",
     "content": "El turismo regenerativo va un paso más allá de la sostenibilidad, buscando dejar el lugar mejor de como lo encontramos."
   },
   {
@@ -124,7 +124,7 @@
     "title": "Compostaje en Apartamentos",
     "excerpt": "Todo lo que necesitas saber para convertir tus restos de comida en abono sin olores ni complicaciones.",
     "date": "2026-02-01",
-    "image": "https://images.unsplash.com/photo-1542601906-9c3fbd690181?auto=format&fit=crop&q=80&w=2070",
+    "image": "/assets/images/regenerated_image_1778893642703.png",
     "content": "El compostaje doméstico reduce el 40% de tus residuos que van al vertedero y genera vida para tus plantas."
   },
   {

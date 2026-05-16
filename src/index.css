@@ -28,10 +28,20 @@
   --color-text-muted: #64748B;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-brand-surface);
   color: #1a1a1a;
   overflow-x: hidden;
+  position: relative;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
 }
 
 body::after {

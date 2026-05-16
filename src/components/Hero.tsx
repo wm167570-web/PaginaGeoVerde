@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import content from '../data/content.json';
 import { OptimizedImage } from './ui/OptimizedImage';
 import { useRef, useEffect, useState } from 'react';
@@ -20,7 +21,7 @@ export default function Hero() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const yTitle = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
   const opacityText = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
@@ -69,15 +70,13 @@ export default function Hero() {
           <motion.div
             style={{ y: isMobile ? 0 : yContent }}
           >
-            <a 
-              href={content.featuredVideos[content.featuredVideos.length - 1].url} 
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link 
+              to="/vive-consciente"
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-sm hover:scale-105 transition-transform cursor-pointer"
             >
               <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
               VIVE CONSCIENTE
-            </a>
+            </Link>
             <h1 className="text-balance font-serif text-5xl md:text-8xl font-black italic leading-[0.95] text-brand-primary mb-8 tracking-tighter">
               {content.hero.title}
             </h1>
@@ -114,7 +113,7 @@ export default function Hero() {
             <OptimizedImage 
               src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
               alt="Conciencia y Naturaleza"
-              className="object-cover w-full h-full scale-110 hover:scale-100 transition-transform duration-[2000ms]"
+              className="object-cover w-full h-full scale-100 hover:scale-110 transition-transform duration-[1000ms]"
               width={1000}
               height={1250}
               priority={true}

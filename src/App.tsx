@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import BlogListing from './pages/BlogListing';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import ViveConsciente from './pages/ViveConsciente';
 import ScrollToTop from './components/ScrollToTop';
 import CustomCursor from './components/CustomCursor';
 import Logo from './components/Logo';
@@ -57,6 +58,7 @@ function AnimatedRoutes() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<RouteWrapper><Home /></RouteWrapper>} />
+          <Route path="/vive-consciente" element={<RouteWrapper><ViveConsciente /></RouteWrapper>} />
           <Route path="/blog" element={<RouteWrapper><BlogListing /></RouteWrapper>} />
           <Route path="/privacidad" element={<RouteWrapper><PrivacyPolicy /></RouteWrapper>} />
           <Route path="/terminos" element={<RouteWrapper><TermsOfService /></RouteWrapper>} />
@@ -69,9 +71,11 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <Router>
-      <CustomCursor />
-      <ScrollToTop />
-      <AnimatedRoutes />
+      <div className="relative min-h-screen">
+        <CustomCursor />
+        <ScrollToTop />
+        <AnimatedRoutes />
+      </div>
     </Router>
   );
 }
