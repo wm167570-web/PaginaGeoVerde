@@ -28,37 +28,39 @@ async function generateArticle() {
 
   // 3. Preparar el Prompt para Gemini
   const genAI = new GoogleGenAI({ apiKey: API_KEY });
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
   const prompt = `
     Eres un escritor experto en medio ambiente y sostenibilidad para Latinoamérica. 
-    Escribe un artículo nuevo para el blog de GeoVerde Vida Consciente.
+    Escribe un artículo nuevo para el blog de GeoVerde Vida Consciente siguiendo estos parámetros de CALIDAD OBLIGATORIOS:
 
-    CONTEXTO DE ARTÍCULOS EXISTENTES (NO REPETIR TEMAS):
+    - Mínimo 400 palabras en el campo 'content'.
+    - Introducción enganchadora (2-3 oraciones).
+    - 3 secciones con títulos en negrita (**Título de Sección**).
+    - Mínimo 3 datos verificables con cifras reales.
+    - Ejemplos específicos de Latinoamérica (Colombia, México, Brasil, Argentina, etc.).
+    - Conclusión con llamado a la reflexión o acción.
+
+    CONTEXTO DE ARTÍCULOS EXISTENTES (PROHIBIDO REPETIR ESTOS TEMAS O ENFOQUES):
     ${JSON.stringify(context)}
 
-    DIRECTRICES:
-    - El nuevo artículo NO debe repetir ningún tema abordado directa ni indirectamente por los anteriores.
-    - Elige el tema con mayor potencial SEO en Latinoamérica que aún no haya sido cubierto.
-    - Temas sugeridos: cambio climático, biodiversidad, energías renovables, vida consciente, economía circular, ecología urbana.
-    - Mínimo 400 palabras en el campo 'content'.
-    - Imagen de Unsplash coherente: https://images.unsplash.com/photo-[ID]?auto=format&fit=crop&q=80&w=2000 (o usa keywords en el formato https://source.unsplash.com/800x600/?[keywords]).
-    - Datos reales y ejemplos de Latam (Colombia, México, Brasil, Argentina, etc.).
+    IDENTIFICACIÓN DE VACÍOS:
+    Analiza los temas anteriores y elige un tema fresco con alto potencial SEO en Latam que NUNCA haya sido tratado.
 
     ESTRUCTURA DE SALIDA (JSON PURO):
     {
       "id": "${newId}",
-      "title": "Título impactante",
-      "date": "${new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}",
+      "title": "Título impactante con palabra clave SEO",
+      "date": "${new Date().toISOString().split('T')[0]}",
       "author": "GEOVERDE",
-      "image": "URL_DE_IMAGEN",
-      "category": "Categoría",
-      "excerpt": "Resumen de máximo 2 oraciones",
-      "content": "Contenido completo con marcadores markdown para negritas y secciones",
-      "keywords": ["keyword1", "keyword2"]
+      "image": "https://source.unsplash.com/800x600/?[keywords-en-ingles-precisos]",
+      "category": "Cambio Climático | Sostenibilidad | etc",
+      "excerpt": "Resumen corto de 2 oraciones para preview",
+      "content": "Párrafo intro... \\n\\n **Sección 1** \\n Desarrollo... \\n\\n **Sección 2** \\n Desarrollo... \\n\\n **Sección 3** \\n Desarrollo... \\n\\n Párrafo conclusión.",
+      "keywords": ["keyword1", "keyword2", "keyword3"]
     }
 
-    IMPORTANTE: Entrega SOLO el objeto JSON, nada más.
+    IMPORTANTE: Entrega SOLO el objeto JSON sin explicaciones adicionales.
   `;
 
   try {
@@ -66,10 +68,11 @@ async function generateArticle() {
     const response = await result.response;
     let text = response.text();
     
-    // Limpiar posibles bloques de código markdown
-    text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+    // Extraer solo el contenido entre llaves para evitar errores de parseo
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("No se encontró un JSON válido en la respuesta");
     
-    const newArticle = JSON.parse(text);
+    const newArticle = JSON.parse(jsonMatch[0]);
 
     // 4. Insertar al inicio del array
     const updatedArticles = [newArticle, ...articles];
