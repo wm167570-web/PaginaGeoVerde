@@ -1,15 +1,14 @@
 import fs from 'fs';
 import path from 'path';
-import { GoogleGenAI } from '@google/genai';
 
 // Configuración de rutas y variables
 const DATA_PATH = path.join(process.cwd(), 'src/data/extendedBlog.json');
-const API_KEY = process.env.GEMINI_API_KEY;
+const API_KEY = process.env.GROQ_API_KEY;
 
 async function generateArticle() {
   // Verificación de API KEY
   if (!API_KEY) {
-    console.error('Error: La variable GEMINI_API_KEY no está configurada en los Secrets de GitHub.');
+    console.error('Error: La variable GROQ_API_KEY no está configurada en los Secrets de GitHub.');
     process.exit(1);
   }
 
@@ -47,9 +46,6 @@ async function generateArticle() {
     });
     const nextId = `post-${maxId + 1}`;
 
-    // 3. Configurar Gemini AI (Sintaxis @google/genai)
-    const ai = new GoogleGenAI({ apiKey: API_KEY });
-
     // 4. Definir el Prompt con las directrices de calidad GeoVerde
     const prompt = `
       Eres un redactor experto en ecología y sostenibilidad para el portal "GeoVerde: Vida Consciente".
@@ -85,12 +81,27 @@ async function generateArticle() {
       IMPORTANTE: Responde ÚNICAMENTE con el objeto JSON. No incluyas explicaciones ni bloques de código markdown (\`\`\`json).
     `;
 
-    // 5. Generar contenido con la API
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.0-flash',
-      contents: prompt
+    // 5. Generar contenido con la API de Groq
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'llama-3.3-70b-versatile',
+        messages: [{ role: 'user', content: prompt }]
+      })
     });
-    const textResponse = response.text.trim();
+    
+    if (!response.ok) {
+       console.error('Error al llamar a la API de Groq:', await response.text());
+       process.exit(1);
+    }
+    
+    const data = await response.json();
+    const textResponse = data.choices[0].message.content.trim();
+
 
     // 6. Extraer y parsear el JSON de forma segura
     const jsonStartIndex = textResponse.indexOf('{');

@@ -22,12 +22,9 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: npm install @google/genai
-
-      - name: Generar Nuevo Artículo con Gemini
+      - name: Generar Nuevo Artículo con Groq
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: node scripts/generate-article.mjs
 
       - name: Commit y Push de cambios
