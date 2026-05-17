@@ -66,7 +66,7 @@ async function generateArticle() {
         2. Al menos 3 secciones con subencabezados en negrita (ejemplo: **El Impacto en las Cuencas**).
         3. Datos técnicos reales y estadísticas actuales sobre Latinoamérica (países como México, Colombia, Brasil, Chile, Argentina, etc.).
         4. Conclusión con una reflexión profunda o llamado a la acción.
-      - Imagen: Genera un enlace de Unsplash con keywords precisas en inglés: https://source.unsplash.com/800x600/?[keywords]
+      - Imagen: Genera una URL de imagen usando el formato: https://images.unsplash.com/photo-[UNSPLASH_ID]?w=800&q=80 (debes buscar una foto relevante al tema)
       - Categoría: Una de estas (Cambio Climático, Biodiversidad, Energía Limpia, Movilidad Sostenible, Estilo de Vida, Tecnología Verde).
 
       FORMATO DE SALIDA (ESTRICTAMENTE JSON):

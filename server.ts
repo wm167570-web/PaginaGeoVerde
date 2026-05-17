@@ -50,8 +50,17 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
+    // Serve static files from 'dist'
     const distPath = path.join(process.cwd(), 'dist');
+    
+    // Serve sitemap.xml explicitly before catch-all
+    app.get('/sitemap.xml', (req, res) => {
+        res.header('Content-Type', 'application/xml');
+        res.sendFile(path.join(distPath, 'sitemap.xml'));
+    });
+
     app.use(express.static(distPath));
+    
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });

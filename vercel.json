@@ -1,4 +1,6 @@
 {
+  "outputDirectory": "dist",
+  "buildCommand": "vite build",
   "trailingSlash": false,
   "headers": [
     {
