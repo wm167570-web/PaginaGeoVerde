@@ -36,4 +36,4 @@ jobs:
           git config --global user.email 'bot@geoverde.com'
           git add src/data/extendedBlog.json
           git commit -m "feat: nuevo artículo automatizado" || echo "No hay cambios para commitear"
-          git push
+          git push origin develop
