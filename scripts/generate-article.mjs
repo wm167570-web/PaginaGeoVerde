@@ -5,6 +5,22 @@ import path from 'path';
 const DATA_PATH = path.join(process.cwd(), 'src/data/extendedBlog.json');
 const API_KEY = process.env.GROQ_API_KEY;
 
+// Diccionario de IDs de imágenes reales de Unsplash sobre temas ambientales
+const ENVIRONMENTAL_IMAGES = {
+  'cambio climático': '1501854140801-50d01698950b', // Glaciar
+  'biodiversidad': '1446941611757-b55cc246903d', // Bosque
+  'energía limpia': '1464822759023-fed622ff2c3b', // Energía solar
+  'movilidad sostenible': '1506012841743-12d46e38708c', // Bicicleta ciudad
+  'estilo de vida': '1532996122748-685b8823f6e8', // Reciclaje
+  'tecnología verde': '1531973576160-7d72657e2f5b', // Hojas tecnología
+  'default': '1542601906111-2d1f68d8557d'
+};
+
+function getSafeImageUrl(category = 'default') {
+  const id = ENVIRONMENTAL_IMAGES[category.toLowerCase()] || ENVIRONMENTAL_IMAGES['default'];
+  return `https://images.unsplash.com/photo-${id}?w=800&q=80`;
+}
+
 async function generateArticle() {
   // Verificación de API KEY
   if (!API_KEY) {
@@ -28,7 +44,22 @@ async function generateArticle() {
       process.exit(1);
     }
 
-    // 2. Extraer títulos y resúmenes para evitar repeticiones (Contexto para la IA)
+    // 2. Validar y corregir imágenes de artículos existentes
+    let needsUpdate = false;
+    articles = articles.map(article => {
+      if (!article.image || article.image.includes('source.unsplash.com') || !article.image.includes('images.unsplash.com/photo-')) {
+        article.image = getSafeImageUrl(article.category);
+        needsUpdate = true;
+      }
+      return article;
+    });
+
+    if (needsUpdate) {
+      console.log('✅ Imágenes de artículos existentes actualizadas.');
+      fs.writeFileSync(DATA_PATH, JSON.stringify(articles, null, 2), 'utf-8');
+    }
+
+    // 3. Extraer títulos y resúmenes para evitar repeticiones (Contexto para la IA)
     const context = articles.slice(0, 15).map(article => ({
       title: article.title,
       excerpt: article.excerpt,
@@ -62,7 +93,7 @@ async function generateArticle() {
         2. Al menos 3 secciones con subencabezados en negrita (ejemplo: **El Impacto en las Cuencas**).
         3. Datos técnicos reales y estadísticas actuales sobre Latinoamérica (países como México, Colombia, Brasil, Chile, Argentina, etc.).
         4. Conclusión con una reflexión profunda o llamado a la acción.
-      - Imagen: Genera una URL de imagen usando el formato: https://images.unsplash.com/photo-[UNSPLASH_ID]?w=800&q=80 (debes buscar una foto relevante al tema)
+      - Imagen: Genera una URL de imagen usando el formato: https://images.unsplash.com/photo-PHOTOID?w=800&q=80. Elige un PHOTOID coherente con el tema. Keywords para la búsqueda interna de la imagen: usa keywords ultra específicos en inglés directamente relacionados con el tema central del artículo (ejemplo si trata de basura: waste-management,recycling,latin-america).
       - Categoría: Una de estas (Cambio Climático, Biodiversidad, Energía Limpia, Movilidad Sostenible, Estilo de Vida, Tecnología Verde).
 
       FORMATO DE SALIDA (ESTRICTAMENTE JSON):
@@ -71,7 +102,7 @@ async function generateArticle() {
         "title": "Título del artículo",
         "date": "${new Date().toISOString().split('T')[0]}",
         "author": "GEOVERDE",
-        "image": "URL de Unsplash generada",
+        "image": "https://images.unsplash.com/photo-[ID]?w=800&q=80",
         "category": "Categoría elegida",
         "excerpt": "Resumen de 2 oraciones para la vista previa.",
         "content": "Introducción... \\n\\n **Subtítulo 1** \\n Texto... \\n\\n **Subtítulo 2** \\n Texto... \\n\\n **Subtítulo 3** \\n Texto... \\n\\n Conclusión.",
