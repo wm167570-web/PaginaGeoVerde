@@ -145,7 +145,51 @@ async function generateArticle() {
     const jsonString = textResponse.substring(jsonStartIndex, jsonEndIndex + 1);
     const newArticle = JSON.parse(jsonString);
 
-    // 7. Validación básica del artículo generado
+    // 7. Generar Imagen Coherente con Unsplash API
+    const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
+    if (UNSPLASH_ACCESS_KEY) {
+      try {
+        console.log('🔍 Buscando imagen coherente en Unsplash...');
+        
+        // Extraer keywords en inglés usando Groq
+        const keywordResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${API_KEY}`
+          },
+          body: JSON.stringify({
+            model: 'llama-3.1-8b-instant', // Usamos un modelo más rápido para keywords
+            messages: [{ role: 'user', content: `Extract 2-3 English keywords for an Unsplash image search from this title: "${newArticle.title}"` }]
+          })
+        });
+
+        if (keywordResponse.ok) {
+          const keywordData = await keywordResponse.json();
+          const keywords = keywordData.choices[0].message.content.trim().replace(/[^a-zA-Z\s,]/g, '').split(',').join(' ');
+          
+          console.log(`🔑 Keywords extraídos: ${keywords}`);
+
+          // Llamar a la API de Unsplash
+          const unsplashResponse = await fetch(
+            `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keywords)}&per_page=1&orientation=landscape`,
+            { headers: { Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}` } }
+          );
+          
+          const unsplashData = await unsplashResponse.json();
+          const imageUrl = unsplashData.results[0]?.urls?.regular || 'https://images.unsplash.com/photo-1542601906111-2d1f68d8557d?w=800&q=80'; // Fallback to a default image
+          
+          newArticle.image = imageUrl;
+          console.log('📸 Imagen de Unsplash asignada con éxito.');
+        }
+      } catch (unsplashError) {
+        console.error('❌ Fallo al obtener imagen de Unsplash:', unsplashError.message);
+      }
+    } else {
+      console.warn('⚠️ UNSPLASH_ACCESS_KEY no configurada. Se usará la imagen predeterminada por la IA.');
+    }
+
+    // 8. Validación básica del artículo generado
     if (!newArticle.title || !newArticle.content || newArticle.content.length < 400) {
       throw new Error('El artículo generado no cumple con los requisitos de longitud o campos obligatorios.');
     }
