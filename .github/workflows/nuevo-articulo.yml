@@ -1,36 +1,53 @@
-name: Nuevo Artículo Automático
+name: Generar Nuevo Artículo DIario/Semanal
 
 on:
   schedule:
-    - cron: '0 0 */5 * *' # Se ejecuta los días 1, 6, 11, 16, 21, 26 de cada mes
-  workflow_dispatch: # Permite ejecución manual para pruebas
+    # Se ejecuta cada 5 días a la medianoche UTC
+    - cron: '0 0 */5 * *'
+  # Permite ejecutarlo manualmente desde la interfaz de GitHub Actions
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  generate-blog:
+  generate-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout del repositorio
         uses: actions/checkout@v4
         with:
-          persist-credentials: true
+          # fetch-depth: 0 es a veces necesario, pero para push a la misma rama no estrictamente, lo ponemos por seguridad
+          fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - name: Generar Nuevo Artículo con Groq
+      - name: Instalar dependencias
+        run: npm ci || npm install
+
+      - name: Ejecutar script generador
         env:
+          # Llamar GROQ_API_KEY desde github secrets
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
         run: node scripts/generate-article.mjs
 
-      - name: Commit y Push de cambios
+      - name: Configurar Git, hacer commit y push
         run: |
-          git config --global user.name 'GeoVerde Bot'
-          git config --global user.email 'bot@geoverde.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # Añadir específicamente el archivo modificado
           git add src/data/extendedBlog.json
-          git commit -m "feat: nuevo artículo automatizado" || echo "No hay cambios para commitear"
-          git push origin main
+          
+          # Verificamos si hay cambios antes de hacer commit para no fallar si no cambió
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore(blog): auto-generar nuevo artículo [skip ci]"
+            git pull --rebase origin main
+            git push
+          else
+            echo "No se detectaron cambios en src/data/extendedBlog.json"
+          fi
