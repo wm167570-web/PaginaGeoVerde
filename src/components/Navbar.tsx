@@ -39,7 +39,7 @@ export default function Navbar() {
         >
           <Tooltip text="Ir al Inicio" position="bottom">
             <motion.div 
-              className="flex items-center gap-3 cursor-pointer"
+              className="flex items-center gap-3 cursor-pointer logo-container"
               animate={{ scale: isScrolled ? 0.9 : 1 }}
             >
               <img 
@@ -47,7 +47,7 @@ export default function Navbar() {
                 alt="Logo GeoVerde Vida Consciente"
                 className="h-10 md:h-12 w-auto object-contain transition-all duration-300"
               />
-              <span className="hidden sm:block font-serif text-[#27e81e] text-lg font-bold tracking-tight">
+              <span className="hidden sm:block font-serif text-[#27e81e] text-lg font-bold tracking-tight brand-name">
                 GeoVerde Vida Consciente
               </span>
             </motion.div>
@@ -75,7 +75,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger */}
-        <button className="md:hidden z-50 text-white p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="md:hidden z-[10000] text-white p-2 menu-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -87,7 +87,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center gap-8"
+            className="mobile-menu flex flex-col items-center justify-center gap-8"
           >
             {NAV_LINKS.map((link, i) => (
               <motion.a 

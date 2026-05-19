@@ -57,3 +57,33 @@ body::after {
 .perspective-1000 {
   perspective: 1000px;
 }
+
+/* Fixes for mobile menu styling */
+.hamburger, .menu-toggle, [class*="burger"] {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.mobile-menu, .nav-mobile, [class*="mobile-nav"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1a3a2a;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand, .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-text, .brand-name {
+    display: block !important;
+    font-size: 14px;
+  }
+}
