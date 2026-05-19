@@ -1,0 +1,35 @@
+name: Corregir Imágenes de Artículos
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Corregir imágenes con script
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: node scripts/fix-images.mjs
+
+      - name: Commit y Push de cambios
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'bot@geoverde.com'
+          git add src/data/extendedBlog.json
+          git commit -m "fix(blog): imágenes actualizadas usando la API de Unsplash" || echo "No hay cambios para commitear"
+          git push origin main
