@@ -105,7 +105,7 @@ export default function BlogSection() {
   };
 
   return (
-    <section id="blog" className="py-24 bg-surface-3 relative overflow-hidden">
+    <section id="blog" className="py-24 bg-surface-3 relative overflow-x-clip overflow-y-visible">
       <div className="absolute top-0 left-0 w-64 h-64 bg-surface-1 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-surface-1 rounded-full blur-3xl translate-x-1/4 translate-y-1/4" />
       
@@ -204,12 +204,21 @@ export default function BlogSection() {
                   <span className="text-xs font-bold uppercase tracking-widest text-brand-forest/40">
                     GEOVERDE BLOG
                   </span>
-                  <button 
-                    onClick={() => setActivePost(null)}
-                    className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
-                  >
-                    Volver al Inicio
-                  </button>
+                  <div className="flex gap-4 items-center">
+                    <button 
+                      onClick={() => setActivePost(null)}
+                      className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
+                    >
+                      Volver al Inicio
+                    </button>
+                    <span className="text-brand-primary/20">|</span>
+                    <Link 
+                      to="/blog" 
+                      className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
+                    >
+                      Volver al Blog
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -314,12 +314,18 @@ export default function BlogListing() {
                   <span className="text-xs font-bold uppercase tracking-widest text-brand-forest/40">
                     GEOVERDE BLOG
                   </span>
-                  <button 
-                    onClick={() => setActivePost(null)}
-                    className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
-                  >
-                    Cerrar Lectura
-                  </button>
+                  <div className="flex gap-4 items-center">
+                    <Link to="/" className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
+                      Volver al Inicio
+                    </Link>
+                    <span className="text-brand-primary/20">|</span>
+                    <button 
+                      onClick={() => setActivePost(null)}
+                      className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
+                    >
+                      Volver al Blog
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
