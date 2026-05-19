@@ -33,14 +33,28 @@ async function getKeywords(title) {
 }
 
 async function getUnsplashImage(query, usedUrls) {
-  const res = await fetch(
-    `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=10&orientation=landscape`,
-    { headers: { Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}` } }
-  );
-  const data = await res.json();
-  const available = (data.results || []).filter(r => !usedUrls.has(r.urls.regular));
-  const selected = available[0] || data.results?.[0];
-  return selected?.urls?.regular || null;
+  try {
+    const res = await fetch(
+      `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=10&orientation=landscape`,
+      { headers: { Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}` } }
+    );
+    if (res.status === 429) {
+      console.log('   ⏳ Rate limit Unsplash, esperando 65 segundos...');
+      await new Promise(r => setTimeout(r, 65000));
+      return getUnsplashImage(query, usedUrls);
+    }
+    if (!res.ok) {
+      console.log(`   ⚠️ Unsplash error ${res.status}`);
+      return null;
+    }
+    const data = await res.json();
+    const available = (data.results || []).filter(r => !usedUrls.has(r.urls.regular));
+    const selected = available[0] || data.results?.[0];
+    return selected?.urls?.regular || null;
+  } catch (err) {
+    console.log(`   ⚠️ Error Unsplash: ${err.message}`);
+    return null;
+  }
 }
 
 const articles = JSON.parse(readFileSync('src/data/extendedBlog.json', 'utf8'));
@@ -67,7 +81,7 @@ for (const article of articles) {
   console.log(`🔄 Procesando: ${article.title}`);
   const keywords = await getKeywords(article.title);
   console.log(`   Keywords: ${keywords}`);
-  await new Promise(r => setTimeout(r, 1000));
+  await new Promise(r => setTimeout(r, 1500));
   const imageUrl = await getUnsplashImage(keywords, usedUrls);
   if (imageUrl) {
     article.image = imageUrl;
@@ -77,7 +91,7 @@ for (const article of articles) {
   } else {
     console.log(`   ⚠️ Sin resultado para: ${keywords}`);
   }
-  await new Promise(r => setTimeout(r, 1000));
+  await new Promise(r => setTimeout(r, 1500));
 }
 
 writeFileSync('src/data/extendedBlog.json', JSON.stringify(articles, null, 2));
