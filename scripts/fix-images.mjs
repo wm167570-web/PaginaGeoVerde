@@ -4,23 +4,32 @@ const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY;
 
 async function getKeywords(title) {
-  const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${GROQ_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'llama3-8b-8192',
-      messages: [{
-        role: 'user',
-        content: `Give me 3 specific English keywords for an Unsplash photo search that visually represents this Spanish article title: "${title}". Reply with ONLY the keywords separated by spaces, nothing else. Be specific and visual, not abstract.`
-      }],
-      max_tokens: 20
-    })
-  });
-  const data = await res.json();
-  return data.choices[0].message.content.trim();
+  try {
+    const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${GROQ_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'llama-3.1-8b-instant',
+        messages: [{
+          role: 'user',
+          content: `Give me 3 specific English keywords for an Unsplash photo search that visually represents this article title: "${title}". Reply with ONLY the keywords separated by spaces, nothing else.`
+        }],
+        max_tokens: 20
+      })
+    });
+    const data = await res.json();
+    if (!data.choices?.[0]?.message?.content) {
+      console.log(`   ⚠️ Groq sin respuesta, usando fallback para: ${title}`);
+      return title.split(' ').slice(0, 3).join(' ');
+    }
+    return data.choices[0].message.content.trim();
+  } catch (err) {
+    console.log(`   ⚠️ Error Groq: ${err.message}, usando fallback`);
+    return title.split(' ').slice(0, 3).join(' ');
+  }
 }
 
 async function getUnsplashImage(query, usedUrls) {
