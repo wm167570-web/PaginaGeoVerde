@@ -6,7 +6,6 @@ import ReactMarkdown from 'react-markdown';
 import Logo from './Logo';
 import Tooltip from './ui/Tooltip';
 import extendedBlog from '../data/extendedBlog.json';
-import { OptimizedImage } from './ui/OptimizedImage';
 
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800";
 
@@ -30,14 +29,11 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
       </div>
 
       <div className="md:w-1/3 h-64 md:h-auto rounded-3xl overflow-hidden shadow-inner">
-        <OptimizedImage
+        <img
           src={imageError || !post.image ? FALLBACK_IMAGE : post.image}
           alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          width={800}
-          height={450}
-          priority={index < 6}
-          decoding="async"
+          loading="lazy"
           onError={(e) => {
             setImageError(true);
             e.currentTarget.src = FALLBACK_IMAGE;
@@ -226,13 +222,11 @@ export default function BlogSection() {
               </button>
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
-                <OptimizedImage 
+                <img 
                   src={activePost.image ? activePost.image : FALLBACK_IMAGE} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
                   className="absolute inset-0 w-full h-full object-cover"
-                  width={600}
-                  height={400}
-                  priority={true}
+                  loading="lazy"
                   onError={(e) => {
                     e.currentTarget.src = FALLBACK_IMAGE;
                   }}

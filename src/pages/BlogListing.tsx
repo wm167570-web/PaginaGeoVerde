@@ -9,8 +9,6 @@ import Tooltip from '../components/ui/Tooltip';
 import Footer from '../components/Footer';
 import extendedBlog from '../data/extendedBlog.json';
 
-import { OptimizedImage } from '../components/ui/OptimizedImage';
-
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800";
 
 export default function BlogListing() {
@@ -178,15 +176,12 @@ export default function BlogListing() {
                   className="group bg-white rounded-[2.5rem] overflow-hidden border border-brand-earth/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
                 >
                   <div className="relative aspect-video overflow-hidden">
-                    <OptimizedImage 
+                    <img 
                       src={imageErrors[post.id] || !post.image ? FALLBACK_IMAGE : post.image} 
                       alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                      loading="lazy"
                       onError={() => handleImageError(post.id)}
-                      width={800}
-                      height={450}
-                      priority={index < 6 && currentPage === 1}
-                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
@@ -340,14 +335,12 @@ export default function BlogListing() {
               </button>
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
-                <OptimizedImage 
+                <img 
                   src={imageErrors[activePost.id] || !activePost.image ? FALLBACK_IMAGE : activePost.image} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
                   onError={() => handleImageError(activePost.id)}
-                  width={600}
-                  height={400}
-                  priority={true}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>
