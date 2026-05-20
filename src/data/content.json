@@ -27,14 +27,14 @@
       "id": "videoId2",
       "title": "Granjas Verticales",
       "description": "Descubre cómo la agricultura hidropónica y vertical está optimizando el uso de recursos en las ciudades inteligentes.",
-      "image": "/assets/images/granjas_verticales_thumb_1779309693763.png",
+      "image": "/assets/images/granjas_verticales_no_text_1779310539305.png",
       "url": "https://www.youtube.com/watch?v=pk6NQWBRlP8&t=2s"
     },
     {
       "id": "videoId3",
       "title": "¿Qué es un DEM?",
       "description": "Explora el uso de Modelos Digitales de Elevación para el análisis topográfico y la gestión del riesgo ambiental.",
-      "image": "/assets/images/dem_thumb_1779309710788.png",
+      "image": "/assets/images/dem_no_text_1779310553855.png",
       "url": "https://www.youtube.com/watch?v=C8MyqlK0lHE"
     }
   ],
