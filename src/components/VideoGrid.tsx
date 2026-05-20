@@ -3,15 +3,17 @@ import { Play } from 'lucide-react';
 import content from '../data/content.json';
 import { OptimizedImage } from './ui/OptimizedImage';
 
+import backgroundBg from '../assets/images/hands_holding_plants_1779246319938.png';
+
 export default function VideoGrid() {
   return (
     <section id="videos" className="py-24 bg-white relative overflow-hidden border-b border-brand-earth/10">
-      {/* Subtle Pattern Background */}
-      <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none">
+      {/* Subtle Background */}
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply">
         <OptimizedImage 
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
-          alt="Environmental Background" 
-          className="w-full h-full object-cover grayscale"
+          src={backgroundBg} 
+          alt="Hands holding plants" 
+          className="w-full h-full object-cover"
           width={1920}
           height={1080}
           loading="lazy"
