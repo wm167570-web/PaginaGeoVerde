@@ -37,7 +37,7 @@ export default function Hero() {
         style={{ y: isMobile ? 0 : yBackground }}
       >
         <OptimizedImage 
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
+          src="/assets/images/regenerated_image_1778719801817.jpg" 
           alt="Conciencia ambiental background" 
           className="w-full h-full object-cover grayscale mix-blend-overlay"
           width={1920}
@@ -55,7 +55,7 @@ export default function Hero() {
         
         <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
           <OptimizedImage 
-            src="https://images.unsplash.com/photo-1467617263073-f6ca849867b2" 
+            src="/assets/images/regenerated_image_1778720228531.jpg" 
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover mix-blend-multiply scale-110 group-hover:scale-100 transition-transform duration-[5s]"
