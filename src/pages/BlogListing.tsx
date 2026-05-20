@@ -306,16 +306,18 @@ export default function BlogListing() {
       {/* Modal View - Reused from BlogSection logic or we could create a standalone BlogModal component */}
       <AnimatePresence>
         {activePost && (
-          <div 
+          <motion.div 
+            key="modal-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-6"
             role="dialog"
             aria-modal="true"
             aria-labelledby={`dialog-title-${activePost.id}`}
           >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+            <div
               onClick={handleCloseArticle}
               className="absolute inset-0 bg-brand-primary/40 backdrop-blur-md"
               aria-hidden="true"
@@ -326,6 +328,7 @@ export default function BlogListing() {
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
+              transition={{ duration: 0.3 }}
               className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row"
               role="document"
             >
@@ -351,7 +354,7 @@ export default function BlogListing() {
                 </div>
               </div>
 
-              <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto bg-brand-surface">
+              <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto overscroll-contain scroll-smooth bg-brand-surface">
                 <div className="hidden md:block mb-8">
                   <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest/80 mb-4">
                     <span className="flex items-center gap-2">
@@ -367,7 +370,48 @@ export default function BlogListing() {
                 </div>
 
                 <div className="prose prose-brand-primary max-w-none prose-p:text-brand-forest/80 prose-headings:text-brand-primary prose-strong:text-brand-primary">
-                  <ReactMarkdown>{activePost.content || activePost.excerpt}</ReactMarkdown>
+                  <ReactMarkdown
+                    components={{
+                      p: ({ node, ...props }) => (
+                        <motion.p
+                          initial={{ opacity: 0, y: 15 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: "-40px" }}
+                          transition={{ duration: 0.5 }}
+                          {...(props as any)}
+                        />
+                      ),
+                      h3: ({ node, ...props }) => (
+                        <motion.h3
+                          initial={{ opacity: 0, y: 15 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: "-40px" }}
+                          transition={{ duration: 0.5 }}
+                          {...(props as any)}
+                        />
+                      ),
+                      li: ({ node, ...props }) => (
+                        <motion.li
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true, margin: "-40px" }}
+                          transition={{ duration: 0.5 }}
+                          {...(props as any)}
+                        />
+                      ),
+                      img: ({ node, ...props }) => (
+                        <motion.img
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true, margin: "-40px" }}
+                          transition={{ duration: 0.5 }}
+                          {...(props as any)}
+                        />
+                      )
+                    }}
+                  >
+                    {activePost.content || activePost.excerpt}
+                  </ReactMarkdown>
                 </div>
                 
                 <div className="mt-12 pt-8 border-t border-brand-primary/10 flex justify-between items-center">
@@ -389,7 +433,7 @@ export default function BlogListing() {
                 </div>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>
