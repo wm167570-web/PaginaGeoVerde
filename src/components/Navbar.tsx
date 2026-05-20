@@ -7,7 +7,7 @@ import content from '../data/content.json';
 const NAV_LINKS = [
   { name: 'Nosotros', href: '/#nosotros' },
   { name: 'Videos', href: '/#videos' },
-  { name: 'Noticias', href: '/#blog' },
+  { name: 'Noticias', href: 'https://geoverdevidaconsciente.com/#blog' },
   { name: 'Recursos', href: '/#resources' },
   { name: 'Contacto', href: '/#contact' },
 ];
@@ -72,17 +72,29 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
           {NAV_LINKS.map(link => (
-            <Link 
-              key={link.name} 
-              to={link.href} 
-              className={`relative py-1 group ${isScrolled ? 'text-white' : 'text-brand-primary hover:text-brand-primary'}`}
-              onClick={(e) => handleScroll(e, link.href)}
-            >
-              <span className="relative z-10">{link.name}</span>
-              {activeHash === link.href && (
-                <motion.div layoutId="underline" className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-secondary" />
-              )}
-            </Link>
+            link.href.startsWith('http') ? (
+              <a 
+                key={link.name}
+                href={link.href}
+                className={`relative py-1 group ${isScrolled ? 'text-white' : 'text-brand-primary hover:text-brand-primary'}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="relative z-10">{link.name}</span>
+              </a>
+            ) : (
+              <Link 
+                key={link.name} 
+                to={link.href} 
+                className={`relative py-1 group ${isScrolled ? 'text-white' : 'text-brand-primary hover:text-brand-primary'}`}
+                onClick={(e) => handleScroll(e, link.href)}
+              >
+                <span className="relative z-10">{link.name}</span>
+                {activeHash === link.href && (
+                  <motion.div layoutId="underline" className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-secondary" />
+                )}
+              </Link>
+            )
           ))}
           <a href={content.channel.url} target="_blank" rel="noreferrer" className="bg-brand-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-brand-primary/90 transition-all shadow-lg">
             Suscribirse
@@ -111,6 +123,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 href={link.href}
+                {...(link.href.startsWith('http') ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="text-4xl font-serif text-white hover:text-brand-secondary"
                 onClick={(e: React.MouseEvent) => handleScroll(e, link.href)}
               >

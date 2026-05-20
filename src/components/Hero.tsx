@@ -102,6 +102,8 @@ export default function Hero() {
               </a>
               <a 
                 href="https://geoverdevidaconsciente.com/#blog"
+                target="_blank"
+                rel="noreferrer"
                 className="group flex items-center gap-3 bg-transparent text-brand-earth border-2 border-brand-earth px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-earth hover:text-white"
               >
                 Explorar Blog
