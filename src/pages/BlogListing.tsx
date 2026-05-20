@@ -318,13 +318,10 @@ export default function BlogListing() {
                     <Link to="/" className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
                       ← Volver al Inicio
                     </Link>
-                    <span className="text-brand-primary/20">|</span>
-                    <button 
-                      onClick={() => setActivePost(null)}
-                      className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
-                    >
-                      ← Volver al Blog
-                    </button>
+                    <span className="mx-2 text-gray-400">|</span>
+                    <a href="/blog" className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-green-700 transition-colors">
+                      ← Blog
+                    </a>
                   </div>
                 </div>
               </div>

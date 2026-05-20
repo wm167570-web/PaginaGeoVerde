@@ -55,19 +55,17 @@ const articles = JSON.parse(readFileSync('src/data/extendedBlog.json', 'utf8'));
 // Registrar URLs de Pexels ya usadas (estas están bien, no se tocan)
 const usedUrls = new Set(
   articles
-    .filter(a => a.image?.includes('pexels.com'))
+    .filter(a => a.image && a.image !== 'https://mock.pexels.com/image.jpg')
     .map(a => a.image)
 );
 
 console.log(`Total artículos: ${articles.length}`);
-console.log(`Ya tienen imagen Pexels: ${usedUrls.size}`);
-console.log(`Necesitan actualización: ${articles.filter(a => !a.image?.includes('pexels.com')).length}\n`);
+console.log(`Ya tienen imagen válida: ${usedUrls.size}`);
 
 let fixed = 0;
 for (const article of articles) {
-  // Solo procesar artículos sin imagen de Pexels
-  if (article.image?.includes('pexels.com')) {
-    console.log(`✅ Pexels OK: ${article.title}`);
+  if (article.image && article.image !== 'https://mock.pexels.com/image.jpg') {
+    console.log(`✅ OK: ${article.title}`);
     continue;
   }
   console.log(`🔄 Actualizando: ${article.title}`);

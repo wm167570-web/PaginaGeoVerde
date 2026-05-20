@@ -211,13 +211,10 @@ export default function BlogSection() {
                     >
                       ← Volver al Inicio
                     </button>
-                    <span className="text-brand-primary/20">|</span>
-                    <Link 
-                      to="/blog" 
-                      className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
-                    >
-                      ← Volver al Blog
-                    </Link>
+                    <span className="mx-2 text-gray-400">|</span>
+                    <a href="/blog" className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-green-700 transition-colors">
+                      ← Blog
+                    </a>
                   </div>
                 </div>
               </div>
