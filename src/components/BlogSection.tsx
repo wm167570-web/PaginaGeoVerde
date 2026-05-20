@@ -39,7 +39,10 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
           height={450}
           loading={index === 0 ? "eager" : "lazy"}
           decoding="async"
-          onError={() => setImageError(true)}
+          onError={(e) => {
+            setImageError(true);
+            e.currentTarget.src = FALLBACK_IMAGE;
+          }}
         />
       </div>
 
@@ -178,6 +181,9 @@ export default function BlogSection() {
                   width={600}
                   height={400}
                   loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = FALLBACK_IMAGE;
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>
