@@ -53,6 +53,16 @@ export default function BlogListing() {
   };
 
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && activePost) {
+        handleCloseArticle();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activePost]);
+
+  useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
     const postSlug = searchParams.get('post');
     if (postSlug) {
@@ -183,8 +193,8 @@ export default function BlogListing() {
                   </div>
                   
                   <div className="p-8 flex flex-col flex-grow">
-                    <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-brand-forest/60 mb-4">
-                       <Calendar className="w-3 h-3 text-brand-sky" /> {post.date}
+                    <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-brand-forest/80 mb-4">
+                       <Calendar className="w-3 h-3 text-brand-sky" aria-hidden="true" /> {post.date}
                     </div>
 
                     <h3 className="font-serif text-2xl font-bold text-brand-primary mb-4 group-hover:text-brand-earth transition-colors leading-tight">
@@ -197,17 +207,19 @@ export default function BlogListing() {
                     <div className="flex items-center justify-between pt-6 border-t border-brand-earth/10 mt-auto">
                       <button 
                         onClick={() => handleOpenArticle(post)}
+                        aria-label={`Leer artículo: ${post.title}`}
                         className="flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all hover:text-brand-sky"
                       >
-                        Leer Artículo <ArrowUpRight className="w-4 h-4" />
+                        Leer Artículo <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                       </button>
 
                       <Tooltip text="Compartir" position="left">
                         <button 
                           onClick={(e) => handleShare(e, post)}
-                          className="p-2 text-brand-forest/40 hover:text-brand-secondary transition-colors"
+                          aria-label={`Compartir artículo: ${post.title}`}
+                          className="p-2 text-brand-forest/80 hover:text-brand-secondary transition-colors"
                         >
-                          <Share2 className="w-4 h-4" />
+                          <Share2 className="w-4 h-4" aria-hidden="true" />
                         </button>
                       </Tooltip>
                     </div>
@@ -294,13 +306,19 @@ export default function BlogListing() {
       {/* Modal View - Reused from BlogSection logic or we could create a standalone BlogModal component */}
       <AnimatePresence>
         {activePost && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+          <div 
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`dialog-title-${activePost.id}`}
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={handleCloseArticle}
               className="absolute inset-0 bg-brand-primary/40 backdrop-blur-md"
+              aria-hidden="true"
             />
             
             <motion.div
@@ -309,12 +327,14 @@ export default function BlogListing() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
               className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row"
+              role="document"
             >
               <button 
                 onClick={handleCloseArticle}
-                className="absolute top-6 right-6 z-20 p-2 bg-white/20 backdrop-blur-md rounded-full text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-lg"
+                aria-label="Cerrar artículo"
+                className="absolute top-6 right-6 z-20 p-2 bg-white/20 backdrop-blur-md rounded-full text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
               >
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6" aria-hidden="true" />
               </button>
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
@@ -333,15 +353,15 @@ export default function BlogListing() {
 
               <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto bg-brand-surface">
                 <div className="hidden md:block mb-8">
-                  <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest/60 mb-4">
+                  <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest/80 mb-4">
                     <span className="flex items-center gap-2">
-                       <Calendar className="w-3 h-3 text-brand-secondary" /> {activePost.date}
+                       <Calendar className="w-3 h-3 text-brand-secondary" aria-hidden="true" /> {activePost.date}
                     </span>
                     <span className="flex items-center gap-2 uppercase">
-                       <User className="w-3 h-3 text-brand-secondary" /> GeoVerde
+                       <User className="w-3 h-3 text-brand-secondary" aria-hidden="true" /> GeoVerde
                     </span>
                   </div>
-                  <h2 className="font-serif text-4xl font-bold text-brand-primary italic leading-[1.1]">
+                  <h2 id={`dialog-title-${activePost.id}`} className="font-serif text-4xl font-bold text-brand-primary italic leading-[1.1]">
                     {activePost.title}
                   </h2>
                 </div>
@@ -351,7 +371,7 @@ export default function BlogListing() {
                 </div>
                 
                 <div className="mt-12 pt-8 border-t border-brand-primary/10 flex justify-between items-center">
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-forest/40">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-forest/80">
                     GEOVERDE BLOG
                   </span>
                   <div className="flex gap-4 items-center">
