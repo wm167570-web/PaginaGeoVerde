@@ -33,7 +33,7 @@ export function OptimizedImage({
     : src;
 
   return (
-    <div className={`relative overflow-hidden ${className}`} style={{ contentVisibility: 'auto', ...style }}>
+    <div className={`relative overflow-hidden ${className}`} style={{ contentVisibility: 'auto', containIntrinsicSize: `${width || 800}px ${height || 450}px`, ...style }}>
       {!loaded && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse" />
       )}
