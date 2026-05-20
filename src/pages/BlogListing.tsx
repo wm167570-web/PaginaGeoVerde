@@ -82,12 +82,12 @@ export default function BlogListing() {
               Volver al Inicio
             </Link>
             <span className="text-brand-primary/20">|</span>
-            <Link 
-              to="/blog" 
+            <a 
+              href="/#blog" 
               className="group inline-flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-[0.2em] hover:text-brand-secondary transition-all"
             >
               Blog Ambiental
-            </Link>
+            </a>
           </motion.div>
 
           <div className="mb-16 text-center">
@@ -326,13 +326,13 @@ export default function BlogListing() {
                     <Link to="/" className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
                       ← Volver al Inicio
                     </Link>
-                    <Link 
-                      to="/blog" 
+                    <a 
+                      href="/#blog" 
                       className="flex items-center gap-1 text-sm font-medium hover:underline"
                       style={{ marginLeft: '12px', paddingLeft: '12px', borderLeft: '1px solid #ccc' }}
                     >
                       Blog
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
