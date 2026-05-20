@@ -66,12 +66,13 @@ export default function BlogListing() {
   const handleShare = async (e: React.MouseEvent, post: typeof extendedBlog[0]) => {
     e.stopPropagation();
     
-    // Si no está abierto en el modal, aseguremos que comparta un link con post, 
-    // pero si seguimos estrictamente "sea exactamente window.location.href":
+    const postSlug = (post as any).slug || post.id;
+    const urlACompartir = `${window.location.origin}/?post=${postSlug}`;
+    
     const shareData = {
       title: `${post.title} | GeoVerde`,
       text: post.excerpt,
-      url: window.location.href,
+      url: urlACompartir,
     };
 
     if (navigator.share) {
@@ -82,7 +83,7 @@ export default function BlogListing() {
       }
     } else {
       try {
-        await navigator.clipboard.writeText(window.location.href);
+        await navigator.clipboard.writeText(urlACompartir);
         alert('Enlace copiado al portapapeles');
       } catch (err) {
         console.error('Error copying to clipboard:', err);
