@@ -36,7 +36,7 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           width={800}
           height={450}
-          priority={index < 3}
+          priority={index < 6}
           decoding="async"
           onError={(e) => {
             setImageError(true);

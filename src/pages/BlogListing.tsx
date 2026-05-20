@@ -185,7 +185,7 @@ export default function BlogListing() {
                       onError={() => handleImageError(post.id)}
                       width={800}
                       height={450}
-                      priority={index < 3 && currentPage === 1}
+                      priority={index < 6 && currentPage === 1}
                       decoding="async"
                     />
                     <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
