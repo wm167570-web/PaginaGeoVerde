@@ -8,6 +8,7 @@ interface OptimizedImageProps {
   height?: number;
   priority?: boolean;
   loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
   onError?: (e: React.SyntheticEvent<HTMLImageElement, Event>) => void;
   style?: React.CSSProperties;
 }
@@ -20,6 +21,7 @@ export function OptimizedImage({
   height, 
   priority = false, 
   loading = 'lazy',
+  decoding = 'async',
   onError,
   style
 }: OptimizedImageProps) {
@@ -41,7 +43,7 @@ export function OptimizedImage({
       height={height}
       loading={priority ? 'eager' : loading}
       fetchPriority={priority ? 'high' : 'auto'}
-      decoding="async"
+      decoding={decoding}
       referrerPolicy="no-referrer"
       style={{ backgroundColor: '#e8f5e9', ...style }}
       onLoad={handleImageLoad}
