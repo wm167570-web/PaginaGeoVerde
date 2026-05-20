@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft, Search, Share2, X, ArrowUpRight, ChevronLeft } from 'lucide-react';
@@ -41,16 +41,37 @@ export default function BlogListing() {
     return filteredPosts.slice(startIndex, startIndex + postsPerPage);
   }, [filteredPosts, currentPage]);
 
+  const handleOpenArticle = (post: typeof extendedBlog[0]) => {
+    const postSlug = (post as any).slug || post.id;
+    window.history.pushState({}, '', `?post=${postSlug}`);
+    setActivePost(post);
+  };
+
+  const handleCloseArticle = () => {
+    window.history.pushState({}, '', window.location.pathname);
+    setActivePost(null);
+  };
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const postSlug = searchParams.get('post');
+    if (postSlug) {
+      const post = extendedBlog.find(p => (p as any).slug === postSlug || String(p.id) === postSlug);
+      if (post) {
+        setActivePost(post);
+      }
+    }
+  }, []);
+
   const handleShare = async (e: React.MouseEvent, post: typeof extendedBlog[0]) => {
     e.stopPropagation();
     
-    const postSlug = (post as any).slug || post.id;
-    const shareUrl = `${window.location.origin}/blog/${postSlug}`;
-    
+    // Si no está abierto en el modal, aseguremos que comparta un link con post, 
+    // pero si seguimos estrictamente "sea exactamente window.location.href":
     const shareData = {
       title: `${post.title} | GeoVerde`,
       text: post.excerpt,
-      url: shareUrl,
+      url: window.location.href,
     };
 
     if (navigator.share) {
@@ -61,7 +82,7 @@ export default function BlogListing() {
       }
     } else {
       try {
-        await navigator.clipboard.writeText(shareUrl);
+        await navigator.clipboard.writeText(window.location.href);
         alert('Enlace copiado al portapapeles');
       } catch (err) {
         console.error('Error copying to clipboard:', err);
@@ -174,7 +195,7 @@ export default function BlogListing() {
 
                     <div className="flex items-center justify-between pt-6 border-t border-brand-earth/10 mt-auto">
                       <button 
-                        onClick={() => setActivePost(post)}
+                        onClick={() => handleOpenArticle(post)}
                         className="flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all hover:text-brand-sky"
                       >
                         Leer Artículo <ArrowUpRight className="w-4 h-4" />
@@ -277,7 +298,7 @@ export default function BlogListing() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setActivePost(null)}
+              onClick={handleCloseArticle}
               className="absolute inset-0 bg-brand-primary/40 backdrop-blur-md"
             />
             
@@ -289,7 +310,7 @@ export default function BlogListing() {
               className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row"
             >
               <button 
-                onClick={() => setActivePost(null)}
+                onClick={handleCloseArticle}
                 className="absolute top-6 right-6 z-20 p-2 bg-white/20 backdrop-blur-md rounded-full text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-lg"
               >
                 <X className="w-6 h-6" />
