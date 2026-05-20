@@ -39,7 +39,7 @@ export function OptimizedImage({
 
   return (
     <div 
-      className={`relative overflow-hidden ${className}`} 
+      className={`overflow-hidden ${className.includes('absolute') ? '' : 'relative'} ${className}`} 
       style={{ 
         contentVisibility: 'auto', 
         containIntrinsicSize: `${width || 800}px ${height || 450}px`,

@@ -174,7 +174,7 @@ export default function BlogSection() {
             </Link>
           </div>
 
-          <div className="lg:col-span-8 flex flex-col gap-12">
+          <div className="lg:col-span-8 flex flex-col gap-12 relative">
             {featuredPosts.map((post, index) => (
               <BlogArticleCard 
                 key={post.id} 
