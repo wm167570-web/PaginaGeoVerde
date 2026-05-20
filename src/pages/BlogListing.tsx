@@ -316,14 +316,14 @@ export default function BlogListing() {
                   </span>
                   <div className="flex gap-4 items-center">
                     <Link to="/" className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
-                      ← Inicio
+                      ← Volver al Inicio
                     </Link>
                     <span className="text-brand-primary/20">|</span>
                     <button 
                       onClick={() => setActivePost(null)}
                       className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
                     >
-                      ← Blog
+                      ← Volver al Blog
                     </button>
                   </div>
                 </div>
