@@ -48,8 +48,8 @@ export function OptimizedImage({
         className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
         width={width}
         height={height}
-        loading="eager"
-        decoding="auto"
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
         referrerPolicy="no-referrer"
         onLoad={() => setLoaded(true)}
         onError={(e) => {

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowUpRight, Share2 } from 'lucide-react';
+import { OptimizedImage } from './ui/OptimizedImage';
 import Tooltip from './ui/Tooltip';
 
-const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800";
+const FALLBACK_IMAGE = "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg";
 
 interface BlogArticleCardProps {
   post: any;
@@ -13,8 +14,6 @@ interface BlogArticleCardProps {
 }
 
 export function BlogArticleCard({ post, index, setActivePost, handleShare }: BlogArticleCardProps) {
-  const [imageError, setImageError] = useState(false);
-
   return (
     <motion.article
       initial={{ opacity: 0, x: 40 }}
@@ -28,15 +27,13 @@ export function BlogArticleCard({ post, index, setActivePost, handleShare }: Blo
       </div>
 
       <div className="md:w-1/3 h-64 md:h-auto rounded-3xl overflow-hidden shadow-inner">
-        <img
-          src={imageError || !post.image ? FALLBACK_IMAGE : post.image}
+        <OptimizedImage
+          src={post.image || FALLBACK_IMAGE}
           alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          loading="lazy"
-          onError={(e) => {
-            setImageError(true);
-            e.currentTarget.src = FALLBACK_IMAGE;
-          }}
+          width={800}
+          height={450}
+          priority={index < 3}
         />
       </div>
 
