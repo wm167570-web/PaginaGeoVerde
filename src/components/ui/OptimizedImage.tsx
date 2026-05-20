@@ -8,7 +8,8 @@ interface OptimizedImageProps {
   height?: number;
   priority?: boolean;
   loading?: 'lazy' | 'eager';
-  onError?: () => void;
+  onError?: (e: React.SyntheticEvent<HTMLImageElement, Event>) => void;
+  style?: React.CSSProperties;
 }
 
 export function OptimizedImage({ 
@@ -19,12 +20,17 @@ export function OptimizedImage({
   height, 
   priority = false, 
   loading = 'lazy',
-  onError
+  onError,
+  style
 }: OptimizedImageProps) {
   // Optimize Unsplash URLs if possible
   const optimizedSrc = src.includes('images.unsplash.com') 
     ? `${src.split('?')[0]}?auto=format&fit=crop&q=75&w=${width || 800}&fm=webp`
     : src;
+
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.classList.add('loaded');
+  };
 
   return (
     <img
@@ -37,7 +43,12 @@ export function OptimizedImage({
       fetchPriority={priority ? 'high' : 'auto'}
       decoding="async"
       referrerPolicy="no-referrer"
-      onError={onError}
+      style={{ backgroundColor: '#e8f5e9', ...style }}
+      onLoad={handleImageLoad}
+      onError={(e) => {
+        e.currentTarget.src = 'https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg';
+        if (onError) onError(e);
+      }}
     />
   );
 }
