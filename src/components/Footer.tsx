@@ -94,13 +94,13 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <span className="text-[18px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Explorar</span>
               <Tooltip text="Ver videos" position="right">
-                <a href="/#videos" className="text-sm font-bold hover:text-brand-primary transition-colors">Videos</a>
+                <Link to="/#videos" className="text-sm font-bold hover:text-brand-primary transition-colors">Videos</Link>
               </Tooltip>
               <Tooltip text="Blog" position="right">
                 <Link to="/blog" className="text-sm font-bold hover:text-brand-primary transition-colors">Noticias</Link>
               </Tooltip>
               <Tooltip text="Material gratis" position="right">
-                <a href="/#resources" className="text-sm font-bold hover:text-brand-primary transition-colors">Recursos</a>
+                <Link to="/#resources" className="text-sm font-bold hover:text-brand-primary transition-colors">Recursos</Link>
               </Tooltip>
             </div>
             <div className="flex flex-col gap-4">

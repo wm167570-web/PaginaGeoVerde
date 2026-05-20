@@ -250,13 +250,13 @@ export default function BlogSection() {
                     >
                       ← Volver al Inicio
                     </button>
-                    <a 
-                      href="/#blog" 
+                    <Link 
+                      to="/#blog" 
                       className="flex items-center gap-1 text-sm font-medium hover:underline"
                       style={{ marginLeft: '12px', paddingLeft: '12px', borderLeft: '1px solid #ccc' }}
                     >
                       Blog
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

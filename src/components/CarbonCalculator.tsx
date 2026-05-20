@@ -479,13 +479,13 @@ export default function CarbonCalculator({ isOpen, onClose }: CarbonCalculatorPr
                   >
                     <Share2 className="w-5 h-5" /> Compartir en WhatsApp
                   </a>
-                  <a 
-                    href="/#contact"
+                  <Link 
+                    to="/#contact"
                     onClick={onClose}
                     className="flex items-center justify-center gap-2 bg-brand-secondary text-brand-primary px-6 py-4 rounded-xl font-bold hover:bg-brand-secondary/90 transition-colors"
                   >
                     Solicita consultoría <ArrowRight className="w-5 h-5" />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             )}
