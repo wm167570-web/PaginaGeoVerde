@@ -43,10 +43,14 @@ export default function BlogListing() {
 
   const handleShare = async (e: React.MouseEvent, post: typeof extendedBlog[0]) => {
     e.stopPropagation();
+    
+    const postSlug = (post as any).slug || post.id;
+    const shareUrl = `${window.location.origin}/blog/${postSlug}`;
+    
     const shareData = {
       title: `${post.title} | GeoVerde`,
       text: post.excerpt,
-      url: window.location.href,
+      url: shareUrl,
     };
 
     if (navigator.share) {
@@ -56,8 +60,12 @@ export default function BlogListing() {
         console.log('Error sharing:', err);
       }
     } else {
-      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}`;
-      window.open(twitterUrl, '_blank');
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        alert('Enlace copiado al portapapeles');
+      } catch (err) {
+        console.error('Error copying to clipboard:', err);
+      }
     }
   };
 
