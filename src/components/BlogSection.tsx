@@ -32,7 +32,7 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
 
       <div className="md:w-1/3 h-64 md:h-auto rounded-3xl overflow-hidden shadow-inner">
         <OptimizedImage
-          src={imageError || !post.image ? FALLBACK_IMAGE : (imageMap[post.image] || post.image)}
+          src={imageError || !post.image ? FALLBACK_IMAGE : (imageMap[`/src${post.image}`] || post.image)}
           alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           width={800}
@@ -228,7 +228,7 @@ export default function BlogSection() {
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
                 <OptimizedImage 
-                  src={activePost.image ? (imageMap[activePost.image] || activePost.image) : FALLBACK_IMAGE} 
+                  src={activePost.image ? (imageMap[`/src${activePost.image}`] || activePost.image) : FALLBACK_IMAGE} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
                   className="absolute inset-0 w-full h-full object-cover"
                   width={600}

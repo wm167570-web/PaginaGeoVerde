@@ -342,7 +342,7 @@ export default function BlogListing() {
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
                 <OptimizedImage 
-                  src={imageErrors[activePost.id] || !activePost.image ? FALLBACK_IMAGE : (imageMap[activePost.image] || activePost.image)} 
+                  src={imageErrors[activePost.id] || !activePost.image ? FALLBACK_IMAGE : (imageMap[`/src${activePost.image}`] || activePost.image)} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
                   className="absolute inset-0 w-full h-full object-cover"
                   onError={() => handleImageError(activePost.id)}
