@@ -17,6 +17,21 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHash, setActiveHash] = useState('');
 
+  const handleScroll = (e: React.MouseEvent, href: string) => {
+    if (href.startsWith('/#')) {
+      const targetId = href.replace('/#', '');
+      const element = document.getElementById(targetId);
+      
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.pushState({}, '', `#${targetId}`);
+        setActiveHash(href);
+        setMobileOpen(false);
+      }
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -61,7 +76,7 @@ export default function Navbar() {
               key={link.name} 
               to={link.href} 
               className={`relative py-1 group ${isScrolled ? 'text-white' : 'text-brand-primary hover:text-brand-primary'}`}
-              onClick={() => setActiveHash(link.href)}
+              onClick={(e) => handleScroll(e, link.href)}
             >
               <span className="relative z-10">{link.name}</span>
               {activeHash === link.href && (
@@ -97,7 +112,7 @@ export default function Navbar() {
                 transition={{ delay: i * 0.1 }}
                 href={link.href}
                 className="text-4xl font-serif text-white hover:text-brand-secondary"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e: React.MouseEvent) => handleScroll(e, link.href)}
               >
                 {link.name}
               </motion.a>
