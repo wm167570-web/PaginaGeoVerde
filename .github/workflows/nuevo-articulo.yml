@@ -30,10 +30,23 @@ jobs:
       - name: Generar artículo
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: |
           echo "Iniciando generación..."
           node scripts/generate-article.mjs
           echo "Generación completada"
+
+      - name: Verificar integridad de imágenes
+        run: |
+          node -e "
+          const articles = JSON.parse(require('fs').readFileSync('src/data/extendedBlog.json','utf8'));
+          const sinImagen = articles.filter(a => !a.image || a.image.length < 10);
+          if(sinImagen.length > 0) {
+            console.log('⚠️ Artículos sin imagen:', sinImagen.map(a=>a.title));
+          } else {
+            console.log('✅ Todas las imágenes OK:', articles.length, 'artículos');
+          }
+          "
 
       - name: Commit y Push de cambios
         run: |
