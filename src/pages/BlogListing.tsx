@@ -171,6 +171,7 @@ export default function BlogListing() {
                   className="group bg-white rounded-[2.5rem] overflow-hidden border border-brand-earth/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
                 >
                   <div className="relative aspect-video overflow-hidden">
+                    {console.log("URL de imagen:", post.image)}
                     <img 
                       src={post.image || FALLBACK_IMAGE} 
                       alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`} 
@@ -331,6 +332,7 @@ export default function BlogListing() {
               </button>
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
+                {console.log("URL de imagen:", activePost.image)}
                 <img 
                   src={activePost.image || FALLBACK_IMAGE} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 

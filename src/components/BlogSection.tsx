@@ -26,7 +26,8 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
         <Logo className="w-full h-full" />
       </div>
 
-      <div className="md:w-1/3 h-64 md:h-auto rounded-3xl overflow-hidden shadow-inner">
+      <div className="md:w-1/3 h-64 md:h-auto rounded-3xl overflow-hidden shadow-inner relative">
+        {console.log("URL de imagen:", post.image)}
         <img
           src={post.image || FALLBACK_IMAGE}
           alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`}
