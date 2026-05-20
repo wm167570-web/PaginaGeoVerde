@@ -8,7 +8,6 @@ import Logo from '../components/Logo';
 import Tooltip from '../components/ui/Tooltip';
 import Footer from '../components/Footer';
 import extendedBlog from '../data/extendedBlog.json';
-import { OptimizedImage } from '../components/ui/OptimizedImage';
 
 const FALLBACK_IMAGE = "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg";
 
@@ -172,11 +171,13 @@ export default function BlogListing() {
                   className="group bg-white rounded-[2.5rem] overflow-hidden border border-brand-earth/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
                 >
                   <div className="relative aspect-video overflow-hidden">
-                    <OptimizedImage 
+                    <img 
                       src={post.image || FALLBACK_IMAGE} 
                       alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                      priority={index < 3}
+                      onError={(e) => {
+                        e.currentTarget.src = FALLBACK_IMAGE;
+                      }}
                     />
                     <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
@@ -330,10 +331,13 @@ export default function BlogListing() {
               </button>
 
               <div className="md:w-1/2 relative h-64 md:h-auto">
-                <OptimizedImage 
+                <img 
                   src={activePost.image || FALLBACK_IMAGE} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
                   className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = FALLBACK_IMAGE;
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>
