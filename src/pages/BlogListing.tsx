@@ -70,7 +70,7 @@ export default function BlogListing() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-8"
+            className="mb-8 flex items-center gap-4"
           >
             <Link 
               to="/" 
@@ -81,6 +81,13 @@ export default function BlogListing() {
               </div>
               Volver al Inicio
             </Link>
+            <span className="text-brand-primary/20">|</span>
+            <a 
+              href="/blog" 
+              className="group inline-flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-[0.2em] hover:text-brand-secondary transition-all"
+            >
+              Blog Ambiental
+            </a>
           </motion.div>
 
           <div className="mb-16 text-center">
