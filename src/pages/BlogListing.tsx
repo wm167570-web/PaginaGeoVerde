@@ -144,8 +144,10 @@ export default function BlogListing() {
                       alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`} 
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                       onError={() => handleImageError(post.id)}
-                      width={400}
-                      height={300}
+                      width={800}
+                      height={450}
+                      loading={index === 0 && currentPage === 1 ? "eager" : "lazy"}
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>

@@ -35,8 +35,10 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
           src={imageError || !post.image ? FALLBACK_IMAGE : (imageMap[post.image] || post.image)}
           alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          width={400}
-          height={300}
+          width={800}
+          height={450}
+          loading={index === 0 ? "eager" : "lazy"}
+          decoding="async"
           onError={() => setImageError(true)}
         />
       </div>

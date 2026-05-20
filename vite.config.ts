@@ -23,10 +23,16 @@ export default defineConfig(({mode}) => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
     build: {
+      target: 'es2015',
+      minify: 'terser',
+      terserOptions: {
+        compress: { drop_console: true, drop_debugger: true }
+      },
       rollupOptions: {
         output: {
           manualChunks: {
-            vendor: ['react', 'react-dom']
+            vendor: ['react', 'react-dom'],
+            router: ['react-router-dom']
           }
         }
       },

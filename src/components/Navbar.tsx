@@ -57,9 +57,9 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest">
           {NAV_LINKS.map(link => (
-            <a 
+            <Link 
               key={link.name} 
-              href={link.href} 
+              to={link.href} 
               className={`relative py-1 group ${isScrolled ? 'text-white' : 'text-brand-primary hover:text-brand-primary'}`}
               onClick={() => setActiveHash(link.href)}
             >
@@ -67,7 +67,7 @@ export default function Navbar() {
               {activeHash === link.href && (
                 <motion.div layoutId="underline" className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-secondary" />
               )}
-            </a>
+            </Link>
           ))}
           <a href={content.channel.url} target="_blank" rel="noreferrer" className="bg-brand-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-brand-primary/90 transition-all shadow-lg">
             Suscribirse

@@ -44,7 +44,10 @@ export default function VideoGrid() {
               transition={{ delay: index * 0.1 }}
               className="group cursor-pointer block"
             >
-              <div className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-brand-light-green/20">
+              <div 
+                className="relative aspect-video rounded-2xl overflow-hidden mb-6 bg-brand-light-green/20"
+                style={{ backgroundColor: '#1a3a2a', minHeight: '180px' }}
+              >
                 {/* Mock Thumbnail */}
                 <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                 <OptimizedImage 
