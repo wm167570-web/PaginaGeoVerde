@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Youtube, Instagram, Music, Facebook, Download, ArrowRight, Calculator } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -18,6 +18,15 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [selectedResource, setSelectedResource] = useState<number | null>(null);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+
+  useEffect(() => {
+    if (window.location.hash === '#blog') {
+      const element = document.getElementById('blog');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
 
   const fetchLatestVideo = async (e: React.MouseEvent, fallbackLink: string) => {
     e.preventDefault();
