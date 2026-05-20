@@ -39,26 +39,17 @@ export function OptimizedImage({
 
   return (
     <div 
-      className={`overflow-hidden ${className.includes('absolute') ? '' : 'relative'} ${className}`} 
-      style={{ 
-        contentVisibility: 'auto', 
-        containIntrinsicSize: `${width || 800}px ${height || 450}px`,
-        ...style 
-      }}
+      className={`relative overflow-hidden ${className}`} 
+      style={{ ...style }}
     >
-      {!loaded && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-      )}
       <img
-        key={src}
         src={optimizedSrc}
         alt={alt}
-        className={`w-full h-full object-cover transition-all duration-700 ${loaded ? 'blur-0' : 'blur-lg'}`}
+        className={`w-full h-full object-cover transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
         width={width}
         height={height}
-        loading={priority ? 'eager' : loading}
-        fetchPriority={priority ? 'high' : 'auto'}
-        decoding={decoding}
+        loading="eager"
+        decoding="auto"
         referrerPolicy="no-referrer"
         onLoad={() => setLoaded(true)}
         onError={(e) => {
