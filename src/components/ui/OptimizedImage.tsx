@@ -40,7 +40,7 @@ export function OptimizedImage({
       <img
         src={optimizedSrc}
         alt={alt}
-        className={`w-full h-full object-cover transition-all duration-700 ${loaded ? 'blur-0' : 'blur-20'}`}
+        className={`w-full h-full object-cover transition-all duration-700 ${loaded ? 'blur-0' : 'blur-lg'}`}
         width={width}
         height={height}
         loading={priority ? 'eager' : loading}
