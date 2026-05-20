@@ -147,7 +147,7 @@ export default function BlogListing() {
                        <Calendar className="w-3 h-3 text-brand-sky" /> {post.date}
                     </div>
 
-                    <h3 className="font-serif text-2xl font-bold text-brand-primary mb-4 group-hover:text-brand-secondary transition-colors leading-tight">
+                    <h3 className="font-serif text-2xl font-bold text-brand-primary mb-4 group-hover:text-brand-earth transition-colors leading-tight">
                       {post.title}
                     </h3>
                     <p className="text-sm text-brand-forest/70 line-clamp-3 mb-8 flex-grow">

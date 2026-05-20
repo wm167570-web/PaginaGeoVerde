@@ -65,7 +65,7 @@ export default function VideoGrid() {
                 </div>
               </div>
 
-              <h4 className="font-serif text-2xl font-bold text-brand-primary mb-2 group-hover:text-brand-secondary transition-colors leading-tight">
+              <h4 className="font-serif text-2xl font-bold text-brand-primary mb-2 group-hover:text-brand-earth transition-colors leading-tight">
                 {video.title}
               </h4>
               <p className="max-w-prose text-[17px] leading-[1.75] text-brand-forest/70 line-clamp-2">
