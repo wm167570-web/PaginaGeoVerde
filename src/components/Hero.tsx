@@ -6,6 +6,8 @@ import { OptimizedImage } from './ui/OptimizedImage';
 import Tooltip from './ui/Tooltip';
 import { useRef, useEffect, useState } from 'react';
 
+import causaSemana from '../data/causaSemana.json';
+
 export default function Hero() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -115,17 +117,20 @@ export default function Hero() {
         >
           <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl skew-y-3 transform transition-transform hover:skew-y-0 duration-700">
             <OptimizedImage 
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" 
-              alt="Conciencia y Naturaleza"
+              src={causaSemana.imagen} 
+              alt={causaSemana.titulo}
               className="object-cover w-full h-full scale-100 hover:scale-110 transition-transform duration-[1000ms]"
               width={1000}
               height={1250}
               priority={true}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/80 via-black/20 to-transparent" />
             <div className="absolute bottom-12 left-12 right-12 text-white">
-              <span className="text-[11px] font-bold uppercase tracking-[0.15em] opacity-80 mb-2 block">Causa del mes</span>
-              <h3 className="text-balance font-serif text-3xl font-bold italic text-white drop-shadow-md">Reforestación Urbana en el Siglo XXI</h3>
+              <span className="text-[11px] font-bold uppercase tracking-[0.15em] opacity-80 mb-2 block animate-pulse">Causa de la Semana</span>
+              <h3 className="text-balance font-serif text-3xl font-bold italic text-white drop-shadow-md mb-2">{causaSemana.titulo}</h3>
+              {causaSemana.descripcion && (
+                <p className="text-sm text-white/90 font-medium leading-relaxed drop-shadow-sm line-clamp-2">{causaSemana.descripcion}</p>
+              )}
             </div>
           </div>
           
