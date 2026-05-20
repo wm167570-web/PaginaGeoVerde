@@ -56,7 +56,7 @@ export default function VideoGrid() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   width={600}
                   height={340}
-                  loading="lazy"
+                  priority={index < 3}
                 />
                 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

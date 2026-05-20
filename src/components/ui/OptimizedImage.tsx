@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface OptimizedImageProps {
   src: string;
@@ -25,32 +25,35 @@ export function OptimizedImage({
   onError,
   style
 }: OptimizedImageProps) {
+  const [loaded, setLoaded] = useState(false);
+
   // Optimize Unsplash URLs if possible
   const optimizedSrc = src.includes('images.unsplash.com') 
     ? `${src.split('?')[0]}?auto=format&fit=crop&q=75&w=${width || 800}&fm=webp`
     : src;
 
-  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.classList.add('loaded');
-  };
-
   return (
-    <img
-      src={optimizedSrc}
-      alt={alt}
-      className={className}
-      width={width}
-      height={height}
-      loading={priority ? 'eager' : loading}
-      fetchPriority={priority ? 'high' : 'auto'}
-      decoding={decoding}
-      referrerPolicy="no-referrer"
-      style={{ backgroundColor: '#e8f5e9', ...style }}
-      onLoad={handleImageLoad}
-      onError={(e) => {
-        e.currentTarget.src = 'https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg';
-        if (onError) onError(e);
-      }}
-    />
+    <div className={`relative overflow-hidden ${className}`} style={{ contentVisibility: 'auto', ...style }}>
+      {!loaded && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+      )}
+      <img
+        src={optimizedSrc}
+        alt={alt}
+        className={`w-full h-full object-cover transition-all duration-700 ${loaded ? 'blur-0' : 'blur-20'}`}
+        width={width}
+        height={height}
+        loading={priority ? 'eager' : loading}
+        fetchPriority={priority ? 'high' : 'auto'}
+        decoding={decoding}
+        referrerPolicy="no-referrer"
+        onLoad={() => setLoaded(true)}
+        onError={(e) => {
+          e.currentTarget.src = 'https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg';
+          setLoaded(true);
+          if (onError) onError(e);
+        }}
+      />
+    </div>
   );
 }

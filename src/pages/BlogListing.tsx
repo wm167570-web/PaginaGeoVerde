@@ -186,7 +186,7 @@ export default function BlogListing() {
                       onError={() => handleImageError(post.id)}
                       width={800}
                       height={450}
-                      loading={index === 0 && currentPage === 1 ? "eager" : "lazy"}
+                      priority={index < 3 && currentPage === 1}
                       decoding="async"
                     />
                     <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
@@ -348,6 +348,7 @@ export default function BlogListing() {
                   onError={() => handleImageError(activePost.id)}
                   width={600}
                   height={400}
+                  priority={true}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
                    <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>

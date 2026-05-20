@@ -37,7 +37,7 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           width={800}
           height={450}
-          loading={index === 0 ? "eager" : "lazy"}
+          priority={index < 3}
           decoding="async"
           onError={(e) => {
             setImageError(true);
@@ -233,7 +233,7 @@ export default function BlogSection() {
                   className="absolute inset-0 w-full h-full object-cover"
                   width={600}
                   height={400}
-                  loading="lazy"
+                  priority={true}
                   onError={(e) => {
                     e.currentTarget.src = FALLBACK_IMAGE;
                   }}
