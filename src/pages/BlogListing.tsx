@@ -83,7 +83,7 @@ export default function BlogListing() {
             </Link>
             <span className="text-brand-primary/20">|</span>
             <a 
-              href="/blog" 
+              href="https://geoverdevidaconsciente.com/#blog" 
               className="group inline-flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-[0.2em] hover:text-brand-secondary transition-all"
             >
               Blog Ambiental
@@ -327,7 +327,7 @@ export default function BlogListing() {
                       ← Volver al Inicio
                     </Link>
                     <a 
-                      href="/blog" 
+                      href="https://geoverdevidaconsciente.com/#blog" 
                       className="flex items-center gap-1 text-sm font-medium hover:underline"
                       style={{ marginLeft: '12px', paddingLeft: '12px', borderLeft: '1px solid #ccc' }}
                     >
