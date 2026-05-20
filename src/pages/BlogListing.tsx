@@ -319,9 +319,12 @@ export default function BlogListing() {
                     <Link to="/" className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
                       ← Volver al Inicio
                     </Link>
-                    <span className="mx-2 text-gray-400">|</span>
-                    <a href="/blog" className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-green-700 transition-colors">
-                      ← Blog
+                    <a 
+                      href="/blog" 
+                      className="flex items-center gap-1 text-sm font-medium hover:underline"
+                      style={{ marginLeft: '12px', paddingLeft: '12px', borderLeft: '1px solid #ccc' }}
+                    >
+                      Blog
                     </a>
                   </div>
                 </div>

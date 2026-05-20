@@ -112,8 +112,8 @@ export default function BlogSection() {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-4 lg:sticky lg:top-32">
-            <h2 className="text-[54px] font-bold uppercase tracking-[0.15em] text-brand-primary/60 mb-4 overflow-visible whitespace-normal w-full max-w-full break-normal">Blog Ambiental</h2>
+          <div className="lg:col-span-4 lg:sticky lg:top-32 overflow-visible w-full">
+            <h2 className="text-[54px] font-bold uppercase tracking-[0.15em] text-brand-primary/60 mb-4 whitespace-normal break-words w-full overflow-visible min-h-[140px]">Blog Ambiental</h2>
             <h3 className="text-balance font-serif text-4xl md:text-5xl font-black text-brand-primary italic leading-[1.1] mb-8 tracking-tighter">
               Artículos & <span className="not-italic font-light opacity-80">Noticias Verdes</span>
             </h3>
@@ -212,9 +212,12 @@ export default function BlogSection() {
                     >
                       ← Volver al Inicio
                     </button>
-                    <span className="mx-2 text-gray-400">|</span>
-                    <a href="/blog" className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-green-700 transition-colors">
-                      ← Blog
+                    <a 
+                      href="/blog" 
+                      className="flex items-center gap-1 text-sm font-medium hover:underline"
+                      style={{ marginLeft: '12px', paddingLeft: '12px', borderLeft: '1px solid #ccc' }}
+                    >
+                      Blog
                     </a>
                   </div>
                 </div>
