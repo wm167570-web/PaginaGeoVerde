@@ -207,16 +207,16 @@ export default function BlogSection() {
                   <div className="flex gap-4 items-center">
                     <button 
                       onClick={() => setActivePost(null)}
-                      className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
+                      className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
                     >
-                      Volver al Inicio
+                      ← Inicio
                     </button>
                     <span className="text-brand-primary/20">|</span>
                     <Link 
                       to="/blog" 
-                      className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
+                      className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
                     >
-                      Volver al Blog
+                      ← Blog
                     </Link>
                   </div>
                 </div>

@@ -315,15 +315,15 @@ export default function BlogListing() {
                     GEOVERDE BLOG
                   </span>
                   <div className="flex gap-4 items-center">
-                    <Link to="/" className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
-                      Volver al Inicio
+                    <Link to="/" className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
+                      ← Inicio
                     </Link>
                     <span className="text-brand-primary/20">|</span>
                     <button 
                       onClick={() => setActivePost(null)}
-                      className="text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
+                      className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors"
                     >
-                      Volver al Blog
+                      ← Blog
                     </button>
                   </div>
                 </div>
