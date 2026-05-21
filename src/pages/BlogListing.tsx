@@ -331,14 +331,17 @@ export default function BlogListing() {
                 <X className="w-6 h-6" aria-hidden="true" />
               </button>
 
-              <div className="md:w-1/2 relative h-64 md:h-auto">
-                {console.log("URL de imagen:", activePost.image)}
+              <div className="md:w-1/2 relative h-64 md:h-full min-h-[300px] flex-shrink-0">
                 <img 
                   src={activePost.image || FALLBACK_IMAGE} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
+                  loading="eager"
+                  decoding="sync"
                   className="absolute inset-0 w-full h-full object-cover"
+                  onLoad={() => console.log("Image loaded successfully")}
                   onError={(e) => {
-                    e.currentTarget.src = FALLBACK_IMAGE;
+                    console.error("Image failed to load:", e);
+                    e.currentTarget.style.display = 'none';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
