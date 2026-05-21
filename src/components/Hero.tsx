@@ -34,16 +34,14 @@ export default function Hero() {
       {/* Background Image Watermark */}
       <motion.div 
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-        style={{ y: isMobile ? 0 : yBackground }}
+        style={{ 
+          y: isMobile ? 0 : yBackground,
+          backgroundImage: `url('/assets/images/forest_river_1779321443558.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
       >
-        <OptimizedImage 
-          src="/assets/images/regenerated_image_1778719801817.jpg" 
-          alt="Conciencia ambiental background" 
-          className="w-full h-full object-cover grayscale mix-blend-overlay"
-          width={1920}
-          height={1080}
-          loading="lazy"
-        />
       </motion.div>
 
       {/* Abstract background elements - using palette blobs */}
@@ -53,16 +51,14 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 bg-white/40 backdrop-blur-md rounded-[3rem] p-4 md:p-20 border border-brand-forest/5 group overflow-hidden shadow-2xl shadow-brand-forest/5">
         
-        <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none">
-          <OptimizedImage 
-            src="/assets/images/regenerated_image_1778720228531.jpg" 
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover mix-blend-multiply scale-110 group-hover:scale-100 transition-transform duration-[5s]"
-            width={1920}
-            height={1080}
-            loading="lazy"
-          />
+        <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none"
+          style={{ 
+            backgroundImage: `url('/assets/images/forest_river_1779321443558.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
         </div>
         
         <motion.div

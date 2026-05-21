@@ -9,15 +9,15 @@ export default function VideoGrid() {
   return (
     <section id="videos" className="py-24 bg-white relative overflow-hidden border-b border-brand-earth/10">
       {/* Subtle Background */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply">
-        <OptimizedImage 
-          src={backgroundBg} 
-          alt="Hands holding plants" 
-          className="w-full h-full object-cover"
-          width={1920}
-          height={1080}
-          loading="lazy"
-        />
+      <div 
+        className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply"
+        style={{ 
+          backgroundImage: `url('${backgroundBg}')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
       </div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
