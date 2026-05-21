@@ -36,7 +36,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
         style={{ 
           y: isMobile ? 0 : yBackground,
-          backgroundImage: `url('/assets/images/forest_river_1779321443558.png')`,
+          backgroundImage: `url('assets/images/forest_river_1779321443558.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -53,7 +53,7 @@ export default function Hero() {
         
         <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-1000 pointer-events-none"
           style={{ 
-            backgroundImage: `url('/assets/images/forest_river_1779321443558.png')`,
+            backgroundImage: `url('assets/images/forest_river_1779321443558.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
