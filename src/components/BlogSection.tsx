@@ -27,7 +27,6 @@ function BlogArticleCard({ post, index, setActivePost, handleShare }: any) {
       </div>
 
       <div className="md:w-1/3 h-64 md:h-auto rounded-3xl overflow-hidden shadow-inner relative">
-        {console.log("URL de imagen:", post.image)}
         <img
           src={post.image || FALLBACK_IMAGE}
           alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`}
@@ -218,13 +217,16 @@ export default function BlogSection() {
                 <X className="w-6 h-6" aria-hidden="true" />
               </button>
 
-              <div className="md:w-1/2 relative h-64 md:h-auto">
+              <div className="md:w-1/2 relative h-64 md:h-auto min-h-[300px] flex-shrink-0">
                 <img 
-                  src={activePost.image ? activePost.image : FALLBACK_IMAGE} 
+                  src={activePost.image || FALLBACK_IMAGE} 
                   alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
                   className="absolute inset-0 w-full h-full object-cover"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="sync"
+                  referrerPolicy="no-referrer"
                   onError={(e) => {
+                    console.error("Image failed to load in blog section modal, falling back:", e);
                     e.currentTarget.src = FALLBACK_IMAGE;
                   }}
                 />

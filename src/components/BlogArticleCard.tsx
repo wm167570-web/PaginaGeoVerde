@@ -37,7 +37,6 @@ export function BlogArticleCard({ post, index, setActivePost, handleShare }: Blo
       </div>
 
       <div className="relative z-10 md:w-2/3 flex flex-col">
-        {console.log("URL de imagen:", post.image)}
         <div className="flex items-center gap-6 text-[11px] font-bold uppercase tracking-[0.15em] text-brand-forest/80 mb-6 font-sans">
           <span className="flex items-center gap-2">
               <Calendar className="w-3 h-3 text-brand-sky" /> {post.date}

@@ -80,6 +80,7 @@ async function generateArticle() {
         2. Al menos 3 secciones con subencabezados en negrita (ejemplo: **El Impacto en las Cuencas**).
         3. Datos técnicos reales y estadísticas actuales sobre Latinoamérica (países como México, Colombia, Brasil, Chile, Argentina, etc.).
         4. Conclusión con una reflexión profunda o llamado a la acción.
+        5. PÁRRAFO FINAL OBLIGATORIO: El artículo debe finalizar con un párrafo de cierre de llamado a la acción. Debe comenzar con una pregunta retórica en negrita invitando de forma directa al lector a formar parte de la solución (por ejemplo: "**¿Estás listo para formar parte de la solución y cambiar tus hábitos diarios?**"), seguida de 2 a 3 líneas con un tono cálido, directo y esperanzador que lo motive a informarse, unirse a iniciativas ecológicas locales y tomar conciencia ambiental en sus decisiones cotidianas.
       - Imagen: Omitido, se asignará dinámicamente post-generación.
       - Categoría: Una de estas (Cambio Climático, Biodiversidad, Energía Limpia, Movilidad Sostenible, Estilo de Vida, Tecnología Verde).
 
@@ -92,7 +93,7 @@ async function generateArticle() {
         "image": "",
         "category": "Categoría elegida",
         "excerpt": "Resumen de 2 oraciones para la vista previa.",
-        "content": "Introducción... \\n\\n **Subtítulo 1** \\n Texto... \\n\\n **Subtítulo 2** \\n Texto... \\n\\n **Subtítulo 3** \\n Texto... \\n\\n Conclusión.",
+        "content": "Introducción... \\n\\n **Subtítulo 1** \\n Texto... \\n\\n **Subtítulo 2** \\n Texto... \\n\\n **Subtítulo 3** \\n Texto... \\n\\n Conclusión. \\n\\n **¿Estás listo para formar parte de la solución y cambiar tus hábitos diarios?** Texto de llamado a la acción motivador de 2 o 3 líneas con un tono cálido y directo.",
         "keywords": ["keyword1", "keyword2", "keyword3"]
       }
 
