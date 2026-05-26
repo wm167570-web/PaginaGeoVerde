@@ -87,24 +87,28 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <a 
-                href="https://m.youtube.com/@GeoVerdeCon100"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 bg-brand-primary text-white border-2 border-brand-primary px-8 py-4 rounded-full font-bold transition-all hover:bg-transparent hover:text-brand-primary shadow-xl shadow-brand-primary/20"
-              >
-                Ver en YouTube
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://geoverdevidaconsciente.com/#blog"
-                target="_blank"
-                rel="noreferrer"
-                className="group flex items-center gap-3 bg-transparent text-brand-earth border-2 border-brand-earth px-8 py-4 rounded-full font-bold transition-all hover:bg-brand-earth hover:text-white"
-              >
-                Explorar Blog
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <div className="button-bg rounded-full p-0.5 hover:scale-105 transition duration-300 active:scale-100 flex-none leading-none">
+                <a 
+                  href="https://m.youtube.com/@GeoVerdeCon100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3 px-8 text-sm py-2.5 text-white rounded-full font-medium bg-gray-800 h-full w-full justify-center"
+                >
+                  Ver en YouTube
+                  <Youtube className="w-5 h-5" />
+                </a>
+              </div>
+              <div className="button-bg rounded-full p-0.5 hover:scale-105 transition duration-300 active:scale-100 flex-none leading-none">
+                <a 
+                  href="https://geoverdevidaconsciente.com/#blog"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center gap-3 px-8 text-sm py-2.5 text-white rounded-full font-medium bg-gray-800 h-full w-full justify-center"
+                >
+                  Explorar Blog
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
             </div>
           </motion.div>
         </motion.div>
