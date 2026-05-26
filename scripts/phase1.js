@@ -1,0 +1,10 @@
+const a = JSON.parse(require('fs').readFileSync('src/data/extendedBlog.json','utf8'));
+const pexels = a.filter(x => x.image?.includes('pexels.com')).length;
+const otros = a.filter(x => x.image && !x.image.includes('pexels.com')).length;
+const sinImagen = a.filter(x => !x.image).length;
+console.log('Total artículos:', a.length);
+console.log('Con imagen Pexels:', pexels);
+console.log('Con imagen NO Pexels:', otros);
+console.log('Sin imagen:', sinImagen);
+console.log('\nPrimeros 5 títulos con imagen NO Pexels:');
+a.filter(x => x.image && !x.image.includes('pexels.com')).slice(0,5).forEach(x => console.log(' -', x.title, '|', x.image?.substring(0,60)));

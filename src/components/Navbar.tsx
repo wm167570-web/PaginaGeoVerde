@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { name: 'Nosotros', href: '/#nosotros' },
   { name: 'Videos', href: '/#videos' },
   { name: 'Noticias', href: 'https://geoverdevidaconsciente.com/#blog' },
-  { name: 'Recursos', href: 'https://geoverdevidaconsciente.com/#resources' },
+  { name: 'Recursos', href: '/#resources' },
   { name: 'Contacto', href: '/#contact' },
 ];
 

@@ -8,7 +8,6 @@ import Logo from '../components/Logo';
 import Tooltip from '../components/ui/Tooltip';
 import Footer from '../components/Footer';
 import extendedBlog from '../data/extendedBlog.json';
-
 const FALLBACK_IMAGE = "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg";
 
 export default function BlogListing() {
