@@ -15,7 +15,7 @@ export default function BlogListing() {
   const [currentPage, setCurrentPage] = useState(1);
   const [activePost, setActivePost] = useState<null | typeof extendedBlog[0]>(null);
 
-  const postsPerPage = 9;
+  const postsPerPage = 8;
 
   const filteredPosts = useMemo(() => {
     setCurrentPage(1); // Reset to first page when searching
@@ -93,7 +93,13 @@ export default function BlogListing() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-surface">
+    <div className="min-h-screen bg-slate-50" id="blog-listing">
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+        #blog-listing * {
+            font-family: 'Poppins', sans-serif;
+        }
+      `}} />
       <Navbar />
       
       <main className="pt-32 pb-24">
@@ -101,130 +107,90 @@ export default function BlogListing() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="mb-8 flex items-center gap-4"
+            className="mb-12 flex items-center justify-center gap-4"
           >
             <Link 
               to="/" 
-              className="inline-flex items-center gap-2 group text-brand-primary font-bold text-xs uppercase tracking-[0.2em] hover:text-brand-secondary transition-all"
+              className="inline-flex items-center gap-2 group text-slate-600 font-medium text-sm hover:text-slate-900 transition-all"
             >
-              <div className="w-8 h-8 rounded-full bg-white border border-brand-earth/10 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all shadow-sm">
-                <ChevronLeft className="w-4 h-4" />
-              </div>
+              <ChevronLeft className="w-4 h-4" />
               Volver al Inicio
-            </Link>
-            <span className="text-brand-primary/20">|</span>
-            <Link 
-              to="/#blog" 
-              className="group inline-flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-[0.2em] hover:text-brand-secondary transition-all"
-            >
-              Blog Ambiental
             </Link>
           </motion.div>
 
-          <div className="mb-16 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-6"
-            >
-               Biblioteca GeoVerde
-            </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="font-serif text-5xl md:text-7xl font-black italic text-brand-primary mb-8 tracking-tighter"
-            >
-              Artículos & <span className="not-italic font-light opacity-80">Conciencia</span>
-            </motion.h1>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="max-w-2xl mx-auto relative group"
-            >
-              <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none text-brand-forest group-focus-within:text-brand-primary transition-colors">
-                <Search className="w-5 h-5" />
+          <div className="mb-10 text-center">
+            <div className="inline-flex flex-col gap-3 items-center w-full max-w-2xl px-4">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+                Blog de Noticias
+              </h2>
+              <p className="max-w-2xl text-base leading-relaxed text-slate-500">
+                Encuentra exactamente lo que buscas en nuestras colecciones de artículos, noticias y ecología.
+              </p>
+              <div className="mt-4 flex items-center mx-auto border pl-4 gap-2 bg-white border-slate-200 h-[46px] rounded-full overflow-hidden w-full shadow-sm">
+                <Search className="w-5 h-5 text-slate-400 flex-shrink-0" />
+                <input 
+                  type="text"
+                  placeholder="Buscar temas, noticias, soluciones..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full h-full outline-none text-sm text-slate-600 placeholder:text-slate-400 bg-transparent"
+                />
+                <button type="submit" className="bg-slate-900 hover:bg-slate-800 transition flex-shrink-0 w-24 h-9 rounded-full text-sm font-medium text-white mr-[3.5px]">
+                    Buscar
+                </button>
               </div>
-              <input 
-                type="text"
-                placeholder="Buscar temas, noticias, soluciones..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white border-2 border-brand-earth/20 rounded-full py-5 pl-16 pr-8 shadow-xl shadow-brand-forest/5 focus:outline-none focus:border-brand-primary transition-all text-brand-primary font-medium placeholder:text-brand-forest/30"
-              />
-            </motion.div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+          <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-4">
             <AnimatePresence mode="popLayout">
-              {paginatedPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.5, delay: index % 10 * 0.05 }}
-                  className="group bg-white rounded-[2.5rem] overflow-hidden border border-brand-earth/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
-                >
-                  <div className="relative aspect-video overflow-hidden">
+              {paginatedPosts.map((post, index) => {
+                return (
+                  <motion.button
+                    key={post.id}
+                    onClick={() => handleOpenArticle(post)}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.5, delay: index % 8 * 0.05 }}
+                    className="group relative block aspect-[4/3] lg:aspect-[3/4] overflow-hidden rounded-2xl w-full text-left bg-slate-900 shadow-sm hover:shadow-xl transition-shadow duration-500"
+                  >
                     <img 
-                      src={post.image || FALLBACK_IMAGE} 
-                      alt={`Infografía de ${post.title} - GeoVerde Vida Consciente`} 
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                      alt={post.title} 
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 md:group-hover:scale-105 opacity-90 group-hover:opacity-100" 
+                      src={post.image || FALLBACK_IMAGE}
                       onError={(e) => {
                         e.currentTarget.src = FALLBACK_IMAGE;
                       }}
                     />
-                    <div className="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition-colors duration-500" />
-                  </div>
-                  
-                  <div className="p-8 flex flex-col flex-grow">
-                    <div className="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-brand-forest/80 mb-4">
-                       <Calendar className="w-3 h-3 text-brand-sky" aria-hidden="true" /> {post.date}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-80 transition-opacity duration-500 md:group-hover:opacity-70"></div>
+                    <div className="absolute inset-0 flex flex-col justify-end p-6">
+                      <div className="transform transition-transform duration-500 md:translate-y-4 md:group-hover:translate-y-0">
+                        <div className="flex items-center gap-2 mb-3 opacity-0 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                           <span className="px-2 py-1 bg-white/20 backdrop-blur-md rounded-md text-[10px] font-semibold text-white tracking-widest uppercase">
+                             Noticia
+                           </span>
+                        </div>
+                        <h3 className="text-lg md:text-xl font-semibold text-white leading-snug drop-shadow-md mb-2 line-clamp-3 md:line-clamp-4">{post.title}</h3>
+                        <p className="text-sm font-medium text-emerald-400 group-hover:text-emerald-300 transition-colors flex items-center gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 duration-500">
+                          Leer Artículo <ArrowUpRight className="w-4 h-4"/>
+                        </p>
+                      </div>
                     </div>
-
-                    <h3 className="font-serif text-2xl font-bold text-brand-primary mb-4 group-hover:text-brand-earth transition-colors leading-tight">
-                      {post.title}
-                    </h3>
-                    <p className="text-sm text-brand-forest/70 line-clamp-3 mb-8 flex-grow">
-                      {post.excerpt}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-6 border-t border-brand-earth/10 mt-auto">
-                      <button 
-                        onClick={() => handleOpenArticle(post)}
-                        aria-label={`Leer artículo: ${post.title}`}
-                        className="flex items-center gap-2 text-brand-primary font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all hover:text-brand-sky"
-                      >
-                        Leer Artículo <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-                      </button>
-
-                      <Tooltip text="Compartir" position="left">
-                        <button 
-                          onClick={(e) => handleShare(e, post)}
-                          aria-label={`Compartir artículo: ${post.title}`}
-                          className="p-2 text-brand-forest/80 hover:text-brand-secondary transition-colors"
-                        >
-                          <Share2 className="w-4 h-4" aria-hidden="true" />
-                        </button>
-                      </Tooltip>
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
+                  </motion.button>
+                )
+              })}
             </AnimatePresence>
           </div>
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <div className="mt-20 flex justify-center items-center gap-3">
+            <div className="mt-16 flex justify-center items-center gap-3">
               <button
                 onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
-                className="p-3 rounded-full border-2 border-brand-earth/20 text-brand-primary disabled:opacity-30 disabled:cursor-not-allowed hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all shadow-lg"
+                className="p-3 rounded-full border border-slate-200 text-slate-800 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-900 hover:text-white transition-all shadow-sm"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
@@ -242,10 +208,10 @@ export default function BlogListing() {
                       <button
                         key={pageNumber}
                         onClick={() => setCurrentPage(pageNumber)}
-                        className={`w-12 h-12 rounded-full font-bold text-sm transition-all ${
+                        className={`w-10 h-10 rounded-full font-medium text-sm transition-all ${
                           currentPage === pageNumber
-                            ? 'bg-brand-primary text-white scale-110 shadow-xl'
-                            : 'bg-white text-brand-primary border-2 border-brand-earth/10 hover:border-brand-primary'
+                            ? 'bg-slate-900 text-white shadow-md'
+                            : 'bg-white text-slate-700 border border-slate-200 hover:bg-slate-50'
                         }`}
                       >
                         {pageNumber}
@@ -256,7 +222,7 @@ export default function BlogListing() {
                     pageNumber === currentPage - 2 ||
                     pageNumber === currentPage + 2
                   ) {
-                    return <span key={pageNumber} className="text-brand-forest/40">...</span>;
+                    return <span key={pageNumber} className="text-slate-400">...</span>;
                   }
                   return null;
                 })}
@@ -265,7 +231,7 @@ export default function BlogListing() {
               <button
                 onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
                 disabled={currentPage === totalPages}
-                className="p-3 rounded-full border-2 border-brand-earth/20 text-brand-primary disabled:opacity-30 disabled:cursor-not-allowed hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all shadow-lg rotate-180"
+                className="p-3 rounded-full border border-slate-200 text-slate-800 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-900 hover:text-white transition-all shadow-sm rotate-180"
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
@@ -278,10 +244,10 @@ export default function BlogListing() {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <p className="text-brand-forest/60 font-serif text-2xl italic">No encontramos artículos para esa búsqueda...</p>
+              <p className="text-slate-500 text-lg">No encontramos artículos para esa búsqueda...</p>
               <button 
                 onClick={() => setSearchTerm('')}
-                className="mt-6 text-brand-primary font-bold uppercase tracking-widest text-sm border-b-2 border-brand-secondary"
+                className="mt-6 text-slate-900 font-semibold text-sm hover:underline"
               >
                 Ver todos los artículos
               </button>
@@ -318,21 +284,21 @@ export default function BlogListing() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row"
+              className="relative w-full max-w-4xl max-h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
               role="document"
             >
               <button 
                 onClick={handleCloseArticle}
                 aria-label="Cerrar artículo"
-                className="absolute top-6 right-6 z-20 p-2 bg-white/20 backdrop-blur-md rounded-full text-brand-primary hover:bg-brand-primary hover:text-white transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                className="absolute top-6 right-6 z-20 p-2 bg-white backdrop-blur-md rounded-full text-slate-900 border border-slate-200 hover:bg-slate-100 transition-all shadow-md focus:outline-none"
               >
                 <X className="w-6 h-6" aria-hidden="true" />
               </button>
 
-              <div className="md:w-1/2 relative h-64 md:h-auto min-h-[300px] flex-shrink-0">
+              <div className="md:w-1/2 relative h-64 md:h-auto min-h-[400px] flex-shrink-0">
                 <img 
                   src={activePost.image || FALLBACK_IMAGE} 
-                  alt={`Infografía de ${activePost.title} - GeoVerde Vida Consciente`} 
+                  alt={activePost.title} 
                   loading="eager"
                   decoding="sync"
                   referrerPolicy="no-referrer"
@@ -343,27 +309,27 @@ export default function BlogListing() {
                     e.currentTarget.src = FALLBACK_IMAGE;
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 md:hidden">
-                   <h2 className="text-white font-serif text-3xl font-bold">{activePost.title}</h2>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8 md:hidden">
+                   <h2 className="text-white text-3xl font-semibold leading-tight">{activePost.title}</h2>
                 </div>
               </div>
 
-              <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto overscroll-contain scroll-smooth bg-brand-surface">
+              <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto overscroll-contain scroll-smooth bg-white">
                 <div className="hidden md:block mb-8">
-                  <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-forest/80 mb-4">
-                    <span className="flex items-center gap-2">
-                       <Calendar className="w-3 h-3 text-brand-secondary" aria-hidden="true" /> {activePost.date}
+                  <div className="flex items-center gap-4 text-xs font-medium text-slate-500 mb-4">
+                    <span className="flex items-center gap-1">
+                       <Calendar className="w-3.5 h-3.5" aria-hidden="true" /> {activePost.date}
                     </span>
-                    <span className="flex items-center gap-2 uppercase">
-                       <User className="w-3 h-3 text-brand-secondary" aria-hidden="true" /> GeoVerde
+                    <span className="flex items-center gap-1">
+                       <User className="w-3.5 h-3.5" aria-hidden="true" /> GeoVerde
                     </span>
                   </div>
-                  <h2 id={`dialog-title-${activePost.id}`} className="font-serif text-4xl font-bold text-brand-primary italic leading-[1.1]">
+                  <h2 id={`dialog-title-${activePost.id}`} className="text-3xl font-semibold text-slate-900 leading-tight">
                     {activePost.title}
                   </h2>
                 </div>
 
-                <div className="prose prose-brand-primary max-w-none prose-p:text-brand-forest/80 prose-headings:text-brand-primary prose-strong:text-brand-primary">
+                <div className="prose prose-slate max-w-none prose-p:text-slate-600 prose-headings:text-slate-900 prose-strong:text-slate-900">
                   <ReactMarkdown
                     components={{
                       p: ({ node, ...props }) => (
@@ -408,21 +374,17 @@ export default function BlogListing() {
                   </ReactMarkdown>
                 </div>
                 
-                <div className="mt-12 pt-8 border-t border-brand-primary/10 flex justify-between items-center">
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-forest/80">
+                <div className="mt-12 pt-8 border-t border-slate-200 flex justify-between items-center">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                     GEOVERDE BLOG
                   </span>
                   <div className="flex gap-4 items-center">
-                    <Link to="/" className="flex items-center gap-2 text-brand-secondary font-bold text-sm uppercase tracking-widest hover:text-brand-primary transition-colors">
-                      ← Volver al Inicio
-                    </Link>
-                    <Link 
-                      to="/#blog" 
-                      className="flex items-center gap-1 text-sm font-medium hover:underline"
-                      style={{ marginLeft: '12px', paddingLeft: '12px', borderLeft: '1px solid #ccc' }}
+                    <button 
+                      onClick={(e) => handleShare(e, activePost)}
+                      className="flex items-center gap-2 text-slate-600 font-medium text-sm hover:text-slate-900 transition-colors"
                     >
-                      Blog
-                    </Link>
+                      <Share2 className="w-4 h-4" /> Compartir
+                    </button>
                   </div>
                 </div>
               </div>

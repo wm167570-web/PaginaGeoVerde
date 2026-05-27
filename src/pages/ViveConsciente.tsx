@@ -88,13 +88,14 @@ export default function ViveConsciente() {
                   "Vive Consciente" significa entender esta transformación. Significa ver más allá del corto plazo e incorporar el impacto ambiental y social en cada decisión.
                 </p>
               </motion.div>
-              <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
                  <OptimizedImage 
                   src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800" 
                   alt="Economía y Naturaleza"
                   className="w-full h-full object-cover"
                   width={600}
                   height={800}
+                  priority={true}
                 />
               </div>
             </div>
@@ -115,13 +116,14 @@ export default function ViveConsciente() {
                   La sustentabilidad ha pasado de ser un área de responsabilidad corporativa a ser el núcleo central de la innovación y la rentabilidad. "Vive Consciente" es un llamado a elevar el nivel, a tomar decisiones con propósito y a diseñar sistemas que regeneran nuestro entorno, no que lo agotan.
                 </p>
               </motion.div>
-              <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl order-last md:order-first">
+              <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl order-last md:order-first bg-gray-100">
                  <OptimizedImage 
                   src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" 
                   alt="Liderazgo y Conciencia"
                   className="w-full h-full object-cover"
                   width={600}
                   height={800}
+                  priority={true}
                 />
               </div>
             </div>

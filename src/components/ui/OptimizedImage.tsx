@@ -39,7 +39,7 @@ export function OptimizedImage({
 
   return (
     <div 
-      className={`relative overflow-hidden ${className}`} 
+      className={`relative overflow-hidden ${className} ${!loaded ? 'bg-black/5 animate-pulse' : ''}`} 
       style={{ ...style }}
     >
       <img

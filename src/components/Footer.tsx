@@ -1,126 +1,51 @@
-import { motion } from 'motion/react';
-import { Youtube, Instagram, Music, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Tooltip from './ui/Tooltip';
 import content from '../data/content.json';
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-earth py-24 border-t border-brand-forest/10 relative overflow-hidden">
-      {/* Subtle Environmental Awareness Background */}
-      <div className="absolute inset-0 z-0 opacity-[0.08] pointer-events-none">
-        <img 
-          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1920" 
-          alt="Environmental Awareness" 
-          className="w-full h-full object-cover grayscale mix-blend-multiply"
-          referrerPolicy="no-referrer"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-          <div className="max-w-sm">
-            <Link to="/">
-              <Tooltip text="Volver arriba" position="right">
-                <div className="flex items-center gap-4 mb-6 cursor-pointer">
-                  <img
-                    src="/logo-geoverde.png"
-                    alt="Logo GeoVerde Vida Consciente"
-                    className="w-16 h-16 object-contain"
-                  />
-                  <span className="font-serif text-3xl font-bold tracking-tight text-brand-primary">
-                    {content.channel.name}
-                  </span>
-                </div>
-              </Tooltip>
+    <footer className="flex flex-col bg-slate-50 items-center justify-around w-full py-16 text-sm text-gray-800/70 font-sans">
+        <div className="flex flex-wrap justify-center items-center gap-8 px-4">
+            <Link to="/" className="font-medium text-gray-500 hover:text-black transition-all">
+                Inicio
             </Link>
-            <p className="text-[#30431b] font-bold text-2xl mb-8 leading-relaxed italic font-serif">
-              "{content.channel.description}"
-            </p>
-            <div className="flex items-center gap-6">
-              <Tooltip text="Instagram" position="top">
-                <motion.a 
-                  whileHover={{ y: -3, scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={content.channel.social.instagram} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-brand-forest hover:text-brand-primary transition-colors"
-                >
-                  <Instagram className="w-5 h-5" />
-                </motion.a>
-              </Tooltip>
-              <Tooltip text="TikTok" position="top">
-                <motion.a 
-                  whileHover={{ y: -3, scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={content.channel.social.tiktok} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-brand-forest hover:text-brand-primary transition-colors"
-                >
-                  <Music className="w-5 h-5" />
-                </motion.a>
-              </Tooltip>
-              <Tooltip text="Facebook" position="top">
-                <motion.a 
-                  whileHover={{ y: -3, scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={content.channel.social.facebook} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-brand-forest hover:text-brand-primary transition-colors"
-                >
-                  <Facebook className="w-5 h-5" />
-                </motion.a>
-              </Tooltip>
-              <Tooltip text="YouTube" position="top">
-                <motion.a 
-                  whileHover={{ y: -3, scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={content.channel.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-brand-forest hover:text-brand-primary transition-colors"
-                >
-                  <Youtube className="w-5 h-5" />
-                </motion.a>
-              </Tooltip>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
-            <div className="flex flex-col gap-4">
-              <span className="text-[18px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Explorar</span>
-              <Tooltip text="Ver videos" position="right">
-                <Link to="/#videos" className="text-sm font-bold hover:text-brand-primary transition-colors">Videos</Link>
-              </Tooltip>
-              <Tooltip text="Blog" position="right">
-                <Link to="/blog" className="text-sm font-bold hover:text-brand-primary transition-colors">Noticias</Link>
-              </Tooltip>
-              <Tooltip text="Material gratis" position="right">
-                <Link to="/#resources" className="text-sm font-bold hover:text-brand-primary transition-colors">Recursos</Link>
-              </Tooltip>
-            </div>
-            <div className="flex flex-col gap-4">
-              <span className="text-[18px] font-bold uppercase tracking-widest text-brand-forest opacity-60">Legal</span>
-              <Tooltip text="Nuestra política" position="right">
-                <Link to="/privacidad" className="text-sm font-bold hover:text-brand-primary transition-colors">Privacidad</Link>
-              </Tooltip>
-              <Tooltip text="Condiciones de uso" position="right">
-                <Link to="/terminos" className="text-sm font-bold hover:text-brand-primary transition-colors">Términos</Link>
-              </Tooltip>
-            </div>
-          </div>
+            <Link to="/#nosotros" className="font-medium text-gray-500 hover:text-black transition-all">
+                Nosotros
+            </Link>
+            <Link to="/#videos" className="font-medium text-gray-500 hover:text-black transition-all">
+                Videos
+            </Link>
+            <Link to="/blog" className="font-medium text-gray-500 hover:text-black transition-all">
+                Noticias
+            </Link>
+            <Link to="/#contact" className="font-medium text-gray-500 hover:text-black transition-all">
+                Contacto
+            </Link>
         </div>
-        
-        <div className="pt-12 border-t border-brand-forest/10 flex justify-center items-center text-center">
-          <span className="text-[0.9rem] md:text-base font-medium tracking-[0.05em] text-[#F3F0DF]/80" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-            © 2026 GEOVERDE VIDA CONSCIENTE. LIDERANDO LA EDUCACIÓN AMBIENTAL HOLÍSTICA.
-          </span>
+        <div className="flex items-center gap-4 mt-8 text-indigo-500">
+            <a href={content.channel.social.facebook || "#"} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-0.5 transition-all duration-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            </a>
+            <a href={content.channel.social.instagram || "#"} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-0.5 transition-all duration-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M16 11.37a4 4 0 1 1-7.914 1.173A4 4 0 0 1 16 11.37m1.5-4.87h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            </a>
+            <a href={content.channel.url || "#"} target="_blank" rel="noopener noreferrer" className="hover:-translate-y-0.5 transition-all duration-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9.75 15.02l5.75-3.27-5.75-3.27v6.54z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            </a>
+            <a href="https://www.tiktok.com/@geoverdecon100" target="_blank" rel="noopener noreferrer" className="hover:-translate-y-0.5 transition-all duration-300">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a3 3 0 0 1-3-3v11a7 7 0 1 1-7-7v3a4 4 0 0 0 3 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            </a>
         </div>
-      </div>
+        <p className="mt-8 text-center px-4">Copyright © 2026 GeoVerde Vida Consciente. Todos los derechos reservados.</p>
     </footer>
   );
 }
